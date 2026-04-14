@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            便宜好用的AI API中转服务
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>便宜好用的AI API中转服务</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：14 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -733,7 +733,26 @@ def get_completion(prompt):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>API中转服务合法吗？会不会被封号？</summary>
+<p>正规的API中转服务是合法的商业模式，它们通过批量采购、技术优化等方式降低成本。只要选择信誉良好的服务商，并遵守使用条款，不会有封号风险。建议选择运营时间较长、用户评价好的服务。</p>
+</details>
+<details>
+<summary>中转服务的响应速度会比官方慢吗？</summary>
+<p>优质的中转服务通常不会明显影响响应速度，有些甚至因为节点优化而更快。关键在于服务商的技术实力和基础设施。建议在正式使用前进行测试，对比首字节时间（TTFB）和总响应时间。</p>
+</details>
+<details>
+<summary>如何判断一个中转服务是否可靠？</summary>
+<p>可以从以下几个方面判断：1) 运营时长（至少6个月以上）；2) 用户评价和社区口碑；3) 是否提供服务状态页面；4) 客服响应速度；5) 是否有详细的文档和示例；6) 是否支持小额充值试用。建议先小额充值测试，满意后再大额充值。</p>
+</details>
+<details>
+<summary>中转服务支持哪些支付方式？</summary>
+<p>大多数国内的<strong>便宜好用的AI API中转服务</strong>都支持支付宝、微信支付，部分还支持银行卡、PayPal等。相比官方API只能用国际信用卡，中转服务的支付门槛要低得多，最低充值金额通常在1-10元人民币。</p>
+</details>
+<details>
+<summary>使用中转服务需要修改很多代码吗？</summary>
+<p>如果中转服务提供OpenAI兼容接口，通常只需要修改两个参数：base_url（API端点）和api_key（密钥）。其他代码逻辑完全不需要改动，迁移成本非常低。这也是为什么建议选择兼容OpenAI接口的服务。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

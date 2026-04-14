@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            DeepSeek API vs OpenAI API 对比评
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>DeepSeek API vs OpenAI API 对比评测</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：10 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -677,7 +677,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>DeepSeek API的稳定性如何？会不会经常宕机？</summary>
+<p>DeepSeek API在2024-2025年间表现稳定，官方SLA承诺99.9%的可用性。虽然作为新兴服务偶有波动，但整体可靠性已达到生产环境标准。建议在关键应用中配置降级方案。</p>
+</details>
+<details>
+<summary>从OpenAI迁移到DeepSeek需要改多少代码？</summary>
+<p>由于DeepSeek高度兼容OpenAI接口，迁移成本极低。通常只需修改API endpoint和密钥，核心代码无需改动。部分高级功能（如function calling）可能需要微调参数。</p>
+</details>
+<details>
+<summary>DeepSeek支持流式输出吗？</summary>
+<p>完全支持。DeepSeek API提供与OpenAI一致的stream参数，可以实现逐字输出，适合聊天机器人等需要实时反馈的场景。</p>
+</details>
+<details>
+<summary>两者在数据隐私方面有什么区别？</summary>
+<p>DeepSeek数据存储在国内，符合《数据安全法》和《个人信息保护法》。OpenAI数据可能涉及跨境传输，需评估合规风险。两者都承诺不使用API数据训练模型（需查看最新服务条款）。</p>
+</details>
+<details>
+<summary>哪个API更适合代码生成任务？</summary>
+<p>两者在代码生成上都表现优秀。DeepSeek在中文注释、国内技术栈（如微信小程序）上更有优势；OpenAI在前沿框架、复杂算法实现上略胜一筹。建议根据具体技术栈选择。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

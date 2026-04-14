@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API vs Azure OpenAI 区别
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API vs Azure OpenAI 区别</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：10 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -648,7 +648,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary><strong>OpenAI API和Azure OpenAI使用的是同一个模型吗？</strong></summary>
+<p>是的，两者使用的核心模型（如GPT-4、GPT-3.5）是相同的，但Azure OpenAI通常会在OpenAI官方发布新版本后1-2周才更新。此外，Azure版本会针对企业场景进行额外的安全加固和合规性优化。</p>
+</details>
+<details>
+<summary><strong>Azure OpenAI的审批流程需要多久？</strong></summary>
+<p>通常需要1-2周时间。微软会审核申请者的使用场景、企业资质等信息。如果是教育机构或非营利组织，审批可能更快；如果涉及敏感行业（如军事、政治），可能需要更长时间或被拒绝。</p>
+</details>
+<details>
+<summary><strong>我可以同时使用OpenAI API和Azure OpenAI吗？</strong></summary>
+<p>完全可以。许多企业采用混合策略：开发测试阶段使用OpenAI API快速迭代，生产环境切换到Azure OpenAI以满足合规要求。两者的API接口高度相似，迁移成本较低。</p>
+</details>
+<details>
+<summary><strong>哪个平台的响应速度更快？</strong></summary>
+<p>在相同模型和参数下，两者的响应速度基本一致（通常在1-3秒）。但Azure OpenAI支持区域部署，如果选择离用户更近的数据中心，网络延迟可能更低。OpenAI API使用全球CDN，对大多数地区的访问速度也很理想。</p>
+</details>
+<details>
+<summary><strong>Azure OpenAI是否支持私有化部署？</strong></summary>
+<p>Azure OpenAI本身是云服务，不支持完全私有化部署。但微软提供了Azure Stack等混合云方案，可以在企业自有数据中心运行部分Azure服务。如果需要完全离线的AI能力，可能需要考虑开源模型或其他私有化方案。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

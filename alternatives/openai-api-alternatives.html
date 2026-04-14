@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API 替代方案
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API 替代方案</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：19 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -794,7 +794,26 @@ print(result)
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>哪个 OpenAI API 替代方案最便宜？</summary>
+<p>如果追求极致性价比，Google Gemini 提供了最慷慨的免费额度（每天 1500 次请求）。对于付费服务，国产大模型如通义千问、GLM-4 的价格通常是 GPT-4 的 1/3 到 1/5，非常适合成本敏感的项目。</p>
+</details>
+<details>
+<summary>Claude 和 GPT-4 哪个更好？</summary>
+<p>两者各有优势。Claude 3.5 Sonnet 在代码生成、长文本理解方面表现优异，且支持 200K tokens 上下文。GPT-4 在通用任务上更均衡，生态更成熟。建议根据具体场景选择，或使用多模型降级策略。</p>
+</details>
+<details>
+<summary>国产大模型的中文能力真的更强吗？</summary>
+<p>是的。通义千问、GLM-4、文心一言等国产模型在中文语料上训练更充分，对中文语境、文化背景的理解更准确。如果你的应用主要服务中文用户，国产模型通常是更优选择。</p>
+</details>
+<details>
+<summary>如何降低 API 调用成本？</summary>
+<p>几个有效方法：1) 使用缓存机制避免重复调用；2) 选择性价比更高的模型（如 GPT-3.5 而非 GPT-4）；3) 优化 prompt 减少 token 消耗；4) 使用 API 中转服务获得批量折扣；5) 实现智能路由，根据任务难度选择合适模型。</p>
+</details>
+<details>
+<summary>API 中转服务安全吗？</summary>
+<p>选择正规的 API 中转服务通常是安全的，但需要注意：1) 选择有资质的服务商；2) 避免传输敏感数据；3) 查看服务商的数据处理政策；4) 对于企业级应用，建议使用官方 API 或私有化部署方案。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

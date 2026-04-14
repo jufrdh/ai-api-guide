@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 构建RAG知识库
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 构建RAG知识库</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：21 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -742,7 +742,26 @@ def rerank_results(question, retrieved_docs):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>RAG系统需要多少文档才能有效工作？</summary>
+<p>理论上几十个文档就可以开始构建RAG系统。但文档质量比数量更重要。建议从核心文档开始，逐步扩充知识库。一般来说，100-1000个高质量文档片段就能支撑一个专业领域的问答系统。</p>
+</details>
+<details>
+<summary>如何评估RAG系统的效果？</summary>
+<p>主要评估指标包括：1) 检索准确率（Retrieval Precision）- 检索到的文档是否相关；2) 答案准确性 - 生成的答案是否正确；3) 响应时间 - 从提问到返回答案的延迟；4) 用户满意度 - 通过反馈收集。建议准备一个测试问题集，定期评估系统表现。</p>
+</details>
+<details>
+<summary>RAG系统如何处理多语言文档？</summary>
+<p>有两种方案：1) 使用多语言Embedding模型（如multilingual-e5-large），可以在同一向量空间表示不同语言；2) 分别构建不同语言的知识库，根据问题语言路由到对应库。对于中英混合场景，推荐使用支持中文的Embedding模型。</p>
+</details>
+<details>
+<summary>向量数据库应该选择哪个？</summary>
+<p>选择取决于具体需求：Pinecone适合快速上手，完全托管；Weaviate开源且功能丰富，支持混合检索；Milvus适合大规模部署，性能优秀；Chroma轻量级，适合原型开发。小型项目可以从Chroma或FAISS开始，生产环境推荐Pinecone或Weaviate。</p>
+</details>
+<details>
+<summary>如何防止RAG系统产生幻觉？</summary>
+<p>关键措施包括：1) 在提示词中明确要求只使用检索到的文档内容；2) 设置较低的temperature参数（0.1-0.3）；3) 实现引用机制，要求模型标注信息来源；4) 添加置信度评估，对低置信度答案给出警告；5) 定期审查和更新知识库内容。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

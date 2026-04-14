@@ -472,9 +472,9 @@ Go：golang.org/x/time/rate
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 限流处理方法
         </nav>
     </div>
 
@@ -484,8 +484,8 @@ Go：golang.org/x/time/rate
             <h1>AI API 限流处理方法</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：31 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -944,7 +944,63 @@ def monitored_api_call(prompt):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何判断是否遇到了API限流？</summary>
+<p>主要通过以下方式判断：</p>
+<ul>
+<li>HTTP状态码为429（Too Many Requests）</li>
+<li>错误信息包含"rate limit"、"quota exceeded"等关键词</li>
+<li>响应头中包含<code>Retry-After</code>或<code>X-RateLimit-*</code>字段</li>
+<li>请求突然变慢或频繁超时</li>
+</ul>
+<p>建议在代码中捕获这些信号并记录日志，便于后续分析和优化。</p>
+</details>
+<details>
+<summary>免费账号和付费账号的限流有什么区别？</summary>
+<p>主要区别包括：</p>
+<ul>
+<li><strong>RPM限制</strong>：免费账号通常为3-20次/分钟，付费账号可达数千次</li>
+<li><strong>TPM限制</strong>：免费账号约40k-90k tokens/分钟，付费账号可达数百万</li>
+<li><strong>并发数</strong>：免费账号通常限制1-3个并发，付费账号可达数百</li>
+<li><strong>优先级</strong>：付费用户在高峰期有更高的处理优先级</li>
+</ul>
+<p>对于生产环境，强烈建议使用付费账号以获得稳定的服务质量。</p>
+</details>
+<details>
+<summary>指数退避的等待时间应该设置多长？</summary>
+<p>推荐的配置：</p>
+<ul>
+<li><strong>初始等待</strong>：1-2秒</li>
+<li><strong>最大等待</strong>：60-120秒</li>
+<li><strong>增长因子</strong>：2倍（即1s → 2s → 4s → 8s...）</li>
+<li><strong>随机抖动</strong>：±20%，避免多个请求同时重试</li>
+<li><strong>最大重试次数</strong>：3-5次</li>
+</ul>
+<p>具体数值需要根据API的限流策略和业务需求调整。</p>
+</details>
+<details>
+<summary>如何在不同编程语言中实现限流？</summary>
+<p>各语言都有成熟的限流库：</p>
+<ul>
+<li><strong>Python</strong>：ratelimit、tenacity、aiolimiter</li>
+<li><strong>Node.js</strong>：bottleneck、p-limit、rate-limiter-flexible</li>
+<li><strong>Java</strong>：Guava RateLimiter、Resilience4j</li>
+<li><strong>Go</strong>：golang.org/x/time/rate</li>
+</ul>
+<p>这些库已经实现了令牌桶、漏桶等算法，可以直接使用而无需从零开发。</p>
+</details>
+<details>
+<summary>遇到持续限流应该如何处理？</summary>
+<p>持续限流的应对策略：</p>
+<ol>
+<li><strong>检查配额</strong>：确认账号是否达到每日/每月上限</li>
+<li><strong>优化请求</strong>：减少不必要的API调用，使用缓存</li>
+<li><strong>升级套餐</strong>：考虑升级到更高级别的付费计划</li>
+<li><strong>分散流量</strong>：使用多个账号或在不同时段处理</li>
+<li><strong>联系支持</strong>：对于企业用户，可申请提高限额</li>
+<li><strong>使用中转服务</strong>：专业服务可提供更灵活的限流管理</li>
+</ol>
+</details>
             </section>
 
             <!-- Related Pages -->

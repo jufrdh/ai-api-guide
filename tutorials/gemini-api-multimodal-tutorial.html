@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Gemini API 多模态调用教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Gemini API 多模态调用教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：20 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -786,7 +786,26 @@ results = asyncio.run(analyze_images_batch(image_list))</code></pre>
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Gemini API 支持哪些图片格式？</summary>
+<p>Gemini API 支持 JPEG、PNG、WebP、HEIC 和 HEIF 格式。单张图片大小建议不超过 4MB，最大支持 20MB。如果图片格式不支持，可以使用 PIL 库转换为 JPEG 格式后再上传。</p>
+</details>
+<details>
+<summary>一次请求可以发送多少张图片？</summary>
+<p>Gemini API 支持在单次请求中发送多张图片，具体数量取决于模型版本和总数据大小。Gemini 2.0 Flash 模型建议单次请求不超过 10 张图片，以保证响应速度和准确性。</p>
+</details>
+<details>
+<summary>如何处理 API 调用失败的情况？</summary>
+<p>建议实现重试机制，使用指数退避策略。常见错误包括：429（限流）、500（服务器错误）、401（认证失败）。对于限流错误，等待一段时间后重试；对于认证错误，检查 API Key 是否正确；对于服务器错误，可以切换到备用模型或稍后重试。</p>
+</details>
+<details>
+<summary>Gemini API 多模态调用的费用如何计算？</summary>
+<p>Gemini API 按输入和输出 token 数量计费。图片会被转换为 token 计算，一张标准图片约等于 258 个 token。Gemini 2.0 Flash 模型提供免费额度，超出后按每百万 token 收费。建议在 Google AI Studio 中查看实时用量和费用明细。</p>
+</details>
+<details>
+<summary>国内访问 Gemini API 有什么解决方案？</summary>
+<p>由于网络限制，国内直接访问 Google API 可能不稳定。可以选择：1) 使用企业级代理服务；2) 使用专业的 API 中转平台，这些平台提供国内可访问的接口，保持与官方 API 兼容，同时提供更稳定的服务质量和技术支持；3) 部署海外服务器作为中转节点。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

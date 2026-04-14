@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API vs Gemini API 开发者对比
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API vs Gemini API 开发者对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：10 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -670,7 +670,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Claude API和Gemini API哪个更适合初学者？</summary>
+<p>对于初学者，Gemini API可能更友好。它的价格更低（特别是Flash模型），文档丰富，且有免费额度可以试用。Claude API虽然质量高，但成本相对较高，更适合有明确需求和预算的开发者。建议初学者先用Gemini API熟悉基本流程，再根据需求考虑Claude API。</p>
+</details>
+<details>
+<summary>两个API的响应速度差异大吗？</summary>
+<p>在实际测试中，Gemini API的平均响应速度通常快15-30%，特别是在短文本生成场景。但Claude API在处理复杂推理任务时，虽然速度稍慢，输出质量往往更高。如果应用对实时性要求极高（如聊天机器人），Gemini可能更合适；如果更看重输出质量，Claude是更好的选择。</p>
+</details>
+<details>
+<summary>可以在同一个项目中同时使用两个API吗？</summary>
+<p>完全可以，而且这是一个推荐的做法。许多开发者使用路由逻辑：简单查询发给Gemini节省成本，复杂任务发给Claude保证质量。也可以使用API中转服务，它们通常提供统一的接口格式，让你可以轻松切换不同模型，甚至实现自动负载均衡和故障转移。</p>
+</details>
+<details>
+<summary>哪个API的多模态能力更强？</summary>
+<p>Gemini API在多模态能力上明显领先。它支持文本、图像、视频、音频等多种输入，而Claude目前只支持文本和图像。如果你的应用需要处理视频内容（如视频摘要、内容审核）或音频（如语音转文字后的理解），Gemini是唯一选择。但如果只需要文本和图像，Claude的理解深度可能更好。</p>
+</details>
+<details>
+<summary>如何降低API使用成本？</summary>
+<p>有几个有效策略：1) 选择合适的模型（不是所有任务都需要最强模型）；2) 优化prompt减少token消耗；3) 使用缓存机制避免重复调用；4) 考虑使用API中转服务，通常能节省20-40%成本；5) 实施请求合并和批处理；6) 设置合理的token限制避免浪费。对于高频调用的应用，这些优化能显著降低月度开支。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

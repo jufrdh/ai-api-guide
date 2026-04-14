@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API 被封了怎么办
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API 被封了怎么办</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：11 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -703,7 +703,26 @@ console.log(response.choices[0].message.content);
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>OpenAI API 被封后数据会丢失吗？</summary>
+<p>不会。你的对话历史和 API 调用记录仍然保存在 OpenAI 服务器上。如果账号恢复，数据可以正常访问。但建议定期备份重要数据。</p>
+</details>
+<details>
+<summary>使用 API 中转服务安全吗？</summary>
+<p>选择正规的中转服务商是安全的。建议选择有企业资质、提供技术支持、用户评价好的服务。避免使用来路不明的免费代理，可能存在数据泄露风险。</p>
+</details>
+<details>
+<summary>国内大模型 API 能完全替代 OpenAI 吗？</summary>
+<p>对于大多数应用场景，国内大模型已经可以很好地替代 GPT-3.5。但如果需要 GPT-4 级别的推理能力或特定的英文场景，可能还需要使用 OpenAI API。建议根据实际需求测试对比。</p>
+</details>
+<details>
+<summary>自建代理服务会不会也被封？</summary>
+<p>如果使用个人 VPS 自建代理，只要 IP 稳定、不被滥用，被封概率较低。但如果多人共用或流量异常，仍有风险。Cloudflare Workers 方案相对更稳定。</p>
+</details>
+<details>
+<summary>OpenAI API 被封了怎么办才能最快恢复业务？</summary>
+<p>最快的方案是立即切换到 API 中转服务，通常 10 分钟内就能恢复。同时可以并行申诉 OpenAI 账号或测试国内大模型作为长期方案。建议提前准备备用方案，避免业务中断。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

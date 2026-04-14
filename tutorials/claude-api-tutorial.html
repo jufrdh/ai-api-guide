@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API 使用教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API 使用教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：16 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -729,7 +729,26 @@ except APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Claude API 支持哪些模型？</summary>
+<p>目前主要包括 Claude 3.5 Sonnet（最新旗舰）、Claude 3 Opus（最强性能）、Claude 3 Sonnet（平衡版）和 Claude 3 Haiku（快速轻量）。不同模型在性能、速度和价格上有所差异，可根据具体需求选择。</p>
+</details>
+<details>
+<summary>如何计算 API 调用成本？</summary>
+<p>Claude API 按输入和输出 token 分别计费。以 Claude 3.5 Sonnet 为例，输入约 $3/百万 tokens，输出约 $15/百万 tokens。可以使用 <code>anthropic.count_tokens()</code> 方法预估 token 数量。</p>
+</details>
+<details>
+<summary>API 有速率限制吗？</summary>
+<p>是的，不同账户等级有不同的速率限制。免费试用账户通常限制为每分钟 5 次请求，付费账户可达到每分钟 50-100 次。超限时会返回 429 错误，建议实现指数退避重试机制。</p>
+</details>
+<details>
+<summary>Claude API 和 ChatGPT API 有什么区别？</summary>
+<p>主要区别在于：Claude 支持更长的上下文（200K vs 128K）、在代码和推理任务上表现更稳定、内置更强的安全机制。但 ChatGPT 生态更成熟，插件和工具更丰富。选择取决于具体应用场景。</p>
+</details>
+<details>
+<summary>如何保护 API 密钥安全？</summary>
+<p>最佳实践包括：1) 使用环境变量而非硬编码；2) 在 .gitignore 中排除配置文件；3) 为不同环境使用不同密钥；4) 定期轮换密钥；5) 在服务端调用 API，避免在前端暴露密钥。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

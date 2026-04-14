@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 自动生成SEO文章
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 自动生成SEO文章</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：24 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -786,7 +786,26 @@ for lang in languages:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+    <summary>AI生成的SEO文章会被搜索引擎惩罚吗？</summary>
+    <p>Google明确表示不反对AI生成内容，关键在于内容质量。只要文章对用户有价值、信息准确、不是纯粹的关键词堆砌，就不会被惩罚。建议在AI生成后进行人工审核和优化，确保内容的独特性和实用性。</p>
+  </details>
+<details>
+    <summary>使用AI API生成文章的成本大概是多少？</summary>
+    <p>以GPT-4为例，生成一篇2000字文章约消耗3000-4000 tokens（输入+输出），成本约$0.15-0.25。如果使用GPT-3.5或国产模型，成本可降至$0.02-0.05。通过API中转服务和批量调用，实际成本还能进一步降低。</p>
+  </details>
+<details>
+    <summary>如何确保AI生成内容的原创性？</summary>
+    <p>可以通过以下方法提升原创性：1) 在Prompt中要求独特视角和案例；2) 设置较高的temperature参数（0.7-0.9）增加随机性；3) 结合多个数据源进行内容融合；4) 使用原创性检测工具（如Copyscape）进行验证；5) 人工添加独家观点和数据。</p>
+  </details>
+<details>
+    <summary>批量生成时如何避免内容重复？</summary>
+    <p>建议采用以下策略：为每个关键词设计差异化的Prompt模板；在生成参数中加入随机种子；使用不同的写作角度（教程、对比、案例分析等）；定期更新Prompt库；建立内容去重检测机制。</p>
+  </details>
+<details>
+    <summary>AI生成的文章需要多少人工干预？</summary>
+    <p>根据内容类型不同，人工干预程度在10%-40%之间。基础信息类文章可能只需5-10分钟的校对和格式调整；专业技术文章可能需要20-30分钟的事实核查和案例补充；高价值内容建议投入更多时间进行深度优化和个性化改写。</p>
+  </details>
             </section>
 
             <!-- Related Pages -->

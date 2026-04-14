@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 实现多语言翻译
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 实现多语言翻译</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：25 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -855,7 +855,26 @@ def translate_with_logging(text, target_lang):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>大模型翻译的准确率如何？</summary>
+<p>主流大模型（GPT-4、Claude 3.5）在通用文本翻译上准确率可达95%以上，接近专业人工翻译水平。对于专业领域内容，配合术语表使用可进一步提升准确性。建议对关键内容进行人工审校。</p>
+</details>
+<details>
+<summary>如何处理大批量翻译任务？</summary>
+<p>建议采用异步队列架构：将翻译任务放入消息队列（如Redis、RabbitMQ），使用多个worker并发处理。同时实现翻译缓存，避免重复翻译相同内容。对于超大规模任务，可考虑使用批量API接口降低成本。</p>
+</details>
+<details>
+<summary>翻译成本大概是多少？</summary>
+<p>以GPT-4为例，翻译1000字中文约消耗2000 tokens（输入+输出），成本约$0.06。使用GPT-3.5成本可降至$0.002。国产大模型成本更低，约¥0.002/千字。通过API中转服务可进一步优化成本。</p>
+</details>
+<details>
+<summary>如何保证翻译的一致性？</summary>
+<p>建议建立翻译记忆库（Translation Memory），存储已翻译的句子对。新翻译时先查询记忆库，相同或相似内容直接复用。同时在提示词中提供术语表和风格指南，确保多次翻译保持一致。</p>
+</details>
+<details>
+<summary>大模型API翻译有哪些局限？</summary>
+<p>主要局限包括：1) 响应速度比传统翻译API慢（2-5秒 vs 0.5秒）；2) 成本相对较高；3) 可能出现"幻觉"现象，添加原文不存在的内容；4) 对极低资源语言支持有限。建议根据实际场景选择合适方案。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

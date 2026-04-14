@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 图片识别和描述生成
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 图片识别和描述生成</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：21 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -770,7 +770,26 @@ results = asyncio.run(batch_analyze(image_list, api_key))
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Q1: 使用 AI API 进行图片识别需要多少成本？</summary>
+<p>成本因服务提供商和使用量而异。OpenAI GPT-4 Vision 按图片数量计费，约 $0.01-0.03/张；Google Gemini Pro Vision 提供免费额度，超出后按请求计费。建议根据实际业务量选择合适的套餐，并通过缓存、批量处理等方式优化成本。</p>
+</details>
+<details>
+<summary>Q2: 哪个多模态 API 的中文识别效果最好？</summary>
+<p>对于中文场景，阿里通义千问 VL 和百度文心一言的视觉模型针对中文内容进行了专门优化，在识别中文文字、理解中国文化元素方面表现更好。但 GPT-4 Vision 和 Claude 3 在复杂场景理解和描述生成质量上仍有优势。建议根据具体需求进行测试对比。</p>
+</details>
+<details>
+<summary>Q3: 如何处理敏感图片内容的隐私问题？</summary>
+<p>建议采取以下措施：1) 在本地进行图片预处理，去除敏感信息；2) 使用支持私有部署的开源模型；3) 选择提供数据隐私保护承诺的服务商；4) 对传输数据进行加密；5) 定期审计 API 调用日志，确保合规性。</p>
+</details>
+<details>
+<summary>Q4: API 调用失败时如何处理？</summary>
+<p>实施完善的错误处理机制：1) 使用指数退避算法进行重试；2) 设置合理的超时时间；3) 准备降级方案（如切换到备用 API）；4) 记录详细的错误日志便于排查；5) 对用户提供友好的错误提示。建议使用 API 中转服务来自动处理故障切换。</p>
+</details>
+<details>
+<summary>Q5: 如何评估图片描述的质量？</summary>
+<p>可以从以下维度评估：1) 准确性：描述是否与图片内容一致；2) 完整性：是否涵盖了主要元素；3) 可读性：语言是否流畅自然；4) 实用性：是否满足业务需求。建议建立人工评测标准，定期抽样检查 API 输出质量，并根据反馈优化 Prompt 设计。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

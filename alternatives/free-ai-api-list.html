@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            免费AI API 有哪些
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>免费AI API 有哪些</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：16 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -725,7 +725,26 @@ print(response.json())
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>免费AI API的响应速度和付费版本有差别吗？</summary>
+<p>通常会有一定差别。免费版本可能会有较低的优先级，在高峰时段响应时间会更长。但对于大多数非实时应用来说，这个差别是可以接受的。如果你的应用对响应时间有严格要求，建议在实际场景中测试后再做决定。</p>
+</details>
+<details>
+<summary>可以在商业项目中使用这些免费AI API吗？</summary>
+<p>这取决于具体的服务条款。Google Gemini和Hugging Face的免费层级允许商业使用，但有调用量限制。Cohere的免费版本主要用于开发和测试，商业部署需要升级到付费计划。OpenAI的试用额度可以用于商业项目，但额度用完后需要付费。使用前务必仔细阅读每个服务的使用条款。</p>
+</details>
+<details>
+<summary>如何避免免费额度被快速消耗？</summary>
+<p>实施以下策略可以有效延长免费额度的使用时间：1) 对常见请求实现缓存机制；2) 优化提示词，减少不必要的token消耗；3) 使用请求队列控制并发数；4) 对于批量任务，选择在非高峰时段处理；5) 定期监控使用量，及时调整策略。</p>
+</details>
+<details>
+<summary>本地部署开源模型需要什么样的硬件配置？</summary>
+<p>这取决于你选择的模型大小。小型模型（如7B参数的Llama2）可以在16GB内存的普通电脑上运行，但推理速度较慢。如果想要更好的性能，建议使用配备NVIDIA GPU（至少8GB显存）的机器。对于13B或更大的模型，建议使用24GB或更大显存的GPU。云服务器也是一个选择，可以按需租用GPU实例。</p>
+</details>
+<details>
+<summary>免费API突然停止服务怎么办？</summary>
+<p>这是使用免费服务的固有风险。建议采取以下预防措施：1) 在代码中实现多个API提供商的支持，便于快速切换；2) 定期备份重要的配置和数据；3) 关注服务提供商的公告和社区动态；4) 对于关键业务，考虑同时使用付费服务作为备份；5) 将API调用逻辑封装成独立模块，降低更换成本。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

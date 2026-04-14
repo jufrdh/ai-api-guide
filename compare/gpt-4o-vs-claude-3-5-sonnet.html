@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            GPT-4o API vs Claude 3.5 Sonne
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>GPT-4o API vs Claude 3.5 Sonnet API 对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -675,7 +675,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>GPT-4o和Claude 3.5 Sonnet哪个更适合中文应用？</summary>
+<p>两款模型的中文能力都很强，但侧重不同。GPT-4o在中文创意写作、日常对话方面更自然流畅；Claude 3.5 Sonnet在中文技术文档、代码注释、专业术语处理上更精准。如果是面向C端用户的产品，GPT-4o体验更好；如果是B端技术工具，Claude更可靠。</p>
+</details>
+<details>
+<summary>这两个API的速率限制是多少？</summary>
+<p>GPT-4o的免费层级限制为每分钟3次请求（RPM）和40,000 tokens（TPM），付费用户根据充值额度提升到500-10,000 RPM。Claude 3.5 Sonnet的免费层为每分钟5次请求，付费用户可达到4,000 RPM。对于高并发应用，建议联系官方申请企业级配额。</p>
+</details>
+<details>
+<summary>可以同时使用两个模型吗？</summary>
+<p>完全可以。许多开发者采用"混合策略"：用Claude处理代码生成和长文档分析，用GPT-4o处理多模态任务和实时对话。通过API中转服务的统一接口，可以轻松实现模型间的动态切换，根据任务类型自动选择最合适的模型。</p>
+</details>
+<details>
+<summary>哪个模型的幻觉（hallucination）问题更少？</summary>
+<p>Claude 3.5 Sonnet在减少幻觉方面做得更好，特别是在事实性问答和技术文档生成中。它更倾向于承认不确定性，而不是编造答案。GPT-4o在创意任务中偶尔会过度发挥，但在数学和逻辑推理中准确率很高。建议在关键应用中加入人工审核环节。</p>
+</details>
+<details>
+<summary>未来这两个模型会如何演进？</summary>
+<p>OpenAI已宣布将持续优化GPT-4o的多模态能力，并计划推出更便宜的GPT-4o-mini版本。Anthropic则在开发Claude 3.5 Opus（更强大的版本）和Claude 3.5 Haiku（更快更便宜的版本）。预计2025年下半年，两家都会推出支持更长上下文（500K+）和更低延迟的版本。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

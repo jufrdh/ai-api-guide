@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 文本摘要功能对比
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 文本摘要功能对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：14 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -781,7 +781,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何选择抽取式摘要还是生成式摘要？</summary>
+<p>抽取式摘要直接从原文提取关键句子，优点是准确性高、不会产生幻觉，适合法律、医疗等对准确性要求极高的场景。生成式摘要由 AI 重新组织语言，优点是更流畅、可读性强，适合新闻、内容营销等场景。大多数现代 AI API 默认使用生成式摘要，但可以通过 prompt 指定"请直接引用原文关键句"来实现抽取式效果。</p>
+</details>
+<details>
+<summary>处理中文文本时，国际模型和国产模型差距大吗？</summary>
+<p>在纯中文摘要场景，GPT-4 和 Claude 3 的质量仍然略优于国产模型，特别是在复杂逻辑和专业领域。但对于日常新闻、企业文档等常规内容，文心一言和通义千问的表现已经非常接近，考虑到价格优势（约为国际模型的 1/10），性价比更高。如果涉及中英混合或专业术语较多的内容，建议优先选择国际模型。</p>
+</details>
+<details>
+<summary>API 调用频率限制如何应对？</summary>
+<p>各服务商都有不同的频率限制，OpenAI 和 Anthropic 对免费用户限制较严。应对策略包括：1) 升级到付费账户获得更高配额；2) 实现请求队列和重试机制；3) 使用多个 API key 轮换；4) 采用 API 中转服务，通常有更高的并发限制。对于企业级应用，建议直接联系服务商申请企业配额。</p>
+</details>
+<details>
+<summary>如何评估摘要质量？</summary>
+<p>摘要质量可从以下维度评估：1) 覆盖度 - 是否包含原文核心信息；2) 准确性 - 是否存在事实错误或幻觉；3) 简洁性 - 是否去除冗余信息；4) 可读性 - 语言是否流畅自然。可以使用 ROUGE 等自动评估指标，但最可靠的方法仍是人工抽查。建议建立标准测试集，定期对比不同模型的表现。</p>
+</details>
+<details>
+<summary>使用 API 中转服务安全吗？</summary>
+<p>选择正规的 API 中转服务商，安全性是有保障的。建议选择有以下特征的服务商：1) 明确的隐私政策，承诺不存储用户数据；2) 支持 HTTPS 加密传输；3) 有完善的日志审计机制；4) 提供 SLA 保障。对于涉及敏感数据的应用，可以先对文本进行脱敏处理再调用 API，或选择支持私有化部署的方案。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

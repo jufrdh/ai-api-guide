@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            ChatGPT API 国内替代
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>ChatGPT API 国内替代</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：18 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -759,7 +759,26 @@ async function handleRequest(request) {
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>使用 API 中转服务安全吗？</summary>
+<p>选择正规的 API 中转服务通常是安全的，但需要注意以下几点：1) 选择有良好口碑和运营历史的服务商；2) 查看服务商的隐私政策，确认不会记录敏感数据；3) 避免在请求中传输用户的个人隐私信息；4) 对于企业应用，建议优先考虑国产大模型或自建方案。</p>
+</details>
+<details>
+<summary>国产大模型和 ChatGPT 的能力差距有多大？</summary>
+<p>目前国产大模型在中文理解和生成方面已经接近甚至超越 GPT-3.5，但在复杂推理、多语言能力和创造性任务上与 GPT-4 还有一定差距。对于大多数中文应用场景，国产大模型已经完全够用。建议根据具体需求进行测试对比。</p>
+</details>
+<details>
+<summary>如何降低 API 调用成本？</summary>
+<p>降低成本的主要方法包括：1) 选择性价比高的模型（如 GPT-3.5 而非 GPT-4）；2) 优化 Prompt 长度，减少不必要的上下文；3) 实现智能缓存，避免重复请求；4) 使用流式输出，提升用户体验的同时可以提前终止不需要的生成；5) 对比不同服务商的价格，选择最优方案。</p>
+</details>
+<details>
+<summary>API 中转服务会被封禁吗？</summary>
+<p>这取决于服务商的技术实力和运营策略。正规的中转服务通常会采用多种技术手段确保稳定性，如使用多个 IP 池、智能路由等。但确实存在一定风险，建议：1) 选择有技术实力的服务商；2) 准备备用方案；3) 对于关键业务，考虑使用国产大模型作为主要方案。</p>
+</details>
+<details>
+<summary>个人开发者应该选择哪种方案？</summary>
+<p>个人开发者建议优先考虑以下方案：1) 如果是学习和测试，可以使用国产大模型的免费额度；2) 如果需要使用 GPT 模型且预算有限，可以选择口碑好的 API 中转服务；3) 如果是商业项目，建议使用国产大模型 API，确保长期稳定性和合规性。可以同时接入多个服务，根据实际情况灵活切换。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

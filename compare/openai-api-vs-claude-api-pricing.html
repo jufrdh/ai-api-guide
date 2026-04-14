@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API vs Claude API 价格对比
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API vs Claude API 价格对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：9 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -699,7 +699,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>OpenAI API和Claude API哪个更适合初学者？</summary>
+<p>对于初学者，推荐从OpenAI API开始。原因是OpenAI的文档更完善，社区资源丰富，遇到问题更容易找到解决方案。GPT-3.5 Turbo价格低廉，适合学习和实验。等熟悉API使用后，再根据具体需求考虑Claude。</p>
+</details>
+<details>
+<summary>两个API的上下文窗口大小有什么实际影响？</summary>
+<p>上下文窗口决定了模型一次能处理的文本量。Claude的200K窗口可以一次性处理约15万字的中文内容，适合分析长篇文档、书籍章节等。而GPT-4 Turbo的128K窗口约能处理10万字。如果你的应用需要处理大量上下文信息，Claude更有优势。</p>
+</details>
+<details>
+<summary>如何在两个API之间迁移？</summary>
+<p>两个API的接口格式相似但不完全相同。建议在代码中使用抽象层，将API调用封装成统一接口。这样切换时只需修改底层实现，不影响业务逻辑。也可以使用支持多模型的SDK，如LangChain，简化迁移过程。</p>
+</details>
+<details>
+<summary>哪个API的安全性更好？</summary>
+<p>Claude在设计上更注重安全性，采用Constitutional AI技术，在拒绝有害请求和减少偏见方面表现更好。OpenAI也有完善的内容审核机制，但Claude在某些敏感场景下更保守。如果你的应用涉及医疗、法律等领域，Claude可能是更安全的选择。</p>
+</details>
+<details>
+<summary>两个API的并发限制和速率限制如何？</summary>
+<p>两家都采用基于账户等级的速率限制。新账户通常有较低的RPM（每分钟请求数）和TPM（每分钟Token数）限制。随着使用量增加和付费金额提升，限制会逐步放宽。企业用户可以申请更高的配额。具体限制建议查看官方文档，因为会定期调整。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API Python调用教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API Python调用教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：16 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -680,7 +680,26 @@ if response.choices[0].message.tool_calls:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何处理 API 速率限制错误？</summary>
+<p>OpenAI API 有速率限制，当遇到 RateLimitError 时，应该实现指数退避重试策略。可以使用 tenacity 库简化重试逻辑，或者手动实现 try-except 捕获错误并等待一段时间后重试。对于高频应用，建议升级到更高的使用层级或考虑使用 API 中转服务来分散请求。</p>
+</details>
+<details>
+<summary>OpenAI API Python调用时如何控制输出格式？</summary>
+<p>可以通过在 system 消息中明确指定输出格式要求，例如"请以 JSON 格式返回"或"请用列表形式回答"。对于结构化输出，可以使用 response_format 参数指定 json_object 类型。此外，通过调整 temperature 参数可以控制输出的确定性，较低的值会产生更一致的格式。</p>
+</details>
+<details>
+<summary>如何在 Python 中实现 OpenAI API 的异步调用？</summary>
+<p>OpenAI Python 库支持异步操作，使用 AsyncOpenAI 客户端即可。导入 asyncio 和 AsyncOpenAI，然后使用 await 关键字调用 API。异步调用特别适合需要同时处理多个请求的场景，可以显著提高应用性能。示例：client = AsyncOpenAI() 然后 await client.chat.completions.create(...)。</p>
+</details>
+<details>
+<summary>调用 OpenAI API 时如何保证数据安全？</summary>
+<p>首先，永远不要在代码中硬编码 API 密钥，应使用环境变量或密钥管理服务。其次，不要将包含敏感信息的请求发送到 API。OpenAI 声明不会使用 API 调用的数据来训练模型，但仍需谨慎处理用户隐私数据。对于企业应用，可以考虑使用 Azure OpenAI 服务获得更强的合规保障。</p>
+</details>
+<details>
+<summary>如何优化 OpenAI API Python调用的响应速度？</summary>
+<p>可以从几个方面优化：1) 使用流式输出让用户更快看到结果；2) 减少 messages 数组长度，只保留必要的上下文；3) 选择响应更快的模型如 gpt-3.5-turbo；4) 使用地理位置更近的 API 端点或中转服务；5) 实现本地缓存机制，避免重复请求相同内容。对于批量处理任务，可以使用异步并发调用。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

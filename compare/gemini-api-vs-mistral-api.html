@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Gemini API vs Mistral API 多模态对
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Gemini API vs Mistral API 多模态对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -742,7 +742,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary><strong>Q1: Gemini API和Mistral API哪个更适合中文应用？</strong></summary>
+<p>Gemini在中文处理上更具优势。Gemini 1.5 Pro支持100多种语言，中文理解和生成质量接近GPT-4水平。Mistral虽然也支持中文，但主要优化了欧洲语言，在中文场景下的表现略逊一筹。如果你的应用主要面向中文用户，建议优先选择Gemini API。</p>
+</details>
+<details>
+<summary><strong>Q2: 两者的免费额度分别是多少？</strong></summary>
+<p>Gemini API提供每天1500次免费请求（Flash版本），每分钟15次的速率限制。Mistral API的免费试用相对有限，新用户可获得5美元体验额度。对于个人开发者和小型项目，Gemini的免费额度更加慷慨。</p>
+</details>
+<details>
+<summary><strong>Q3: 在图像识别准确性上谁更强？</strong></summary>
+<p>根据实测数据，Gemini 1.5 Pro在复杂场景的图像理解上准确率更高，特别是在需要结合上下文推理的任务中。Mistral的Pixtral Large在技术图表、代码截图等专业领域表现出色。如果是通用图像识别，推荐Gemini；如果是技术文档OCR，Mistral更合适。</p>
+</details>
+<details>
+<summary><strong>Q4: 可以同时使用两个API吗？</strong></summary>
+<p>完全可以！许多开发者采用混合策略：用Gemini Flash处理高频简单任务（如客服对话），用Mistral Large处理代码生成和技术文档。通过API中转服务可以更方便地管理多个平台的调用，实现成本和效果的最优平衡。</p>
+</details>
+<details>
+<summary><strong>Q5: 哪个API的响应速度更快？</strong></summary>
+<p>Gemini 1.5 Flash是目前最快的多模态API之一，平均响应时间约1.2秒。Mistral Large 2的响应时间约2.1秒。如果你的应用对实时性要求极高（如实时翻译、语音助手），Gemini Flash是更好的选择。对于批处理任务，两者的速度差异影响不大。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API 错误处理最佳实践
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API 错误处理最佳实践</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：17 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -751,7 +751,26 @@ async def process_batch(prompts, concurrency=5):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何判断是否应该重试 OpenAI API 请求？</summary>
+<p>一般来说，速率限制错误（429）、服务器错误（5xx）和超时错误应该重试。而认证错误（401）、请求参数错误（400）和权限错误（403）不应该重试，因为重试不会改变结果。建议使用指数退避策略，最多重试 3-5 次。</p>
+</details>
+<details>
+<summary>OpenAI API 的速率限制是如何计算的？</summary>
+<p>OpenAI 的速率限制基于每分钟请求数（RPM）和每分钟令牌数（TPM）两个维度。不同的订阅级别有不同的限制。当触发速率限制时，响应头会包含 Retry-After 字段，指示应该等待的秒数。建议在代码中解析这个字段来动态调整重试时间。</p>
+</details>
+<details>
+<summary>如何处理 OpenAI API 的超时问题？</summary>
+<p>超时通常由网络延迟或请求处理时间过长引起。建议设置合理的超时阈值（如 30-60 秒），并实施重试机制。对于长文本处理，可以考虑分段处理或使用流式响应。同时，检查网络连接质量和 DNS 解析速度也很重要。</p>
+</details>
+<details>
+<summary>生产环境中应该如何监控 OpenAI API 的错误？</summary>
+<p>建议建立完整的监控体系，包括：错误率追踪、响应时间监控、API 配额使用情况、不同错误类型的分布统计。使用日志聚合工具（如 ELK、Datadog）集中管理日志，设置告警规则在错误率异常时及时通知。同时，定期分析错误模式，优化错误处理策略。</p>
+</details>
+<details>
+<summary>如何在多个 API 密钥之间实现负载均衡？</summary>
+<p>可以维护一个 API 密钥池，使用轮询或随机选择策略分配请求。当某个密钥触发速率限制时，自动切换到其他可用密钥。同时追踪每个密钥的使用情况和配额，实现智能调度。这种方式能够有效提升系统的吞吐量和可用性。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

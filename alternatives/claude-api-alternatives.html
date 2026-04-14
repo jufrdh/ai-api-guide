@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API 替代方案推荐
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API 替代方案推荐</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：19 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -803,7 +803,26 @@ response = client.chat([{"role": "user", "content": "Hello"}])
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>哪个Claude API替代方案最接近Claude的能力？</summary>
+<p>从综合能力来看，GPT-4 Turbo是最接近Claude的替代方案，特别是在推理能力和对话质量方面。如果你的应用主要处理长文档，Gemini 1.5 Pro的超长上下文能力可能更适合。对于中文场景，通义千问Max和GLM-4在语言理解上甚至可能超越Claude。</p>
+</details>
+<details>
+<summary>切换到其他API会影响现有应用的性能吗？</summary>
+<p>可能会有一定影响。不同模型在响应速度、输出风格和特定任务表现上存在差异。建议在切换前进行充分测试，特别关注关键业务场景的表现。可以先在非核心功能上试用新API，逐步扩大使用范围。</p>
+</details>
+<details>
+<summary>如何降低API调用成本？</summary>
+<p>降低成本的策略包括：1) 选择性价比更高的模型（如Cohere或国产模型）；2) 优化prompt减少token消耗；3) 实现智能缓存机制避免重复调用；4) 根据任务复杂度选择不同规格的模型；5) 使用批量处理API降低单次调用成本。</p>
+</details>
+<details>
+<summary>国产大模型的数据安全性如何？</summary>
+<p>主流国产大模型服务商（如阿里云、智谱AI）都通过了国家信息安全等级保护认证，符合《数据安全法》和《个人信息保护法》要求。对于敏感数据，建议选择支持私有化部署的方案，或使用数据脱敏技术。企业用户可要求服务商签署数据保密协议。</p>
+</details>
+<details>
+<summary>可以同时使用多个AI API吗？</summary>
+<p>完全可以，这也是推荐的最佳实践。通过实现统一的适配层，你可以根据不同场景调用最合适的模型：用GPT-4处理复杂推理、用Gemini分析长文档、用国产模型处理中文内容。这种多模型策略既能优化成本，又能提升整体服务质量和可靠性。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

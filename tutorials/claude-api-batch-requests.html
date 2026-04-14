@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API 批量请求教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API 批量请求教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：22 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -781,7 +781,26 @@ async function getResults(batchId) {
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>批量请求的处理时间一般需要多久？</summary>
+<p>Claude API 批量请求的处理时间取决于任务数量和复杂度，通常在提交后的 24 小时内完成。小批量任务（几百个请求）可能在几分钟到几小时内完成，大批量任务可能需要更长时间。系统会自动优化处理顺序，无需人工干预。</p>
+</details>
+<details>
+<summary>批量请求失败后可以重试吗？</summary>
+<p>可以。当批量任务中的某些请求失败时，你可以提取失败的请求重新组织成新的批量任务进行重试。建议在重试前检查失败原因（如参数错误、token 超限等），修正问题后再提交。</p>
+</details>
+<details>
+<summary>批量请求和普通 API 调用有什么区别？</summary>
+<p>主要区别在于：1) 批量请求是异步处理，普通调用是同步的；2) 批量请求价格更优惠（约50%折扣）；3) 批量请求适合非实时场景，普通调用适合需要即时响应的场景；4) 批量请求无需管理并发限制，系统自动处理。</p>
+</details>
+<details>
+<summary>如何处理批量请求中的敏感数据？</summary>
+<p>建议在提交批量请求前对敏感数据进行脱敏处理，或使用加密传输。同时确保 API Key 的安全存储，不要硬编码在代码中。对于高度敏感的数据，可以考虑使用私有部署方案或在本地进行预处理。</p>
+</details>
+<details>
+<summary>批量请求的结果可以保存多久？</summary>
+<p>批量任务完成后，结果文件通常会在 Anthropic 服务器上保留一段时间（具体时长请参考官方文档）。建议在任务完成后及时下载并保存结果到本地或云存储，避免数据丢失。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

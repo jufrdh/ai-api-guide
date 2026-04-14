@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            OpenAI API Function Calling 教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>OpenAI API Function Calling 教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：30 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -838,7 +838,26 @@ def handle_customer_service(user_message):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Function Calling 支持哪些 OpenAI 模型？</summary>
+<p>目前支持函数调用的模型包括：gpt-4、gpt-4-turbo、gpt-4o、gpt-3.5-turbo（0613 版本及以后）。推荐使用 gpt-4-turbo 或 gpt-4o，它们支持并行函数调用和更复杂的参数推理。</p>
+</details>
+<details>
+<summary>函数调用会增加多少 Token 消耗？</summary>
+<p>函数定义会计入输入 Token，每个函数的描述和参数结构大约消耗 50-200 个 Token。函数调用的响应（包含 function_call 字段）也会计入输出 Token。建议在开发时使用 <code>response.usage</code> 监控实际消耗。</p>
+</details>
+<details>
+<summary>如何让模型更准确地选择函数？</summary>
+<p>关键在于函数的 <code>description</code> 字段。应该清晰描述函数的用途、适用场景和限制条件。例如："查询指定日期范围内的订单，日期格式为 YYYY-MM-DD，最多支持查询 90 天内的数据"。</p>
+</details>
+<details>
+<summary>Function Calling 和 Plugins 有什么区别？</summary>
+<p>Function Calling 是开发者在代码中定义和执行函数，完全由开发者控制；Plugins（已废弃）是 OpenAI 托管的第三方服务。Function Calling 提供了更好的安全性、灵活性和性能。</p>
+</details>
+<details>
+<summary>可以在函数中调用外部 API 吗？</summary>
+<p>完全可以。Function Calling 的设计初衷就是让 GPT 模型能够与外部系统交互。你可以在函数中调用任何 API、查询数据库、操作文件系统等。只需确保将结果以 JSON 字符串形式返回给模型即可。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            GPT-4 替代品 开源模型API
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>GPT-4 替代品 开源模型API</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：19 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -749,7 +749,26 @@ python -m vllm.entrypoints.openai.api_server \
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>开源模型的性能真的能接近 GPT-4 吗？</summary>
+<p>在特定领域，部分开源模型已经达到甚至超越 GPT-4 的水平。例如 DeepSeek V3 在数学推理和代码生成方面的表现与 GPT-4 相当，而 Qwen2.5 在中文理解上甚至更胜一筹。但在通用能力和复杂推理任务上，GPT-4 仍保持一定优势。</p>
+</details>
+<details>
+<summary>自建开源模型 API 需要什么样的硬件配置？</summary>
+<p>这取决于模型规模。运行 7B 模型只需 16GB 显存（如 RTX 4090），32B 模型需要 48GB（如 A6000），而 70B 模型则需要 4×A100 80GB 或类似配置。使用量化技术可以显著降低硬件要求。</p>
+</details>
+<details>
+<summary>如何确保开源模型 API 的数据安全？</summary>
+<p>自建服务的最大优势就是数据完全可控。所有推理过程都在本地完成，不会将敏感数据发送到第三方服务器。建议在生产环境中配置 HTTPS、API 密钥认证和访问日志审计。</p>
+</details>
+<details>
+<summary>开源模型支持 Function Calling 吗？</summary>
+<p>是的，主流开源模型如 Qwen2.5、DeepSeek V3 都原生支持 Function Calling（工具调用）。使用方式与 OpenAI 的 API 完全一致，只需在请求中添加 tools 参数即可。</p>
+</details>
+<details>
+<summary>使用 API 中转服务有什么优势？</summary>
+<p>专业的 API 中转服务提供了开箱即用的负载均衡、智能缓存、多模型切换、用量统计等功能，免去了自建服务器的运维成本。对于中小团队来说，这是快速接入多种开源模型的最佳方案，同时保持了与 OpenAI API 的完全兼容性。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

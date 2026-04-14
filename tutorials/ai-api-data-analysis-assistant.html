@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 构建智能数据分析助手
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 构建智能数据分析助手</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：26 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -851,7 +851,26 @@ assistant.analyze('本月销售额前10的产品是哪些？')
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>AI生成的SQL查询准确吗？</summary>
+<p>准确率取决于几个因素：1) 提供的schema描述是否清晰完整；2) 问题表达是否明确；3) 使用的模型能力（GPT-4准确率可达90%以上）。建议在生产环境中添加人工审核机制，或者对生成的SQL进行自动化测试验证。</p>
+</details>
+<details>
+<summary>如何处理大数据量的分析？</summary>
+<p>对于大数据场景，建议：1) 在数据库层面做好索引优化；2) 使用数据采样技术，先分析样本数据；3) 将复杂查询拆分为多个步骤；4) 考虑使用专门的数据仓库（如ClickHouse、BigQuery）而不是直接查询业务数据库。</p>
+</details>
+<details>
+<summary>支持哪些数据源？</summary>
+<p>理论上支持所有可以通过编程访问的数据源，包括：关系型数据库（MySQL、PostgreSQL）、NoSQL（MongoDB、Redis）、数据仓库（Snowflake、Redshift）、API接口、CSV/Excel文件等。关键是提供清晰的数据结构描述给AI模型。</p>
+</details>
+<details>
+<summary>如何让分析结果更符合业务场景？</summary>
+<p>可以通过以下方式优化：1) 在Prompt中加入行业知识和业务规则；2) 提供历史分析案例作为few-shot示例；3) 建立业务术语词典，统一指标定义；4) 收集用户反馈，持续优化Prompt模板。</p>
+</details>
+<details>
+<summary>成本大概是多少？</summary>
+<p>以GPT-4为例，每次分析（包含SQL生成、洞察生成）约消耗2000-5000 tokens，成本约0.1-0.3元人民币。如果使用API中转服务，成本可以降低30-50%。对于高频使用场景，建议结合缓存策略和模型选择来优化成本。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

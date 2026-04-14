@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API Node.js 接入教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API Node.js 接入教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：24 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -796,7 +796,26 @@ app.listen(PORT, () => {
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何在 Node.js 中安全地存储 API 密钥？</summary>
+<p>最佳实践是使用环境变量配合 <code>.env</code> 文件。在生产环境中，应该使用云服务商提供的密钥管理服务（如 AWS Secrets Manager、Azure Key Vault）。永远不要将 API 密钥硬编码在代码中或提交到版本控制系统。</p>
+</details>
+<details>
+<summary>AI API 调用失败时应该如何处理？</summary>
+<p>建议实现多层错误处理：1) 使用 try-catch 捕获异常；2) 根据 HTTP 状态码返回友好的错误信息；3) 实现自动重试机制（带指数退避）；4) 记录详细的错误日志用于排查问题。对于用户端，应该返回通用的错误提示而不是暴露技术细节。</p>
+</details>
+<details>
+<summary>如何控制 AI API 的调用成本？</summary>
+<p>可以采取以下措施：1) 设置 <code>max_tokens</code> 参数限制响应长度；2) 实现请求频率限制；3) 对常见问题使用缓存；4) 监控每日 Token 消耗量并设置预警阈值；5) 根据业务需求选择合适的模型（如 GPT-3.5 比 GPT-4 更便宜）。</p>
+</details>
+<details>
+<summary>Node.js 接入 AI API 时如何处理流式响应？</summary>
+<p>流式响应需要设置 <code>stream: true</code> 参数，并将 <code>responseType</code> 设为 <code>'stream'</code>。然后监听 <code>data</code> 事件逐块处理返回的数据。注意要正确解析 SSE（Server-Sent Events）格式的数据流，每行以 <code>data:</code> 开头，并在遇到 <code>[DONE]</code> 标记时结束。</p>
+</details>
+<details>
+<summary>在 Node.js 项目中使用 AI API 需要注意哪些安全问题？</summary>
+<p>主要注意以下几点：1) 永远不要在客户端代码中暴露 API 密钥；2) 对用户输入进行验证和清理，防止注入攻击；3) 实现请求频率限制防止滥用；4) 使用 HTTPS 加密传输；5) 定期轮换 API 密钥；6) 监控异常调用模式；7) 遵守 AI 服务提供商的使用条款。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

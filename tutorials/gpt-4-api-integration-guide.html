@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            GPT-4 API 接入指南
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>GPT-4 API 接入指南</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：28 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -913,7 +913,26 @@ if response.choices[0].message.get("function_call"):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>GPT-4 API 的定价是怎样的？</summary>
+<p>GPT-4 采用按 token 计费的模式。截至 2024 年，GPT-4 的定价约为输入 $0.03/1K tokens，输出 $0.06/1K tokens。GPT-4-32k 版本价格更高。具体价格可能会调整，建议查看 OpenAI 官网的最新定价信息。</p>
+</details>
+<details>
+<summary>如何选择 GPT-4 和 GPT-3.5-turbo？</summary>
+<p>GPT-4 在复杂推理、创意写作、代码生成等方面表现更优，但成本较高。GPT-3.5-turbo 速度更快、成本更低，适合简单对话和常规任务。建议根据任务复杂度动态选择模型，或先用 GPT-3.5-turbo 尝试，必要时再升级到 GPT-4。</p>
+</details>
+<details>
+<summary>API 调用失败时如何处理？</summary>
+<p>常见的失败原因包括：速率限制、网络问题、余额不足、无效的 API 密钥等。建议实现完善的错误处理机制，包括异常捕获、重试逻辑、降级方案等。对于速率限制错误，使用指数退避策略重试；对于网络问题，可以考虑使用代理或中转服务。</p>
+</details>
+<details>
+<summary>如何保护 API 密钥的安全？</summary>
+<p>永远不要将 API 密钥硬编码在代码中或提交到版本控制系统。推荐做法：使用环境变量存储密钥，在服务器端调用 API（避免在前端暴露），定期轮换密钥，为不同环境使用不同的密钥，监控 API 使用情况以及时发现异常。</p>
+</details>
+<details>
+<summary>GPT-4 API 有哪些使用限制？</summary>
+<p>主要限制包括：速率限制（RPM 和 TPM），上下文长度限制（GPT-4 为 8K tokens，GPT-4-32k 为 32K tokens），以及内容政策限制（不能用于生成违法、有害或违反使用政策的内容）。新账户通常有较低的速率限制，可以通过增加使用量或联系 OpenAI 来提高限额。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

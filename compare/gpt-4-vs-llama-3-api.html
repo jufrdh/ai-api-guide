@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            GPT-4 API vs Llama 3 API 性能对比
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>GPT-4 API vs Llama 3 API 性能对比</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -684,7 +684,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>GPT-4 API和Llama 3 API可以混合使用吗？</summary>
+<p>完全可以。实际上，许多企业采用混合策略：用Llama 3处理常规任务（如简单问答、内容分类），用GPT-4处理复杂任务（如创意写作、深度分析）。通过智能路由层判断任务复杂度，自动选择合适的模型，既保证效果又控制成本。</p>
+</details>
+<details>
+<summary>Llama 3需要多少GPU资源才能运行？</summary>
+<p>Llama 3 8B模型在单张RTX 4090（24GB显存）上即可流畅运行，适合中小规模应用。Llama 3 70B模型需要至少2张A100（80GB）或4张A10G（24GB），推荐使用专业推理框架如vLLM进行优化。如果预算有限，可以选择云服务商的按需GPU实例。</p>
+</details>
+<details>
+<summary>GPT-4 API的数据安全吗？</summary>
+<p>OpenAI声明不会使用API数据训练模型，并提供企业级数据保护协议。但数据仍需传输到OpenAI服务器处理。对于极高隐私要求的场景（如医疗记录、金融交易），建议使用可本地部署的Llama 3，或选择支持私有化部署的商业大模型。</p>
+</details>
+<details>
+<summary>Llama 3可以达到GPT-4的效果吗？</summary>
+<p>在通用任务上，Llama 3 70B已经接近GPT-4的80-85%水平。通过针对特定领域的微调（Fine-tuning），Llama 3在垂直场景中甚至可以超越GPT-4。例如，在医疗问答、法律文书生成等专业领域，经过微调的Llama 3表现往往更好。但在需要强大常识推理和创造性的任务上，GPT-4仍保持优势。</p>
+</details>
+<details>
+<summary>如何选择合适的Llama 3托管服务？</summary>
+<p>选择托管服务时需要考虑：1）价格透明度和计费方式；2）服务可用性SLA保证；3）是否支持模型微调；4）API兼容性（最好兼容OpenAI格式）；5）数据存储位置和隐私政策。主流选择包括AWS Bedrock、Replicate、Together AI等，建议先试用对比后再做决定。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

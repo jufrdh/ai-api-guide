@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            用AI API开发微信聊天机器人
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>用AI API开发微信聊天机器人</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：18 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -751,7 +751,26 @@ itchat.run()
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Q: 个人微信机器人会被封号吗？</summary>
+<p>使用协议或Hook方案存在一定风险，建议使用小号测试，控制消息频率，避免敏感操作。如果是商业用途，建议使用微信公众号或企业微信的官方接口。</p>
+</details>
+<details>
+<summary>Q: 如何选择合适的AI模型？</summary>
+<p>GPT-3.5-turbo性价比高，适合日常对话；GPT-4理解能力更强但成本较高；Claude 3在中文和长文本处理上表现优秀。可以根据场景混合使用，简单问题用3.5，复杂问题用4。</p>
+</details>
+<details>
+<summary>Q: 如何实现多轮对话记忆？</summary>
+<p>维护一个Map存储每个用户的对话历史，每次调用API时传入完整历史。注意控制历史长度（如保留最近10轮），避免超过模型的token限制。</p>
+</details>
+<details>
+<summary>Q: API调用失败怎么办？</summary>
+<p>实现重试机制（如3次重试），设置超时时间，捕获异常后返回友好提示。可以准备备用API或降级方案（如返回预设回复）。</p>
+</details>
+<details>
+<summary>Q: 如何降低API调用成本？</summary>
+<p>1) 使用更便宜的模型；2) 设置用户请求频率限制；3) 对简单问题使用关键词匹配；4) 优化prompt减少token消耗；5) 使用流式响应提前返回部分内容。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

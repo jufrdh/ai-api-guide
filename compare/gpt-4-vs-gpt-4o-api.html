@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            GPT-4 API vs GPT-4o API 有什么区别
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>GPT-4 API vs GPT-4o API 有什么区别</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -672,7 +672,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>GPT-4o的输出质量是否不如GPT-4？</summary>
+<p>根据OpenAI的官方基准测试和大量用户反馈，GPT-4o在绝大多数任务上的表现与GPT-4相当甚至更优，特别是在多语言、推理和创意写作方面。只有在极少数特定专业领域，GPT-4可能因为更长的训练和优化时间而略有优势。对于99%的应用场景，GPT-4o的质量完全可以满足需求。</p>
+</details>
+<details>
+<summary>使用GPT-4o API需要修改现有代码吗？</summary>
+<p>如果你的应用只使用文本功能，代码几乎不需要修改，只需将模型名称从"gpt-4"改为"gpt-4o"即可。如果要使用新的多模态功能（如音频处理），则需要参考OpenAI的最新文档添加相应的参数。整体迁移成本很低。</p>
+</details>
+<details>
+<summary>GPT-4o-mini与GPT-4o有什么区别？</summary>
+<p>GPT-4o-mini是GPT-4o的轻量级版本，价格更低（输入$0.15/百万tokens），速度更快，但在复杂推理、专业知识等方面的能力有所削弱。它适合简单的对话、分类、摘要等任务。如果你的应用对模型能力要求不高，GPT-4o-mini是极具性价比的选择。</p>
+</details>
+<details>
+<summary>GPT-4 API会被淘汰吗？</summary>
+<p>OpenAI目前仍在维护GPT-4 API，短期内不会停止服务。但从技术发展趋势看，GPT-4o代表了未来方向。建议新项目直接使用GPT-4o，现有项目可以根据实际情况逐步迁移。OpenAI通常会提前至少6个月通知API的弃用计划。</p>
+</details>
+<details>
+<summary>如何选择合适的上下文窗口大小？</summary>
+<p>上下文窗口越大，成本越高（虽然GPT-4o已经将128K作为标配）。建议根据实际需求选择：短对话或简单任务使用4K-8K即可；文档分析、长对话需要32K-128K。可以通过监控实际使用的tokens数量来优化配置，避免浪费。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

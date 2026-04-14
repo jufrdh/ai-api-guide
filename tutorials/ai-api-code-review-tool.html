@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 做代码审查工具
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 做代码审查工具</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：21 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -759,7 +759,26 @@ jobs:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>AI 代码审查能完全替代人工审查吗？</summary>
+<p>不能完全替代。AI 擅长发现常见问题和模式匹配，但对业务逻辑的理解、架构决策的评估仍需要人工参与。最佳实践是将 AI 作为第一道审查关卡，人工进行最终把关。</p>
+</details>
+<details>
+<summary>使用 AI API 做代码审查的成本大概是多少？</summary>
+<p>成本取决于代码量和调用频率。以 GPT-4 为例，审查一个 500 行的文件大约消耗 0.05-0.1 美元。对于中小型团队，每月成本通常在 50-200 美元之间。使用 API 中转服务或选择更经济的模型可以进一步降低成本。</p>
+</details>
+<details>
+<summary>代码会被 AI 服务商存储吗？有安全风险吗？</summary>
+<p>主流 AI 服务商（如 OpenAI、Anthropic）都承诺不会使用 API 调用的数据进行模型训练。但对于高度敏感的代码，建议使用本地部署的开源模型，或者只审查非核心代码部分。</p>
+</details>
+<details>
+<summary>如何处理 AI 给出的误报？</summary>
+<p>建立反馈机制很重要。可以设置一个"忽略列表"，记录确认为误报的问题模式。同时优化提示词，让 AI 更准确地理解项目的特定上下文。随着使用时间增长，误报率会逐步降低。</p>
+</details>
+<details>
+<summary>支持哪些编程语言？</summary>
+<p>主流 AI 模型对常见编程语言（Python、JavaScript、Java、Go、C++等）都有良好支持。对于小众语言，可以在提示词中提供更多上下文信息来提升审查质量。实际测试表明，GPT-4 对 30+ 种编程语言都能提供有价值的审查建议。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/alternative/">替代方案</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            不需要翻墙的AI API
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>不需要翻墙的AI API</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：19 分钟 分钟</span>
+                <span>分类：替代方案</span>
             </div>
 
             <!-- Main Content -->
@@ -751,7 +751,26 @@ results = asyncio.run(batch_call_api(prompts))</code></pre>
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+    <summary>使用不需要翻墙的AI API是否合法合规？</summary>
+    <p>使用国产AI服务（如文心一言、通义千问等）完全合法合规。使用API中转服务访问国际AI服务需要注意数据安全和隐私保护，建议企业应用优先选择国产服务。个人学习和开发使用API中转服务一般没有问题，但要选择可信赖的服务商。</p>
+  </details>
+<details>
+    <summary>API中转服务的稳定性如何保证？</summary>
+    <p>优质的API中转服务通常会采用多节点部署、负载均衡、自动故障转移等技术手段保证稳定性。选择时可以查看服务商的SLA承诺、用户评价和历史可用率数据。建议在正式使用前进行充分测试，并准备备用方案。</p>
+  </details>
+<details>
+    <summary>国产AI和GPT-4相比差距有多大？</summary>
+    <p>在中文理解和生成方面，国产AI（如通义千问Max、文心一言4.0）已经接近甚至在某些场景超过GPT-4。在英文能力、复杂推理和代码生成方面，GPT-4仍有一定优势。但对于大多数中文应用场景，国产AI完全能够满足需求，且具有更好的合规性和稳定性。</p>
+  </details>
+<details>
+    <summary>如何选择合适的AI模型？</summary>
+    <p>选择模型需要考虑：1）任务类型（对话、写作、代码、分析等）；2）响应速度要求；3）成本预算；4）语言需求（中文/英文）。一般建议：简单任务用轻量模型（如qwen-turbo、gpt-3.5-turbo），复杂任务用旗舰模型（如qwen-max、gpt-4）。可以先用小模型测试，确认需求后再升级。</p>
+  </details>
+<details>
+    <summary>API调用失败时如何处理？</summary>
+    <p>建议实现完善的错误处理机制：1）添加重试逻辑（指数退避）；2）设置超时时间；3）记录详细的错误日志；4）准备降级方案（如切换到备用模型或返回默认响应）；5）监控API调用成功率和响应时间。对于关键业务，可以同时接入多个服务商实现高可用。</p>
+  </details>
             </section>
 
             <!-- Related Pages -->

@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/comparison/">对比评测</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API vs AWS Bedrock 怎么选
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API vs AWS Bedrock 怎么选</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：对比评测</span>
             </div>
 
             <!-- Main Content -->
@@ -692,7 +692,26 @@ message = client.messages.create(
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary><strong>Claude API和AWS Bedrock的模型版本完全一致吗？</strong></summary>
+<p>不完全一致。虽然底层模型相同，但Bedrock上的Claude版本通常比官方API晚1-4周上线。例如Claude 3.5 Sonnet在2024年10月22日于官方API发布，但Bedrock在11月初才可用。此外，一些实验性功能（如Extended Thinking）可能仅在官方API提供。</p>
+</details>
+<details>
+<summary><strong>使用AWS Bedrock是否会产生额外的数据传输费用？</strong></summary>
+<p>可能会。如果你的应用服务器不在AWS上，或者跨AWS区域调用Bedrock，会产生数据传输费用（通常每GB $0.09-$0.15）。对于大规模应用，这部分费用可能占总成本的5-10%。建议将应用部署在与Bedrock相同的AWS区域以避免此费用。</p>
+</details>
+<details>
+<summary><strong>个人开发者可以使用AWS Bedrock吗？</strong></summary>
+<p>可以，但需要注意：1) 需要有效的AWS账号和支付方式；2) 部分AWS区域需要申请Bedrock访问权限（通常1-2个工作日审批）；3) AWS的账单和权限管理相对复杂，对新手不太友好。如果只是做小项目或学习，Claude API更简单直接。</p>
+</details>
+<details>
+<summary><strong>在中国大陆使用Claude API和AWS Bedrock有什么区别？</strong></summary>
+<p>Claude API在中国大陆访问可能需要代理，且支付需要国际信用卡。AWS Bedrock可以通过AWS中国区域（由光环新网或西云数据运营）访问，但目前中国区尚未开通Bedrock服务。实际使用中，许多国内开发者选择AWS海外区域（如新加坡、东京）或使用API中转服务来解决访问问题。</p>
+</details>
+<details>
+<summary><strong>如何在Claude API和AWS Bedrock之间迁移？</strong></summary>
+<p>迁移相对简单，主要工作是调整API调用代码。Claude API使用Anthropic的原生格式，而Bedrock使用AWS统一的Converse API格式。大多数情况下只需修改endpoint和认证方式，消息格式基本兼容。建议在迁移前做好充分测试，特别是涉及流式输出、函数调用等高级功能时。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

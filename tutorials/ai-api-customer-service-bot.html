@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            如何用AI API做智能客服
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>如何用AI API做智能客服</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：21 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -802,7 +802,26 @@ app.listen(3000, () => {
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>如何用AI API做智能客服时控制成本？</summary>
+<p>成本控制的关键在于：1）限制对话历史长度，只保留最近几轮对话；2）对常见问题做缓存，避免重复调用API；3）使用更经济的模型处理简单问题；4）设置每日调用上限；5）考虑使用API中转服务获得批量折扣。一般来说，每千次对话的成本可以控制在几元到几十元之间。</p>
+</details>
+<details>
+<summary>AI客服会不会给出错误答案？</summary>
+<p>AI可能产生幻觉（生成不准确的信息）。解决方案包括：1）在System Prompt中明确知识边界；2）对关键信息（如价格、政策）使用结构化数据而非让AI生成；3）添加置信度判断，不确定时转人工；4）定期审查对话日志，发现问题及时优化Prompt；5）对敏感领域（如医疗、法律）建议仅作为辅助工具。</p>
+</details>
+<details>
+<summary>如何处理多语言客服需求？</summary>
+<p>主流AI API都支持多语言。实现方式：1）在System Prompt中说明"根据用户语言自动切换回复语言"；2）或先检测用户语言，再调用对应语言的Prompt；3）对于小语种，可以先翻译成英文处理，再翻译回去；4）注意不同语言的文化差异，调整语气和表达方式。GPT-4和Claude对中文、英文、日文等主流语言支持都很好。</p>
+</details>
+<details>
+<summary>如何保证对话数据的安全性？</summary>
+<p>数据安全措施包括：1）选择符合GDPR、等保等合规要求的API服务商；2）对敏感信息（如身份证号、银行卡）做脱敏处理后再发送给API；3）使用企业级API服务，确保数据不用于模型训练；4）在本地做访问控制和加密存储；5）定期进行安全审计；6）对于高度敏感场景，考虑使用私有化部署的模型。</p>
+</details>
+<details>
+<summary>AI客服能否完全替代人工？</summary>
+<p>目前AI客服更适合作为人工的辅助而非完全替代。AI擅长处理标准化、高频的问题，但在处理复杂投诉、情感安抚、创造性问题解决等方面仍需人工介入。最佳实践是建立"AI+人工"的混合模式：AI处理80%的常规问题，复杂问题平滑转接人工，同时人工客服的优质对话可以用来优化AI的表现。这种模式既提升了效率，又保证了服务质量。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

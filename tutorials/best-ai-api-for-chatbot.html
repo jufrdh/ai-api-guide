@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            哪个AI API 做Chatbot最好
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>哪个AI API 做Chatbot最好</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：12 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -748,7 +748,26 @@
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Q1: 做Chatbot一定要用最贵的GPT-4吗？</summary>
+<p>不一定。GPT-4能力最强，但对于很多应用场景，GPT-4o、Claude 3.5或Gemini 1.5已经足够。建议先用较便宜的模型测试，只有在确实需要更强能力时才升级。混合使用不同模型也是常见策略。</p>
+</details>
+<details>
+<summary>Q2: 国产AI API和国际API差距有多大？</summary>
+<p>在中文理解方面，国产API已经非常接近甚至超越国际厂商。但在英文、多语言、复杂推理等方面仍有差距。如果你的Chatbot主要服务国内中文用户，国产API完全可以满足需求，且有访问稳定、合规等优势。</p>
+</details>
+<details>
+<summary>Q3: 如何处理API调用失败和限流问题？</summary>
+<p>建议实现重试机制（指数退避）、多API备份、请求队列管理。对于高并发场景，可以使用Redis等缓存常见问题答案。同时要监控API使用情况，提前申请配额提升。</p>
+</details>
+<details>
+<summary>Q4: Chatbot的数据安全如何保障？</summary>
+<p>主流API提供商都有严格的数据保护政策，但仍需注意：不要发送敏感个人信息到API；使用企业版API可以获得更强的隐私保障；对于高度敏感场景，考虑本地部署开源模型。国产API在数据本地化方面有天然优势。</p>
+</details>
+<details>
+<summary>Q5: 如何评估Chatbot的实际效果？</summary>
+<p>关键指标包括：用户满意度评分、问题解决率、平均对话轮次、响应时间、API成本。建议进行A/B测试，对比不同API的实际表现。用户反馈往往比技术指标更重要。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

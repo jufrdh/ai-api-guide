@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            如何在中国使用OpenAI API
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>如何在中国使用OpenAI API</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：16 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -756,7 +756,26 @@ def log_api_call(model, tokens_used, cost):
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>使用代理或中转服务访问 OpenAI API 是否合法？</summary>
+<p>从技术角度来说，使用代理或中转服务访问 API 本身不违反中国法律。但需要注意 OpenAI 的服务条款，确保你的使用方式符合其规定。建议用于学习、研究和合法的商业用途。</p>
+</details>
+<details>
+<summary>中转服务会不会记录我的 API 请求内容？</summary>
+<p>这取决于中转服务提供商的政策。选择信誉良好、有明确隐私政策的服务商很重要。如果对数据安全有极高要求，建议使用自建中转服务器方案。</p>
+</details>
+<details>
+<summary>为什么我的请求经常超时？</summary>
+<p>超时问题通常由以下原因引起：1) 代理服务器不稳定；2) 网络延迟过高；3) OpenAI 服务器负载过高；4) 超时时间设置过短。建议增加超时时间到 30-60 秒，并选择稳定的代理或中转服务。</p>
+</details>
+<details>
+<summary>使用中转服务的费用如何计算？</summary>
+<p>大多数中转服务采用按量计费模式，根据你实际调用 OpenAI API 的次数和 tokens 数量收费。通常会在 OpenAI 官方价格基础上加收一定比例的服务费（10%-30%）。部分服务商也提供包月套餐。</p>
+</details>
+<details>
+<summary>如何选择合适的 GPT 模型？</summary>
+<p>选择模型时需要平衡性能和成本：GPT-3.5-turbo 适合日常对话和简单任务，响应快且便宜；GPT-4 适合复杂推理、代码生成等高要求场景，但费用较高。建议先用 GPT-3.5-turbo 测试，确有必要再升级到 GPT-4。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

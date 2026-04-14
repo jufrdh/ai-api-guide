@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/tutorial/">使用教程</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            Claude API 流式输出教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>Claude API 流式输出教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：22 分钟 分钟</span>
+                <span>分类：使用教程</span>
             </div>
 
             <!-- Main Content -->
@@ -789,7 +789,26 @@ with client.messages.stream(...) as stream:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>Claude API流式输出会增加费用吗？</summary>
+<p>不会。流式输出和非流式输出的计费方式完全相同，都是按照输入和输出的token数量计费。流式只是改变了数据传输方式，不影响实际生成的内容量。</p>
+</details>
+<details>
+<summary>可以同时发起多个流式请求吗？</summary>
+<p>可以，但需要注意API的速率限制。每个账户有并发请求数限制，建议在应用层实现请求队列管理，避免触发限流。使用异步编程可以更高效地处理多个并发流。</p>
+</details>
+<details>
+<summary>流式输出中途失败如何恢复？</summary>
+<p>Claude API的流式请求不支持断点续传。如果连接中断，需要重新发起完整请求。建议在应用层保存对话历史，失败时可以快速重试。对于关键应用，可以实现自动重试机制。</p>
+</details>
+<details>
+<summary>如何在React中集成Claude流式输出？</summary>
+<p>推荐使用useEffect和useState hooks。创建一个状态存储累积的文本，在useEffect中启动流式请求，每收到新内容就更新状态。记得在组件卸载时清理连接，避免内存泄漏。</p>
+</details>
+<details>
+<summary>流式输出的延迟通常是多少？</summary>
+<p>首字延迟（TTFB）通常在500ms-2s之间，取决于模型负载和网络状况。后续token的生成速度约为每秒20-50个token。如果延迟明显偏高，可能是网络问题或API服务繁忙，国内用户可考虑使用API中转服务改善连接质量。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

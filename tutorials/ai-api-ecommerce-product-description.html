@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API 用于电商产品描述生成
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API 用于电商产品描述生成</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：26 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -894,7 +894,26 @@ results = asyncio.run(generate_batch_descriptions(products))
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+<summary>AI生成的产品描述会不会导致内容重复，影响SEO？</summary>
+<p>合理使用不会。关键在于：1) 为每个产品提供独特的输入信息（特点、卖点等）；2) 在提示词中要求生成差异化内容；3) 设置适当的temperature参数（0.7-0.9）增加随机性；4) 定期更新提示词模板。实践表明，AI生成的描述在独特性上可以达到90%以上，完全满足SEO要求。</p>
+</details>
+<details>
+<summary>使用AI API生成产品描述的成本大概是多少？</summary>
+<p>以GPT-3.5-turbo为例，生成一条200字左右的产品描述大约消耗500-800 tokens，成本约0.001-0.002美元（约0.007-0.014元人民币）。如果每天生成1000条描述，月成本约200-400元。相比人工撰写（按每条5-10元计算），成本可降低95%以上。使用API中转服务还能进一步降低成本。</p>
+</details>
+<details>
+<summary>如何确保AI生成的内容符合品牌调性？</summary>
+<p>建议采取以下措施：1) 在提示词中明确品牌调性要求（如"年轻活力"、"专业严谨"等）；2) 提供2-3个优质人工撰写的示例作为参考；3) 建立品牌词库和禁用词库；4) 设置人工审核流程，前期100%审核，后期可降至抽检；5) 根据审核反馈持续优化提示词模板。</p>
+</details>
+<details>
+<summary>AI生成的描述能否直接用于广告投放？</summary>
+<p>可以，但需要额外注意：1) 严格遵守广告法，避免使用"最"、"第一"等绝对化用语；2) 在提示词中明确要求合规表述；3) 建立敏感词过滤机制；4) 广告文案建议100%人工审核；5) 定期检查投放效果，根据数据反馈优化生成策略。建议先用于常规产品页描述，积累经验后再扩展到广告场景。</p>
+</details>
+<details>
+<summary>如何处理技术参数类产品的描述生成？</summary>
+<p>技术参数类产品需要特殊处理：1) 将结构化参数（如CPU型号、内存容量）与AI生成的场景描述分离；2) 参数部分直接从数据库读取，确保准确性；3) AI只负责生成使用场景、优势说明等主观描述部分；4) 在提示词中提供完整的技术参数，让AI理解产品定位；5) 对于专业术语，建立术语库确保表述规范。这种"结构化数据+AI生成描述"的混合模式效果最佳。</p>
+</details>
             </section>
 
             <!-- Related Pages -->

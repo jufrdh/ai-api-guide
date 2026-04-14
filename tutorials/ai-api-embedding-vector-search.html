@@ -436,9 +436,9 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/{{category}}/">{{category_name}}</a>
+            <a href="/use-case/">应用场景</a>
             <span>/</span>
-            {{breadcrumb_current}}
+            AI API Embedding 向量搜索教程
         </nav>
     </div>
 
@@ -448,8 +448,8 @@
             <h1>AI API Embedding 向量搜索教程</h1>
             <div class="article-meta">
                 <span>更新于 2026-04-14</span>
-                <span>阅读时间：{{read_time}} 分钟</span>
-                <span>分类：{{category_name}}</span>
+                <span>阅读时间：14 分钟 分钟</span>
+                <span>分类：应用场景</span>
             </div>
 
             <!-- Main Content -->
@@ -650,7 +650,26 @@ async function search(collection, query, topK = 5) {
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                {{faqs}}
+                <details>
+    <summary>Embedding API 的调用成本如何计算？</summary>
+    <p>以 OpenAI 为例，text-embedding-3-small 按 token 计费（$0.02/1M tokens）。中文文本约 1.5 字/token，10 万字文档约需 $1.3。使用 API 中转服务可获得更优惠的价格，部分服务商提供批量折扣或按需付费模式。</p>
+  </details>
+<details>
+    <summary>向量搜索的准确率如何提升？</summary>
+    <p>三个关键方法：1) 使用更高维度的模型（如 text-embedding-3-large）；2) 优化文本分块策略，保持语义完整性；3) 结合用户反馈进行微调，或使用混合检索（向量 + 关键词）。</p>
+  </details>
+<details>
+    <summary>如何处理多语言搜索？</summary>
+    <p>OpenAI 的 Embedding 模型天然支持多语言，无需额外配置。但对于中文等非英语场景，Cohere 的多语言模型或国内的智谱 AI、百川等服务可能效果更好。建议用实际数据测试对比。</p>
+  </details>
+<details>
+    <summary>向量数据库如何选择？</summary>
+    <p>小规模（&lt;10 万条）：ChromaDB、FAISS（本地部署）；中等规模（10-100 万条）：Qdrant、Weaviate；大规模（&gt;100 万条）：Pinecone、Milvus。考虑因素包括查询延迟、成本、运维复杂度。</p>
+  </details>
+<details>
+    <summary>API 调用失败或超时怎么办？</summary>
+    <p>建议实现重试机制（指数退避）和降级策略。对于频繁调用场景，可考虑使用 API 中转服务，这些服务通常提供负载均衡、自动切换备用节点等功能，提升稳定性。</p>
+  </details>
             </section>
 
             <!-- Related Pages -->
