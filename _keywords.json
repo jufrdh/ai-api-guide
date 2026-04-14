@@ -1,0 +1,451 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generated": "2026-04-13",
+    "total_keywords": 55,
+    "base_url": "https://openclaw.com",
+    "categories": ["comparison", "pricing", "tutorial", "alternative", "use-case"]
+  },
+  "keywords": [
+    {
+      "keyword": "OpenAI API vs Claude API 价格对比",
+      "slug": "openai-api-vs-claude-api-pricing",
+      "category": "comparison",
+      "search_intent": "对比两大主流AI API的定价、性能和功能差异",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "GPT-4o API vs Claude 3.5 Sonnet API 对比",
+      "slug": "gpt-4o-vs-claude-3-5-sonnet",
+      "category": "comparison",
+      "search_intent": "对比最新旗舰模型的API性能和价格",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "OpenAI API vs Google Gemini API 哪个好",
+      "slug": "openai-api-vs-gemini-api",
+      "category": "comparison",
+      "search_intent": "选择OpenAI还是Gemini作为开发API",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "Claude API vs Gemini API 开发者对比",
+      "slug": "claude-api-vs-gemini-api",
+      "category": "comparison",
+      "search_intent": "对比Anthropic和Google的API服务",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "GPT-4 API vs Llama 3 API 性能对比",
+      "slug": "gpt-4-vs-llama-3-api",
+      "category": "comparison",
+      "search_intent": "闭源vs开源大模型API对比",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "OpenAI API vs Mistral API 2026对比",
+      "slug": "openai-api-vs-mistral-api",
+      "category": "comparison",
+      "search_intent": "对比OpenAI和欧洲AI新锐Mistral",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "Claude API vs AWS Bedrock 怎么选",
+      "slug": "claude-api-vs-aws-bedrock",
+      "category": "comparison",
+      "search_intent": "直接调用Claude API还是通过AWS Bedrock",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "OpenAI API vs Azure OpenAI 区别",
+      "slug": "openai-api-vs-azure-openai",
+      "category": "comparison",
+      "search_intent": "官方API与Azure托管版本的差异",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "GPT-4 API vs GPT-4o API 有什么区别",
+      "slug": "gpt-4-vs-gpt-4o-api",
+      "category": "comparison",
+      "search_intent": "理解GPT-4不同版本的差异",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "DeepSeek API vs OpenAI API 对比评测",
+      "slug": "deepseek-api-vs-openai-api",
+      "category": "comparison",
+      "search_intent": "国产大模型API与OpenAI的对比",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "Gemini API vs Mistral API 多模态对比",
+      "slug": "gemini-api-vs-mistral-api",
+      "category": "comparison",
+      "search_intent": "新一代多模态API对比",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "Claude API vs Cohere API 企业级对比",
+      "slug": "claude-api-vs-cohere-api",
+      "category": "comparison",
+      "search_intent": "企业场景下两个API的选择",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "GPT-4o API 价格",
+      "slug": "gpt-4o-api-pricing",
+      "category": "pricing",
+      "search_intent": "了解GPT-4o API的最新定价",
+      "estimated_difficulty": "high",
+      "template": "pricing"
+    },
+    {
+      "keyword": "Claude API 定价 2026最新",
+      "slug": "claude-api-pricing-2026",
+      "category": "pricing",
+      "search_intent": "查询Claude API当前价格体系",
+      "estimated_difficulty": "high",
+      "template": "pricing"
+    },
+    {
+      "keyword": "OpenAI API 价格计算器",
+      "slug": "openai-api-price-calculator",
+      "category": "pricing",
+      "search_intent": "估算OpenAI API使用成本",
+      "estimated_difficulty": "medium",
+      "template": "pricing"
+    },
+    {
+      "keyword": "Gemini API 免费额度有多少",
+      "slug": "gemini-api-free-tier",
+      "category": "pricing",
+      "search_intent": "了解Gemini API免费使用限制",
+      "estimated_difficulty": "low",
+      "template": "pricing"
+    },
+    {
+      "keyword": "AI API 价格对比表 2026",
+      "slug": "ai-api-pricing-comparison-2026",
+      "category": "pricing",
+      "search_intent": "一站式对比所有主流AI API价格",
+      "estimated_difficulty": "high",
+      "template": "pricing"
+    },
+    {
+      "keyword": "最便宜的AI API推荐",
+      "slug": "cheapest-ai-api",
+      "category": "pricing",
+      "search_intent": "寻找性价比最高的AI API服务",
+      "estimated_difficulty": "medium",
+      "template": "pricing"
+    },
+    {
+      "keyword": "OpenAI API 免费额度 怎么用",
+      "slug": "openai-api-free-tier-guide",
+      "category": "pricing",
+      "search_intent": "了解OpenAI免费层的使用方法",
+      "estimated_difficulty": "medium",
+      "template": "pricing"
+    },
+    {
+      "keyword": "DeepSeek API 价格 便宜吗",
+      "slug": "deepseek-api-pricing",
+      "category": "pricing",
+      "search_intent": "了解DeepSeek API定价优势",
+      "estimated_difficulty": "low",
+      "template": "pricing"
+    },
+    {
+      "keyword": "AI API 成本优化指南",
+      "slug": "ai-api-cost-optimization",
+      "category": "pricing",
+      "search_intent": "降低AI API使用成本的方法",
+      "estimated_difficulty": "medium",
+      "template": "pricing"
+    },
+    {
+      "keyword": "Mistral API 价格 值得用吗",
+      "slug": "mistral-api-pricing",
+      "category": "pricing",
+      "search_intent": "评估Mistral API的价格竞争力",
+      "estimated_difficulty": "low",
+      "template": "pricing"
+    },
+    {
+      "keyword": "Claude API 使用教程",
+      "slug": "claude-api-tutorial",
+      "category": "tutorial",
+      "search_intent": "从零开始学习使用Claude API",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "OpenAI API Python调用教程",
+      "slug": "openai-api-python-tutorial",
+      "category": "tutorial",
+      "search_intent": "用Python调用OpenAI API的完整指南",
+      "estimated_difficulty": "high",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "GPT-4 API 接入指南",
+      "slug": "gpt-4-api-integration-guide",
+      "category": "tutorial",
+      "search_intent": "将GPT-4 API集成到项目中",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "Claude API 流式输出教程",
+      "slug": "claude-api-streaming-tutorial",
+      "category": "tutorial",
+      "search_intent": "实现Claude API的流式响应",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "OpenAI API Function Calling 教程",
+      "slug": "openai-function-calling-tutorial",
+      "category": "tutorial",
+      "search_intent": "学习OpenAI函数调用功能",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "Gemini API 多模态调用教程",
+      "slug": "gemini-api-multimodal-tutorial",
+      "category": "tutorial",
+      "search_intent": "使用Gemini API处理图片和文本",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API Node.js 接入教程",
+      "slug": "ai-api-nodejs-tutorial",
+      "category": "tutorial",
+      "search_intent": "在Node.js项目中使用AI API",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "OpenAI API 错误处理最佳实践",
+      "slug": "openai-api-error-handling",
+      "category": "tutorial",
+      "search_intent": "正确处理OpenAI API返回的各种错误",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "Claude API 批量请求教程",
+      "slug": "claude-api-batch-requests",
+      "category": "tutorial",
+      "search_intent": "高效进行Claude API批量调用",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 限流处理方法",
+      "slug": "ai-api-rate-limiting-guide",
+      "category": "tutorial",
+      "search_intent": "处理API速率限制的策略",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "如何用AI API做智能客服",
+      "slug": "ai-api-customer-service-bot",
+      "category": "tutorial",
+      "search_intent": "用AI API构建客服机器人",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 缓存策略提升性能",
+      "slug": "ai-api-caching-strategies",
+      "category": "tutorial",
+      "search_intent": "通过缓存减少API调用成本",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "如何在中国使用OpenAI API",
+      "slug": "how-to-use-openai-api-in-china",
+      "category": "tutorial",
+      "search_intent": "解决中国大陆访问OpenAI API的问题",
+      "estimated_difficulty": "high",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "OpenAI API 替代方案",
+      "slug": "openai-api-alternatives",
+      "category": "alternative",
+      "search_intent": "寻找OpenAI API的替代品",
+      "estimated_difficulty": "high",
+      "template": "alternative"
+    },
+    {
+      "keyword": "Claude API 替代方案推荐",
+      "slug": "claude-api-alternatives",
+      "category": "alternative",
+      "search_intent": "寻找Claude API的替代品",
+      "estimated_difficulty": "medium",
+      "template": "alternative"
+    },
+    {
+      "keyword": "ChatGPT API 国内替代",
+      "slug": "chatgpt-api-china-alternatives",
+      "category": "alternative",
+      "search_intent": "在国内找到ChatGPT API的替代方案",
+      "estimated_difficulty": "high",
+      "template": "alternative"
+    },
+    {
+      "keyword": "免费AI API 有哪些",
+      "slug": "free-ai-api-list",
+      "category": "alternative",
+      "search_intent": "寻找免费可用的AI API服务",
+      "estimated_difficulty": "high",
+      "template": "alternative"
+    },
+    {
+      "keyword": "GPT-4 替代品 开源模型API",
+      "slug": "gpt-4-open-source-alternatives",
+      "category": "alternative",
+      "search_intent": "用开源模型替代GPT-4的API方案",
+      "estimated_difficulty": "medium",
+      "template": "alternative"
+    },
+    {
+      "keyword": "便宜好用的AI API中转服务",
+      "slug": "affordable-ai-api-proxy",
+      "category": "alternative",
+      "search_intent": "找到性价比高的API中转服务商",
+      "estimated_difficulty": "medium",
+      "template": "alternative"
+    },
+    {
+      "keyword": "OpenAI API 被封了怎么办",
+      "slug": "openai-api-blocked-solutions",
+      "category": "alternative",
+      "search_intent": "API账号被封后的替代解决方案",
+      "estimated_difficulty": "medium",
+      "template": "alternative"
+    },
+    {
+      "keyword": "不需要翻墙的AI API",
+      "slug": "ai-api-no-vpn-needed",
+      "category": "alternative",
+      "search_intent": "直接在国内访问的AI API服务",
+      "estimated_difficulty": "high",
+      "template": "alternative"
+    },
+    {
+      "keyword": "AI API 用于电商产品描述生成",
+      "slug": "ai-api-ecommerce-product-description",
+      "category": "use-case",
+      "search_intent": "用AI API自动生成电商产品文案",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 自动生成SEO文章",
+      "slug": "ai-api-seo-content-generation",
+      "category": "use-case",
+      "search_intent": "用AI API批量生成SEO优化内容",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 做代码审查工具",
+      "slug": "ai-api-code-review-tool",
+      "category": "use-case",
+      "search_intent": "构建基于AI API的代码审查系统",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 构建RAG知识库",
+      "slug": "ai-api-rag-knowledge-base",
+      "category": "use-case",
+      "search_intent": "使用AI API搭建检索增强生成系统",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 实现多语言翻译",
+      "slug": "ai-api-multilingual-translation",
+      "category": "use-case",
+      "search_intent": "用大模型API做高质量翻译",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 构建智能数据分析助手",
+      "slug": "ai-api-data-analysis-assistant",
+      "category": "use-case",
+      "search_intent": "用AI API分析和解读数据",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "用AI API开发微信聊天机器人",
+      "slug": "ai-api-wechat-chatbot",
+      "category": "use-case",
+      "search_intent": "将AI API接入微信生态",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API Embedding 向量搜索教程",
+      "slug": "ai-api-embedding-vector-search",
+      "category": "use-case",
+      "search_intent": "使用Embedding API实现语义搜索",
+      "estimated_difficulty": "medium",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "AI API 图片识别和描述生成",
+      "slug": "ai-api-image-recognition",
+      "category": "use-case",
+      "search_intent": "用多模态API处理图片内容",
+      "estimated_difficulty": "low",
+      "template": "tutorial"
+    },
+    {
+      "keyword": "哪个AI API 做Chatbot最好",
+      "slug": "best-ai-api-for-chatbot",
+      "category": "use-case",
+      "search_intent": "选择最适合做聊天机器人的API",
+      "estimated_difficulty": "medium",
+      "template": "comparison"
+    },
+    {
+      "keyword": "AI API 文本摘要功能对比",
+      "slug": "ai-api-text-summarization",
+      "category": "use-case",
+      "search_intent": "对比各API的文本摘要能力",
+      "estimated_difficulty": "low",
+      "template": "comparison"
+    },
+    {
+      "keyword": "2026年最值得用的AI API排行",
+      "slug": "best-ai-api-2026-ranking",
+      "category": "alternative",
+      "search_intent": "了解当前最佳AI API综合排名",
+      "estimated_difficulty": "high",
+      "template": "alternative"
+    }
+  ]
+}
