@@ -597,7 +597,7 @@ callQwenAPI("请介绍一下人工智能的发展历程")
   <pre><code>import openai
 
 # 使用中转服务，只需修改base_url
-openai.api_base = "https://api.your-proxy-service.com/v1"
+openai.api_base = "https://xiaomuai.cn/v1"
 openai.api_key = "your-api-key"
 
 response = openai.ChatCompletion.create(
@@ -691,7 +691,7 @@ async def batch_call_api(prompts):
 
 async def call_api_async(session, prompt):
     async with session.post(
-        'https://api.example.com/v1/chat/completions',
+        'https://xiaomuai.cn/v1/chat/completions',
         json={
             'model': 'gpt-3.5-turbo',
             'messages': [{'role': 'user', 'content': prompt}]

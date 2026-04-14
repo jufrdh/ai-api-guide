@@ -565,7 +565,7 @@
 # 初始化客户端，指向中转服务
 client = OpenAI(
     api_key="your-api-key",  # 中转服务提供的密钥
-    base_url="https://api.example.com/v1"  # 中转服务的端点
+    base_url="https://xiaomuai.cn/v1"  # 中转服务的端点
 )
 
 # 调用聊天接口
@@ -590,7 +590,7 @@ print(response.choices[0].message.content)
 
 const client = new OpenAI({
   apiKey: 'your-api-key',
-  baseURL: 'https://api.example.com/v1'
+  baseURL: 'https://xiaomuai.cn/v1'
 });
 
 async function chat() {
@@ -618,7 +618,7 @@ chat();
 
 client = OpenAI(
     api_key="your-api-key",
-    base_url="https://api.example.com/v1"
+    base_url="https://xiaomuai.cn/v1"
 )
 
 stream = client.chat.completions.create(
