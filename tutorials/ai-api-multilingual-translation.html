@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API 实现多语言翻译 | 实战教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="AI API 实现多语言翻译实战教程。从入门到进阶，附完整代码示例。">
+    <title>AI API 实现多语言翻译 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="用大模型API做高质量翻译">
     <meta name="keywords" content="AI API 实现多语言翻译, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/ai-api-multilingual-translation">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/ai-api-multilingual-translation">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AI API 实现多语言翻译 | 实战教程与代码示例">
-    <meta property="og:description" content="AI API 实现多语言翻译实战教程。从入门到进阶，附完整代码示例。">
+    <meta property="og:title" content="AI API 实现多语言翻译">
+    <meta property="og:description" content="用大模型API做高质量翻译">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/ai-api-multilingual-translation">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/ai-api-multilingual-translation">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API 实现多语言翻译 | 实战教程与代码示例">
-    <meta name="twitter:description" content="AI API 实现多语言翻译实战教程。从入门到进阶，附完整代码示例。">
+    <meta name="twitter:title" content="AI API 实现多语言翻译">
+    <meta name="twitter:description" content="用大模型API做高质量翻译">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "AI API 实现多语言翻译 | 实战教程与代码示例",
-        "description": "AI API 实现多语言翻译实战教程。从入门到进阶，附完整代码示例。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "AI API 实现多语言翻译",
+        "description": "用大模型API做高质量翻译",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/ai-api-multilingual-translation"
+            "@id": "https://guide.xiaomuai.cn/tutorials/ai-api-multilingual-translation"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "大模型翻译的准确率如何？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主流大模型（GPT-4、Claude 3.5）在通用文本翻译上准确率可达95%以上，接近专业人工翻译水平。对于专业领域内容，配合术语表使用可进一步提升准确性。建议对关键内容进行人工审校。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何处理大批量翻译任务？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议采用异步队列架构：将翻译任务放入消息队列（如Redis、RabbitMQ），使用多个worker并发处理。同时实现翻译缓存，避免重复翻译相同内容。对于超大规模任务，可考虑使用批量API接口降低成本。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "翻译成本大概是多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "以GPT-4为例，翻译1000字中文约消耗2000 tokens（输入+输出），成本约$0.06。使用GPT-3.5成本可降至$0.002。国产大模型成本更低，约¥0.002/千字。通过API中转服务可进一步优化成本。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何保证翻译的一致性？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议建立翻译记忆库（Translation Memory），存储已翻译的句子对。新翻译时先查询记忆库，相同或相似内容直接复用。同时在提示词中提供术语表和风格指南，确保多次翻译保持一致。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "大模型API翻译有哪些局限？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要局限包括：1) 响应速度比传统翻译API慢（2-5秒 vs 0.5秒）；2) 成本相对较高；3) 可能出现"幻觉"现象，添加原文不存在的内容；4) 对极低资源语言支持有限。建议根据实际场景选择合适方案。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,413 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">应用场景</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            AI API 实现多语言翻译
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>AI API 实现多语言翻译 | 实战教程与代码示例</h1>
+            <h1>AI API 实现多语言翻译</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：应用场景</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你AI API 实现多语言翻译。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>AI API 实现多语言翻译：开发者完整指南</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>随着全球化业务的发展，多语言翻译需求日益增长。传统翻译API虽然快速，但在处理专业术语、上下文理解和文化适配方面存在明显局限。<strong>AI API 实现多语言翻译</strong>正成为开发者的新选择——利用大语言模型的强大理解能力，实现更自然、更准确的翻译效果。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<p>本文将详细介绍如何使用大模型API构建高质量的翻译系统，包括技术选型、代码实现和优化策略。</p>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<h2>为什么选择大模型API做翻译？</h2>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<p>相比传统翻译服务，<strong>AI API 实现多语言翻译</strong>具有以下显著优势：</p>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<ul>
+<li><strong>上下文理解能力强</strong>：大模型能理解整段文本的语境，避免逐句翻译导致的语义断裂</li>
+<li><strong>专业术语处理</strong>：可以通过提示词指定行业领域，提升专业内容翻译准确度</li>
+<li><strong>风格可控</strong>：支持正式/口语、简洁/详细等多种翻译风格定制</li>
+<li><strong>多语言支持</strong>：一个API接口即可支持100+种语言互译</li>
+<li><strong>成本优化</strong>：按token计费，长文本翻译成本可能低于传统按字符计费的服务</li>
+</ul>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<h2>技术选型：主流大模型API对比</h2>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
+<thead>
+<tr style="background-color:#f0f0f0;">
+<th>API服务</th>
+<th>优势</th>
+<th>适用场景</th>
+<th>价格区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI GPT-4</td>
+<td>翻译质量最高，支持复杂上下文</td>
+<td>高端内容、文学作品翻译</td>
+<td>$0.03/1K tokens</td>
+</tr>
+<tr>
+<td>Claude 3.5</td>
+<td>长文本处理能力强（200K上下文）</td>
+<td>技术文档、长篇文章</td>
+<td>$0.015/1K tokens</td>
+</tr>
+<tr>
+<td>Gemini Pro</td>
+<td>多模态支持，可翻译图片中文字</td>
+<td>图文混排内容</td>
+<td>$0.0005/1K tokens</td>
+</tr>
+<tr>
+<td>国产大模型</td>
+<td>中文理解优秀，价格低廉</td>
+<td>中文为主的业务场景</td>
+<td>¥0.001/1K tokens</td>
+</tr>
+</tbody>
+</table>
 
-print(response.choices[0].message.content)</code></pre>
+<h2>Python实现：基础翻译功能</h2>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<p>以下是使用OpenAI API实现<strong>AI API 实现多语言翻译</strong>的完整示例：</p>
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
-
-            <h3>错误处理</h3>
 <pre><code>import openai
+from typing import Optional
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+class AITranslator:
+    def __init__(self, api_key: str, model: str = "gpt-4"):
+        self.client = openai.OpenAI(api_key=api_key)
+        self.model = model
+    
+    def translate(
+        self, 
+        text: str, 
+        target_lang: str, 
+        source_lang: Optional[str] = None,
+        style: str = "formal"
+    ) -> str:
+        """
+        使用大模型API进行翻译
+        
+        Args:
+            text: 待翻译文本
+            target_lang: 目标语言（如 "中文"、"English"）
+            source_lang: 源语言（可选，模型会自动检测）
+            style: 翻译风格（formal/casual/technical）
+        """
+        # 构建提示词
+        prompt = f"""请将以下文本翻译成{target_lang}。
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+翻译要求：
+- 保持原文的语气和风格
+- 专业术语需准确翻译
+- 翻译风格：{style}
+{"- 源语言：" + source_lang if source_lang else ""}
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+原文：
+{text}
 
+翻译："""
+
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": "你是一位专业的翻译专家。"},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.3  # 降低随机性，提高翻译稳定性
+        )
+        
+        return response.choices[0].message.content.strip()
+
+# 使用示例
+translator = AITranslator(api_key="your-api-key")
+
+# 基础翻译
+result = translator.translate(
+    text="Artificial intelligence is transforming the translation industry.",
+    target_lang="中文"
+)
+print(result)  # 输出：人工智能正在改变翻译行业。
+
+# 指定风格的翻译
+technical_result = translator.translate(
+    text="The API endpoint returns a JSON response.",
+    target_lang="中文",
+    style="technical"
+)
+print(technical_result)  # 输出：该API端点返回JSON响应。
+</code></pre>
+
+<h2>Node.js实现：批量翻译优化</h2>
+
+<p>对于需要翻译大量内容的场景，可以使用批量处理提升效率：</p>
+
+<pre><code>const OpenAI = require('openai');
+
+class BatchTranslator {
+  constructor(apiKey, model = 'gpt-4') {
+    this.client = new OpenAI({ apiKey });
+    this.model = model;
+  }
+
+  async translateBatch(texts, targetLang, options = {}) {
+    const { sourceLanguage, domain, maxConcurrent = 5 } = options;
+    
+    // 分批处理，避免并发过高
+    const results = [];
+    for (let i = 0; i < texts.length; i += maxConcurrent) {
+      const batch = texts.slice(i, i + maxConcurrent);
+      const promises = batch.map(text => 
+        this.translateSingle(text, targetLang, { sourceLanguage, domain })
+      );
+      const batchResults = await Promise.all(promises);
+      results.push(...batchResults);
+    }
+    
+    return results;
+  }
+
+  async translateSingle(text, targetLang, options) {
+    const systemPrompt = options.domain 
+      ? `你是${options.domain}领域的专业翻译。`
+      : '你是一位专业的翻译专家。';
+
+    const userPrompt = `将以下文本翻译成${targetLang}，保持原文风格和专业性：\n\n${text}`;
+
+    const response = await this.client.chat.completions.create({
+      model: this.model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+      ],
+      temperature: 0.3
+    });
+
+    return response.choices[0].message.content.trim();
+  }
+}
+
+// 使用示例
+const translator = new BatchTranslator('your-api-key');
+
+const texts = [
+  'Hello, world!',
+  'How are you today?',
+  'Machine learning is fascinating.'
+];
+
+translator.translateBatch(texts, '中文', { domain: '技术' })
+  .then(results => {
+    results.forEach((translation, index) => {
+      console.log(`原文: ${texts[index]}`);
+      console.log(`译文: ${translation}\n`);
+    });
+  });
+</code></pre>
+
+<h2>高级技巧：提升翻译质量</h2>
+
+<h3>1. 术语表注入</h3>
+
+<p>对于包含专业术语的内容，可以在提示词中提供术语对照表：</p>
+
+<pre><code>def translate_with_glossary(text, target_lang, glossary):
+    """
+    使用术语表进行翻译
+    
+    glossary示例：
+    {
+        "API": "应用程序接口",
+        "token": "令牌",
+        "endpoint": "端点"
+    }
+    """
+    glossary_text = "\n".join([f"- {k}: {v}" for k, v in glossary.items()])
+    
+    prompt = f"""请将以下文本翻译成{target_lang}。
+
+专业术语对照表：
+{glossary_text}
+
+原文：
+{text}"""
+    
+    # ... 调用API
+</code></pre>
+
+<h3>2. 上下文保持</h3>
+
+<p>翻译长文档时，保持前文上下文可以提升连贯性：</p>
+
+<pre><code>class ContextualTranslator:
+    def __init__(self, api_key):
+        self.client = openai.OpenAI(api_key=api_key)
+        self.context = []  # 存储翻译历史
+    
+    def translate_paragraph(self, text, target_lang):
+        # 构建包含历史的提示词
+        context_text = "\n".join([
+            f"原文：{item['source']}\n译文：{item['target']}"
+            for item in self.context[-3:]  # 保留最近3段
+        ])
+        
+        prompt = f"""基于以下已翻译的上下文，翻译新段落：
+
+{context_text}
+
+新段落：
+{text}
+
+翻译成{target_lang}："""
+        
+        # 调用API获取翻译
+        translation = self._call_api(prompt)
+        
+        # 更新上下文
+        self.context.append({
+            'source': text,
+            'target': translation
+        })
+        
+        return translation
+</code></pre>
+
+<h3>3. 质量评估与重译</h3>
+
+<p>实现自动质量检查，对低质量翻译进行重译：</p>
+
+<pre><code>def translate_with_quality_check(text, target_lang, threshold=0.7):
+    """带质量检查的翻译"""
+    translation = translate(text, target_lang)
+    
+    # 使用大模型评估翻译质量
+    quality_prompt = f"""评估以下翻译的质量（0-1分）：
+
+原文：{text}
+译文：{translation}
+
+评分标准：准确性、流畅性、专业性
+只返回数字分数："""
+    
+    score = float(get_llm_response(quality_prompt))
+    
+    if score < threshold:
+        # 质量不达标，使用更强模型重译
+        translation = translate(text, target_lang, model="gpt-4")
+    
+    return translation, score
+</code></pre>
+
+<h2>成本优化策略</h2>
+
+<p>使用<strong>AI API 实现多语言翻译</strong>时，合理控制成本很重要：</p>
+
+<ul>
+<li><strong>模型选择</strong>：短文本用GPT-3.5，复杂内容用GPT-4</li>
+<li><strong>缓存机制</strong>：相同内容不重复翻译，建立翻译缓存数据库</li>
+<li><strong>分段处理</strong>：长文本按段落翻译，避免超长上下文</li>
+<li><strong>API中转服务</strong>：使用国内API中转服务可降低30-50%成本，同时提升访问速度和稳定性</li>
+</ul>
+
+<h2>生产环境部署建议</h2>
+
+<h3>错误处理</h3>
+
+<pre><code>import time
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+class RobustTranslator:
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=2, max=10)
+    )
+    def translate_with_retry(self, text, target_lang):
+        """带重试机制的翻译"""
+        try:
+            return self.translate(text, target_lang)
+        except openai.RateLimitError:
+            print("触发速率限制，等待后重试...")
+            time.sleep(5)
+            raise
+        except openai.APIError as e:
+            print(f"API错误：{e}")
+            raise
+</code></pre>
+
+<h3>监控与日志</h3>
+
+<pre><code>import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def translate_with_logging(text, target_lang):
+    start_time = time.time()
+    
+    try:
+        result = translator.translate(text, target_lang)
+        duration = time.time() - start_time
+        
+        logger.info(f"翻译成功 | 字符数: {len(text)} | 耗时: {duration:.2f}s")
+        return result
+    except Exception as e:
+        logger.error(f"翻译失败 | 错误: {str(e)}")
+        raise
+</code></pre>
+
+<h2>实际应用场景</h2>
+
+<p><strong>AI API 实现多语言翻译</strong>已在多个领域得到广泛应用：</p>
+
+<ul>
+<li><strong>跨境电商</strong>：商品描述、用户评论的实时翻译</li>
+<li><strong>内容平台</strong>：文章、视频字幕的多语言发布</li>
+<li><strong>技术文档</strong>：API文档、开发指南的国际化</li>
+<li><strong>客服系统</strong>：多语言客户咨询的自动翻译</li>
+<li><strong>游戏本地化</strong>：游戏剧情、UI文本的快速翻译</li>
+</ul>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>大模型翻译的准确率如何？</summary>
+<p>主流大模型（GPT-4、Claude 3.5）在通用文本翻译上准确率可达95%以上，接近专业人工翻译水平。对于专业领域内容，配合术语表使用可进一步提升准确性。建议对关键内容进行人工审校。</p>
+</details>
+
+<details>
+<summary>如何处理大批量翻译任务？</summary>
+<p>建议采用异步队列架构：将翻译任务放入消息队列（如Redis、RabbitMQ），使用多个worker并发处理。同时实现翻译缓存，避免重复翻译相同内容。对于超大规模任务，可考虑使用批量API接口降低成本。</p>
+</details>
+
+<details>
+<summary>翻译成本大概是多少？</summary>
+<p>以GPT-4为例，翻译1000字中文约消耗2000 tokens（输入+输出），成本约$0.06。使用GPT-3.5成本可降至$0.002。国产大模型成本更低，约¥0.002/千字。通过API中转服务可进一步优化成本。</p>
+</details>
+
+<details>
+<summary>如何保证翻译的一致性？</summary>
+<p>建议建立翻译记忆库（Translation Memory），存储已翻译的句子对。新翻译时先查询记忆库，相同或相似内容直接复用。同时在提示词中提供术语表和风格指南，确保多次翻译保持一致。</p>
+</details>
+
+<details>
+<summary>大模型API翻译有哪些局限？</summary>
+<p>主要局限包括：1) 响应速度比传统翻译API慢（2-5秒 vs 0.5秒）；2) 成本相对较高；3) 可能出现"幻觉"现象，添加原文不存在的内容；4) 对极低资源语言支持有限。建议根据实际场景选择合适方案。</p>
+</details>
+
+<h2>总结</h2>
+
+<p><strong>AI API 实现多语言翻译</strong>为开发者提供了强大而灵活的解决方案。通过合理的技术选型、优化的提示词设计和完善的错误处理机制，可以构建出高质量、高可用的翻译系统。</p>
+
+<p>对于追求翻译质量的场景，大模型API是理想选择；对于成本敏感的大规模应用，可以考虑混合方案——常规内容使用传统API，重要内容使用大模型精译。无论哪种方案，选择稳定可靠的API服务商都至关重要，这将直接影响系统的可用性和用户体验。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +855,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/ai-api-ecommerce-product-description.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 用于电商产品描述生成</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/ai-api-seo-content-generation.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 自动生成SEO文章</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/ai-api-ecommerce-product-description.html" class="related-card"><h3>AI API 用于电商产品描述生成</h3><p>用AI API自动生成电商产品文案</p></a>
+<a href="/tutorials/ai-api-seo-content-generation.html" class="related-card"><h3>AI API 自动生成SEO文章</h3><p>用AI API批量生成SEO优化内容</p></a>
+<a href="/tutorials/ai-api-code-review-tool.html" class="related-card"><h3>AI API 做代码审查工具</h3><p>构建基于AI API的代码审查系统</p></a>
+<a href="/tutorials/ai-api-rag-knowledge-base.html" class="related-card"><h3>AI API 构建RAG知识库</h3><p>使用AI API搭建检索增强生成系统</p></a>
+
                 </div>
             </section>
         </article>

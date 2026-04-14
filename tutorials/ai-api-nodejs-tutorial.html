@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API Node.js 接入教程 | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="AI API Node.js 接入教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>AI API Node.js 接入教程 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="在Node.js项目中使用AI API">
     <meta name="keywords" content="AI API Node.js 接入教程, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/ai-api-nodejs-tutorial">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/ai-api-nodejs-tutorial">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AI API Node.js 接入教程 | 完整教程与代码示例">
-    <meta property="og:description" content="AI API Node.js 接入教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="AI API Node.js 接入教程">
+    <meta property="og:description" content="在Node.js项目中使用AI API">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/ai-api-nodejs-tutorial">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/ai-api-nodejs-tutorial">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API Node.js 接入教程 | 完整教程与代码示例">
-    <meta name="twitter:description" content="AI API Node.js 接入教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="AI API Node.js 接入教程">
+    <meta name="twitter:description" content="在Node.js项目中使用AI API">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "AI API Node.js 接入教程 | 完整教程与代码示例",
-        "description": "AI API Node.js 接入教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "AI API Node.js 接入教程",
+        "description": "在Node.js项目中使用AI API",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/ai-api-nodejs-tutorial"
+            "@id": "https://guide.xiaomuai.cn/tutorials/ai-api-nodejs-tutorial"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "如何在 Node.js 中安全地存储 API 密钥？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最佳实践是使用环境变量配合 .env 文件。在生产环境中，应该使用云服务商提供的密钥管理服务（如 AWS Secrets Manager、Azure Key Vault）。永远不要将 API 密钥硬编码在代码中或提交到版本控制系统。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI API 调用失败时应该如何处理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议实现多层错误处理：1) 使用 try-catch 捕获异常；2) 根据 HTTP 状态码返回友好的错误信息；3) 实现自动重试机制（带指数退避）；4) 记录详细的错误日志用于排查问题。对于用户端，应该返回通用的错误提示而不是暴露技术细节。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何控制 AI API 的调用成本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以采取以下措施：1) 设置 max_tokens 参数限制响应长度；2) 实现请求频率限制；3) 对常见问题使用缓存；4) 监控每日 Token 消耗量并设置预警阈值；5) 根据业务需求选择合适的模型（如 GPT-3.5 比 GPT-4 更便宜）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Node.js 接入 AI API 时如何处理流式响应？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "流式响应需要设置 stream: true 参数，并将 responseType 设为 'stream'。然后监听 data 事件逐块处理返回的数据。注意要正确解析 SSE（Server-Sent Events）格式的数据流，每行以 data: 开头，并在遇到 [DONE] 标记时结束。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在 Node.js 项目中使用 AI API 需要注意哪些安全问题？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要注意以下几点：1) 永远不要在客户端代码中暴露 API 密钥；2) 对用户输入进行验证和清理，防止注入攻击；3) 实现请求频率限制防止滥用；4) 使用 HTTPS 加密传输；5) 定期轮换 API 密钥；6) 监控异常调用模式；7) 遵守 AI 服务提供商的使用条款。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,354 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            AI API Node.js 接入教程
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>AI API Node.js 接入教程 | 完整教程与代码示例</h1>
+            <h1>AI API Node.js 接入教程</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你AI API Node.js 接入教程。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>Node.js 接入 AI API 完整教程：从零开始构建智能应用</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>随着人工智能技术的快速发展，越来越多的开发者希望在自己的 Node.js 项目中集成 AI 能力。本文将详细介绍如何在 Node.js 环境中接入主流 AI API，帮助你快速构建具备智能对话、文本生成等功能的应用。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>为什么选择 Node.js 接入 AI API</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>Node.js 作为一个高性能的 JavaScript 运行环境，具有以下优势：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li><strong>异步非阻塞</strong>：天然适合处理 AI API 的异步请求</li>
+<li><strong>生态丰富</strong>：npm 提供了大量现成的 HTTP 客户端库</li>
+<li><strong>全栈统一</strong>：前后端使用同一种语言，降低学习成本</li>
+<li><strong>社区活跃</strong>：遇到问题容易找到解决方案</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>准备工作：环境配置与 API 密钥获取</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<h3>1. 安装 Node.js 环境</h3>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+<p>确保你的系统已安装 Node.js 14.0 或更高版本。可以通过以下命令检查：</p>
 
-print(response.choices[0].message.content)</code></pre>
+<pre><code>node --version
+npm --version</code></pre>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<h3>2. 创建项目并安装依赖</h3>
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+<p>创建一个新的 Node.js 项目并安装必要的依赖包：</p>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<pre><code>mkdir ai-api-demo
+cd ai-api-demo
+npm init -y
+npm install axios dotenv</code></pre>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<p>这里我们使用 <code>axios</code> 作为 HTTP 客户端，<code>dotenv</code> 用于管理环境变量。</p>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<h3>3. 获取 API 密钥</h3>
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<p>在使用 AI API 之前，你需要先注册账号并获取 API Key。主流的 AI 服务提供商包括 OpenAI、Anthropic、Google AI 等。注册后在控制台创建 API 密钥，并妥善保管。</p>
 
+<h2>实战：在 Node.js 中接入 OpenAI API</h2>
+
+<h3>步骤 1：配置环境变量</h3>
+
+<p>在项目根目录创建 <code>.env</code> 文件，存储你的 API 密钥：</p>
+
+<pre><code>OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=https://api.openai.com/v1</code></pre>
+
+<p>记得将 <code>.env</code> 添加到 <code>.gitignore</code> 文件中，避免泄露密钥。</p>
+
+<h3>步骤 2：编写基础调用代码</h3>
+
+<p>创建 <code>index.js</code> 文件，实现一个简单的 AI 对话功能：</p>
+
+<pre><code>require('dotenv').config();
+const axios = require('axios');
+
+const apiKey = process.env.OPENAI_API_KEY;
+const baseURL = process.env.OPENAI_BASE_URL;
+
+async function chatWithAI(userMessage) {
+  try {
+    const response = await axios.post(
+      `${baseURL}/chat/completions`,
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [
+          { role: 'user', content: userMessage }
+        ],
+        temperature: 0.7,
+        max_tokens: 1000
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    return response.data.choices[0].message.content;
+  } catch (error) {
+    console.error('API 调用失败:', error.response?.data || error.message);
+    throw error;
+  }
+}
+
+// 测试调用
+chatWithAI('请用一句话介绍 Node.js')
+  .then(reply => console.log('AI 回复:', reply))
+  .catch(err => console.error('错误:', err));</code></pre>
+
+<h3>步骤 3：添加流式响应支持</h3>
+
+<p>对于长文本生成场景，流式响应可以提供更好的用户体验。以下是支持流式输出的代码示例：</p>
+
+<pre><code>async function streamChatWithAI(userMessage) {
+  try {
+    const response = await axios.post(
+      `${baseURL}/chat/completions`,
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'user', content: userMessage }],
+        stream: true
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        responseType: 'stream'
+      }
+    );
+
+    response.data.on('data', chunk => {
+      const lines = chunk.toString().split('\n').filter(line => line.trim());
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          const data = line.slice(6);
+          if (data === '[DONE]') return;
+          try {
+            const parsed = JSON.parse(data);
+            const content = parsed.choices[0]?.delta?.content;
+            if (content) process.stdout.write(content);
+          } catch (e) {
+            // 忽略解析错误
+          }
+        }
+      }
+    });
+
+    response.data.on('end', () => console.log('\n流式响应完成'));
+  } catch (error) {
+    console.error('流式调用失败:', error.message);
+  }
+}</code></pre>
+
+<h2>进阶技巧：优化你的 AI API 接入方案</h2>
+
+<h3>1. 实现请求重试机制</h3>
+
+<p>网络请求可能因为各种原因失败，实现自动重试可以提高系统稳定性：</p>
+
+<pre><code>async function callWithRetry(fn, maxRetries = 3) {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (i === maxRetries - 1) throw error;
+      const delay = Math.pow(2, i) * 1000; // 指数退避
+      console.log(`重试 ${i + 1}/${maxRetries}，等待 ${delay}ms...`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+}</code></pre>
+
+<h3>2. 添加请求超时控制</h3>
+
+<p>为了避免请求长时间挂起，建议设置合理的超时时间：</p>
+
+<pre><code>const response = await axios.post(url, data, {
+  headers: headers,
+  timeout: 30000 // 30秒超时
+});</code></pre>
+
+<h3>3. 实现 Token 计数与成本控制</h3>
+
+<p>AI API 通常按 Token 数量计费，实现 Token 统计可以帮助控制成本：</p>
+
+<pre><code>function estimateTokens(text) {
+  // 简单估算：中文约 1.5 字符/token，英文约 4 字符/token
+  const chineseChars = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
+  const otherChars = text.length - chineseChars;
+  return Math.ceil(chineseChars / 1.5 + otherChars / 4);
+}
+
+console.log(`预估消耗 Token: ${estimateTokens(userMessage)}`);</code></pre>
+
+<h2>常见问题与解决方案</h2>
+
+<h3>处理 API 限流</h3>
+
+<p>当请求频率过高时，API 可能返回 429 错误。建议实现请求队列和速率限制：</p>
+
+<pre><code>class RateLimiter {
+  constructor(maxRequests, timeWindow) {
+    this.maxRequests = maxRequests;
+    this.timeWindow = timeWindow;
+    this.requests = [];
+  }
+
+  async acquire() {
+    const now = Date.now();
+    this.requests = this.requests.filter(t => now - t < this.timeWindow);
+    
+    if (this.requests.length >= this.maxRequests) {
+      const oldestRequest = this.requests[0];
+      const waitTime = this.timeWindow - (now - oldestRequest);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+      return this.acquire();
+    }
+    
+    this.requests.push(now);
+  }
+}
+
+const limiter = new RateLimiter(10, 60000); // 每分钟最多10次请求</code></pre>
+
+<h3>错误处理最佳实践</h3>
+
+<p>完善的错误处理可以提升应用的健壮性：</p>
+
+<pre><code>async function safeAPICall(userMessage) {
+  try {
+    const result = await chatWithAI(userMessage);
+    return { success: true, data: result };
+  } catch (error) {
+    if (error.response) {
+      // API 返回了错误响应
+      const status = error.response.status;
+      if (status === 401) {
+        return { success: false, error: 'API 密钥无效' };
+      } else if (status === 429) {
+        return { success: false, error: '请求过于频繁，请稍后重试' };
+      } else if (status === 500) {
+        return { success: false, error: 'API 服务器错误' };
+      }
+    } else if (error.request) {
+      // 请求已发送但没有收到响应
+      return { success: false, error: '网络连接失败' };
+    }
+    return { success: false, error: '未知错误' };
+  }
+}</code></pre>
+
+<h2>使用 API 中转服务提升稳定性</h2>
+
+<p>在实际生产环境中，直接调用官方 API 可能会遇到网络不稳定、区域限制等问题。一些开发者会选择使用 API 中转服务来解决这些问题。中转服务通常提供国内优化的网络线路、统一的接口格式以及更灵活的计费方式，可以显著提升 AI API 在 Node.js 项目中的接入体验和稳定性。</p>
+
+<h2>完整示例：构建一个简单的 AI 聊天服务器</h2>
+
+<p>下面是一个使用 Express 框架构建的完整 AI 聊天 API 服务器示例：</p>
+
+<pre><code>const express = require('express');
+const axios = require('axios');
+require('dotenv').config();
+
+const app = express();
+app.use(express.json());
+
+const apiKey = process.env.OPENAI_API_KEY;
+const baseURL = process.env.OPENAI_BASE_URL;
+
+app.post('/api/chat', async (req, res) => {
+  const { message } = req.body;
+  
+  if (!message) {
+    return res.status(400).json({ error: '消息不能为空' });
+  }
+
+  try {
+    const response = await axios.post(
+      `${baseURL}/chat/completions`,
+      {
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'user', content: message }]
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        timeout: 30000
+      }
+    );
+
+    const reply = response.data.choices[0].message.content;
+    res.json({ success: true, reply });
+  } catch (error) {
+    console.error('API 错误:', error.message);
+    res.status(500).json({ 
+      success: false, 
+      error: '服务暂时不可用，请稍后重试' 
+    });
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`AI 聊天服务器运行在端口 ${PORT}`);
+});</code></pre>
+
+<h2>性能优化建议</h2>
+
+<ul>
+<li><strong>使用连接池</strong>：复用 HTTP 连接可以减少握手开销</li>
+<li><strong>实现缓存机制</strong>：对于相同的问题，可以缓存 AI 的回复</li>
+<li><strong>异步处理</strong>：充分利用 Node.js 的异步特性，避免阻塞</li>
+<li><strong>监控与日志</strong>：记录 API 调用情况，便于排查问题和优化</li>
+</ul>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>如何在 Node.js 中安全地存储 API 密钥？</summary>
+<p>最佳实践是使用环境变量配合 <code>.env</code> 文件。在生产环境中，应该使用云服务商提供的密钥管理服务（如 AWS Secrets Manager、Azure Key Vault）。永远不要将 API 密钥硬编码在代码中或提交到版本控制系统。</p>
+</details>
+
+<details>
+<summary>AI API 调用失败时应该如何处理？</summary>
+<p>建议实现多层错误处理：1) 使用 try-catch 捕获异常；2) 根据 HTTP 状态码返回友好的错误信息；3) 实现自动重试机制（带指数退避）；4) 记录详细的错误日志用于排查问题。对于用户端，应该返回通用的错误提示而不是暴露技术细节。</p>
+</details>
+
+<details>
+<summary>如何控制 AI API 的调用成本？</summary>
+<p>可以采取以下措施：1) 设置 <code>max_tokens</code> 参数限制响应长度；2) 实现请求频率限制；3) 对常见问题使用缓存；4) 监控每日 Token 消耗量并设置预警阈值；5) 根据业务需求选择合适的模型（如 GPT-3.5 比 GPT-4 更便宜）。</p>
+</details>
+
+<details>
+<summary>Node.js 接入 AI API 时如何处理流式响应？</summary>
+<p>流式响应需要设置 <code>stream: true</code> 参数，并将 <code>responseType</code> 设为 <code>'stream'</code>。然后监听 <code>data</code> 事件逐块处理返回的数据。注意要正确解析 SSE（Server-Sent Events）格式的数据流，每行以 <code>data:</code> 开头，并在遇到 <code>[DONE]</code> 标记时结束。</p>
+</details>
+
+<details>
+<summary>在 Node.js 项目中使用 AI API 需要注意哪些安全问题？</summary>
+<p>主要注意以下几点：1) 永远不要在客户端代码中暴露 API 密钥；2) 对用户输入进行验证和清理，防止注入攻击；3) 实现请求频率限制防止滥用；4) 使用 HTTPS 加密传输；5) 定期轮换 API 密钥；6) 监控异常调用模式；7) 遵守 AI 服务提供商的使用条款。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>本文详细介绍了在 Node.js 项目中接入 AI API 的完整流程，从环境配置、基础调用到进阶优化都进行了深入讲解。通过合理的错误处理、重试机制和性能优化，你可以构建一个稳定可靠的 AI 应用。随着实践经验的积累，你还可以根据具体业务需求进一步定制和优化你的 AI API 接入方案。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +796,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/claude-api-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>Claude API 使用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/openai-api-python-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>OpenAI API Python调用教程</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/claude-api-tutorial.html" class="related-card"><h3>Claude API 使用教程</h3><p>从零开始学习使用Claude API</p></a>
+<a href="/tutorials/openai-api-python-tutorial.html" class="related-card"><h3>OpenAI API Python调用教程</h3><p>用Python调用OpenAI API的完整指南</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+
                 </div>
             </section>
         </article>

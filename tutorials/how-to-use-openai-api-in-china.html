@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何在中国使用OpenAI API | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="如何在中国使用OpenAI API完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>如何在中国使用OpenAI API | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="解决中国大陆访问OpenAI API的问题">
     <meta name="keywords" content="如何在中国使用OpenAI API, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/how-to-use-openai-api-in-china">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/how-to-use-openai-api-in-china">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="如何在中国使用OpenAI API | 完整教程与代码示例">
-    <meta property="og:description" content="如何在中国使用OpenAI API完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="如何在中国使用OpenAI API">
+    <meta property="og:description" content="解决中国大陆访问OpenAI API的问题">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/how-to-use-openai-api-in-china">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/how-to-use-openai-api-in-china">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="如何在中国使用OpenAI API | 完整教程与代码示例">
-    <meta name="twitter:description" content="如何在中国使用OpenAI API完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="如何在中国使用OpenAI API">
+    <meta name="twitter:description" content="解决中国大陆访问OpenAI API的问题">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "如何在中国使用OpenAI API | 完整教程与代码示例",
-        "description": "如何在中国使用OpenAI API完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "如何在中国使用OpenAI API",
+        "description": "解决中国大陆访问OpenAI API的问题",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/how-to-use-openai-api-in-china"
+            "@id": "https://guide.xiaomuai.cn/tutorials/how-to-use-openai-api-in-china"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "使用代理或中转服务访问 OpenAI API 是否合法？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "从技术角度来说，使用代理或中转服务访问 API 本身不违反中国法律。但需要注意 OpenAI 的服务条款，确保你的使用方式符合其规定。建议用于学习、研究和合法的商业用途。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中转服务会不会记录我的 API 请求内容？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这取决于中转服务提供商的政策。选择信誉良好、有明确隐私政策的服务商很重要。如果对数据安全有极高要求，建议使用自建中转服务器方案。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么我的请求经常超时？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "超时问题通常由以下原因引起：1) 代理服务器不稳定；2) 网络延迟过高；3) OpenAI 服务器负载过高；4) 超时时间设置过短。建议增加超时时间到 30-60 秒，并选择稳定的代理或中转服务。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "使用中转服务的费用如何计算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "大多数中转服务采用按量计费模式，根据你实际调用 OpenAI API 的次数和 tokens 数量收费。通常会在 OpenAI 官方价格基础上加收一定比例的服务费（10%-30%）。部分服务商也提供包月套餐。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何选择合适的 GPT 模型？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "选择模型时需要平衡性能和成本：GPT-3.5-turbo 适合日常对话和简单任务，响应快且便宜；GPT-4 适合复杂推理、代码生成等高要求场景，但费用较高。建议先用 GPT-3.5-turbo 测试，确有必要再升级到 GPT-4。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,314 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            如何在中国使用OpenAI API
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>如何在中国使用OpenAI API | 完整教程与代码示例</h1>
+            <h1>如何在中国使用OpenAI API</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你如何在中国使用OpenAI API。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>如何在中国使用OpenAI API：完整指南</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>OpenAI API 是目前最强大的人工智能接口之一，但由于网络限制，中国大陆用户在访问时会遇到各种问题。本文将详细介绍<strong>如何在中国使用OpenAI API</strong>，包括多种可行方案、代码示例和常见问题解答。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>为什么中国无法直接访问OpenAI API</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>OpenAI 的服务器位于海外，且官方不支持中国大陆地区的注册和使用。主要障碍包括：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li>网络连接限制：API 请求无法直接到达 OpenAI 服务器</li>
+<li>支付限制：OpenAI 不接受中国大陆发行的信用卡</li>
+<li>手机号验证：注册时需要非中国大陆的手机号</li>
+<li>IP 地址检测：OpenAI 会检测并限制来自特定地区的访问</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>方案一：使用代理服务器</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<p>这是最直接的方法，通过代理服务器转发 API 请求。以下是 Python 和 Node.js 的实现示例。</p>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
+<h3>Python 示例</h3>
+
+<pre><code>import openai
+import os
+
+# 设置代理
+os.environ['HTTP_PROXY'] = 'http://your-proxy-server:port'
+os.environ['HTTPS_PROXY'] = 'http://your-proxy-server:port'
+
+# 配置 API Key
+openai.api_key = 'your-api-key-here'
+
+# 发送请求
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
+        {"role": "user", "content": "你好，请介绍一下自己"}
+    ]
 )
 
-print(response.choices[0].message.content)</code></pre>
+print(response.choices[0].message.content)
+</code></pre>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
+<h3>Node.js 示例</h3>
+
+<pre><code>const { Configuration, OpenAIApi } = require('openai');
+const { HttpsProxyAgent } = require('https-proxy-agent');
+
+// 配置代理
+const agent = new HttpsProxyAgent('http://your-proxy-server:port');
+
+const configuration = new Configuration({
+    apiKey: 'your-api-key-here',
+    baseOptions: {
+        httpsAgent: agent,
+    }
+});
+
+const openai = new OpenAIApi(configuration);
+
+async function chat() {
+    const response = await openai.createChatCompletion({
+        model: 'gpt-3.5-turbo',
+        messages: [
+            { role: 'user', content: '你好，请介绍一下自己' }
+        ]
+    });
+    
+    console.log(response.data.choices[0].message.content);
+}
+
+chat();
+</code></pre>
+
+<h3>注意事项</h3>
+
+<ul>
+<li>确保代理服务器稳定可靠</li>
+<li>注意代理服务器的流量限制</li>
+<li>避免使用免费公共代理，可能存在安全风险</li>
+<li>定期检查代理连接状态</li>
+</ul>
+
+<h2>方案二：使用 API 中转服务</h2>
+
+<p>API 中转服务是专门为解决<strong>如何在中国使用OpenAI API</strong>问题而设计的解决方案。这些服务在海外部署中转节点，将你的请求转发到 OpenAI，然后返回结果。</p>
+
+<h3>中转服务的优势</h3>
+
+<ul>
+<li><strong>无需配置代理</strong>：只需修改 API 端点地址</li>
+<li><strong>稳定性高</strong>：专业团队维护，保证服务可用性</li>
+<li><strong>支持国内支付</strong>：可以使用支付宝、微信支付</li>
+<li><strong>响应速度快</strong>：国内优化的网络路由</li>
+<li><strong>技术支持</strong>：遇到问题可以获得及时帮助</li>
+</ul>
+
+<h3>使用中转服务的代码示例</h3>
+
+<pre><code>import openai
+
+# 修改 API 基础地址为中转服务地址
+openai.api_base = "https://api.your-relay-service.com/v1"
+openai.api_key = "your-relay-service-key"
+
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": "写一首关于春天的诗"}
+    ]
+)
+
+print(response.choices[0].message.content)
+</code></pre>
+
+<p>使用中转服务时，代码几乎不需要修改，只需更换 <code>api_base</code> 和 <code>api_key</code> 即可。这使得迁移成本极低，是目前最受欢迎的方案之一。</p>
+
+<h2>方案三：自建中转服务器</h2>
+
+<p>如果你有技术能力和海外服务器资源，可以自己搭建中转服务。这种方案适合有较高安全要求或大量 API 调用需求的用户。</p>
+
+<h3>基本架构</h3>
+
+<ol>
+<li>在海外（如美国、新加坡）租用一台云服务器</li>
+<li>部署反向代理服务（如 Nginx、Cloudflare Workers）</li>
+<li>配置转发规则，将请求转发到 OpenAI API</li>
+<li>在国内通过自建服务器访问 API</li>
+</ol>
+
+<h3>Nginx 配置示例</h3>
+
+<pre><code>server {
+    listen 443 ssl;
+    server_name your-domain.com;
+
+    ssl_certificate /path/to/cert.pem;
+    ssl_certificate_key /path/to/key.pem;
+
+    location /v1/ {
+        proxy_pass https://api.openai.com/v1/;
+        proxy_set_header Host api.openai.com;
+        proxy_set_header Authorization $http_authorization;
+        proxy_ssl_server_name on;
+    }
+}
+</code></pre>
+
+<h2>方案对比</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse;">
+<thead>
+<tr>
+<th>方案</th>
+<th>难度</th>
+<th>成本</th>
+<th>稳定性</th>
+<th>速度</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代理服务器</td>
+<td>中等</td>
+<td>低-中</td>
+<td>中等</td>
+<td>中等</td>
+<td>个人开发、小规模使用</td>
+</tr>
+<tr>
+<td>API 中转服务</td>
+<td>低</td>
+<td>中</td>
+<td>高</td>
+<td>快</td>
+<td>商业项目、快速上线</td>
+</tr>
+<tr>
+<td>自建中转服务器</td>
+<td>高</td>
+<td>中-高</td>
+<td>高</td>
+<td>快</td>
+<td>大规模应用、高安全要求</td>
+</tr>
+</tbody>
+</table>
+
+<h2>最佳实践建议</h2>
+
+<p>无论选择哪种方案来解决<strong>如何在中国使用OpenAI API</strong>的问题，以下建议都能帮助你获得更好的体验：</p>
+
+<h3>1. 错误处理</h3>
+
+<pre><code>import openai
+import time
+
+def call_openai_with_retry(messages, max_retries=3):
+    for i in range(max_retries):
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=messages,
+                timeout=30
+            )
+            return response
+        except openai.error.Timeout:
+            print(f"请求超时，重试 {i+1}/{max_retries}")
+            time.sleep(2)
+        except openai.error.APIError as e:
+            print(f"API 错误: {e}")
+            time.sleep(2)
+        except Exception as e:
+            print(f"未知错误: {e}")
+            break
+    
+    return None
+</code></pre>
+
+<h3>2. 设置合理的超时时间</h3>
+
+<p>由于网络延迟，建议将超时时间设置为 30-60 秒，避免请求过早失败。</p>
+
+<h3>3. 使用流式响应</h3>
+
+<p>对于长文本生成，使用流式响应可以更快地看到结果：</p>
+
+<pre><code>response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "写一篇长文章"}],
     stream=True
 )
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+for chunk in response:
+    if chunk.choices[0].delta.get("content"):
+        print(chunk.choices[0].delta.content, end="")
+</code></pre>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<h3>4. 监控 API 使用情况</h3>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<p>定期检查 API 调用次数和费用，避免超出预算。可以在代码中添加日志记录：</p>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<pre><code>import logging
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
+def log_api_call(model, tokens_used, cost):
+    logger.info(f"模型: {model}, 使用 tokens: {tokens_used}, 费用: ${cost}")
+</code></pre>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>使用代理或中转服务访问 OpenAI API 是否合法？</summary>
+<p>从技术角度来说，使用代理或中转服务访问 API 本身不违反中国法律。但需要注意 OpenAI 的服务条款，确保你的使用方式符合其规定。建议用于学习、研究和合法的商业用途。</p>
+</details>
+
+<details>
+<summary>中转服务会不会记录我的 API 请求内容？</summary>
+<p>这取决于中转服务提供商的政策。选择信誉良好、有明确隐私政策的服务商很重要。如果对数据安全有极高要求，建议使用自建中转服务器方案。</p>
+</details>
+
+<details>
+<summary>为什么我的请求经常超时？</summary>
+<p>超时问题通常由以下原因引起：1) 代理服务器不稳定；2) 网络延迟过高；3) OpenAI 服务器负载过高；4) 超时时间设置过短。建议增加超时时间到 30-60 秒，并选择稳定的代理或中转服务。</p>
+</details>
+
+<details>
+<summary>使用中转服务的费用如何计算？</summary>
+<p>大多数中转服务采用按量计费模式，根据你实际调用 OpenAI API 的次数和 tokens 数量收费。通常会在 OpenAI 官方价格基础上加收一定比例的服务费（10%-30%）。部分服务商也提供包月套餐。</p>
+</details>
+
+<details>
+<summary>如何选择合适的 GPT 模型？</summary>
+<p>选择模型时需要平衡性能和成本：GPT-3.5-turbo 适合日常对话和简单任务，响应快且便宜；GPT-4 适合复杂推理、代码生成等高要求场景，但费用较高。建议先用 GPT-3.5-turbo 测试，确有必要再升级到 GPT-4。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>本文详细介绍了<strong>如何在中国使用OpenAI API</strong>的三种主要方案：使用代理服务器、使用 API 中转服务、自建中转服务器。每种方案都有其适用场景：</p>
+
+<ul>
+<li>如果你是个人开发者，预算有限，可以尝试代理服务器方案</li>
+<li>如果你需要快速上线商业项目，追求稳定性，API 中转服务是最佳选择</li>
+<li>如果你有技术团队和较高的安全要求，可以考虑自建中转服务器</li>
+</ul>
+
+<p>无论选择哪种方案，都要注意错误处理、超时设置、成本控制等细节。随着 AI 技术的发展，OpenAI API 的应用场景越来越广泛，掌握在中国稳定使用 OpenAI API 的方法，将为你的项目开发带来巨大便利。</p>
+
+<p>如果你希望快速开始使用而不想处理复杂的技术配置，可以考虑使用专业的 API 中转服务。这些服务通常提供开箱即用的解决方案，让你能够专注于应用开发本身，而不是被网络问题困扰。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +756,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/claude-api-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>Claude API 使用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/openai-api-python-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>OpenAI API Python调用教程</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/claude-api-tutorial.html" class="related-card"><h3>Claude API 使用教程</h3><p>从零开始学习使用Claude API</p></a>
+<a href="/tutorials/openai-api-python-tutorial.html" class="related-card"><h3>OpenAI API Python调用教程</h3><p>用Python调用OpenAI API的完整指南</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+
                 </div>
             </section>
         </article>

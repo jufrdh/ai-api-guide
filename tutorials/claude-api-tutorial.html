@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude API 使用教程 | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="Claude API 使用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>Claude API 使用教程 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="从零开始学习使用Claude API">
     <meta name="keywords" content="Claude API 使用教程, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/claude-api-tutorial">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/claude-api-tutorial">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Claude API 使用教程 | 完整教程与代码示例">
-    <meta property="og:description" content="Claude API 使用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="Claude API 使用教程">
+    <meta property="og:description" content="从零开始学习使用Claude API">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/claude-api-tutorial">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/claude-api-tutorial">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claude API 使用教程 | 完整教程与代码示例">
-    <meta name="twitter:description" content="Claude API 使用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="Claude API 使用教程">
+    <meta name="twitter:description" content="从零开始学习使用Claude API">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Claude API 使用教程 | 完整教程与代码示例",
-        "description": "Claude API 使用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "Claude API 使用教程",
+        "description": "从零开始学习使用Claude API",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/claude-api-tutorial"
+            "@id": "https://guide.xiaomuai.cn/tutorials/claude-api-tutorial"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "Claude API 支持哪些模型？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目前主要包括 Claude 3.5 Sonnet（最新旗舰）、Claude 3 Opus（最强性能）、Claude 3 Sonnet（平衡版）和 Claude 3 Haiku（快速轻量）。不同模型在性能、速度和价格上有所差异，可根据具体需求选择。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何计算 API 调用成本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude API 按输入和输出 token 分别计费。以 Claude 3.5 Sonnet 为例，输入约 $3/百万 tokens，输出约 $15/百万 tokens。可以使用 anthropic.count_tokens() 方法预估 token 数量。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "API 有速率限制吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，不同账户等级有不同的速率限制。免费试用账户通常限制为每分钟 5 次请求，付费账户可达到每分钟 50-100 次。超限时会返回 429 错误，建议实现指数退避重试机制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Claude API 和 ChatGPT API 有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要区别在于：Claude 支持更长的上下文（200K vs 128K）、在代码和推理任务上表现更稳定、内置更强的安全机制。但 ChatGPT 生态更成熟，插件和工具更丰富。选择取决于具体应用场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何保护 API 密钥安全？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最佳实践包括：1) 使用环境变量而非硬编码；2) 在 .gitignore 中排除配置文件；3) 为不同环境使用不同密钥；4) 定期轮换密钥；5) 在服务端调用 API，避免在前端暴露密钥。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,287 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            Claude API 使用教程
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>Claude API 使用教程 | 完整教程与代码示例</h1>
+            <h1>Claude API 使用教程</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你Claude API 使用教程。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>Claude API 使用教程：从零开始掌握 Anthropic 的强大 AI 接口</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>Claude API 是 Anthropic 公司推出的大语言模型接口服务，以其出色的对话能力、长文本处理和安全性著称。本教程将带你从零开始，系统学习如何使用 Claude API 构建智能应用。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>什么是 Claude API</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>Claude API 提供了对 Claude 系列模型的编程访问能力，包括 Claude 3.5 Sonnet、Claude 3 Opus 等多个版本。相比其他 AI 接口，Claude 在以下方面表现突出：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li><strong>超长上下文</strong>：支持最高 200K tokens 的上下文窗口</li>
+<li><strong>安全可靠</strong>：内置宪法 AI 机制，减少有害输出</li>
+<li><strong>代码能力</strong>：在编程任务上表现优异</li>
+<li><strong>多语言支持</strong>：对中文等非英语语言理解准确</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>准备工作：获取 API 密钥</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
+<p>使用 Claude API 的第一步是获取 API 密钥。访问 <a href="https://console.anthropic.com/" target="_blank">Anthropic Console</a> 并完成以下步骤：</p>
+
+<ol>
+<li>注册并登录 Anthropic 账户</li>
+<li>进入 API Keys 页面</li>
+<li>点击 "Create Key" 创建新密钥</li>
+<li>妥善保存生成的密钥（格式类似 <code>sk-ant-xxx</code>）</li>
+</ol>
+
+<p><strong>注意</strong>：API 密钥具有完全访问权限，请勿泄露或提交到代码仓库。建议使用环境变量存储。</p>
+
+<h2>Python 快速入门</h2>
+
+<p>Python 是使用 Claude API 最常见的语言。首先安装官方 SDK：</p>
+
+<pre><code>pip install anthropic</code></pre>
+
+<h3>基础对话示例</h3>
+
+<p>以下是一个完整的 Claude API 使用示例：</p>
+
+<pre><code>import anthropic
+import os
+
+# 从环境变量读取 API 密钥
+client = anthropic.Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY")
 )
 
-response = client.chat.completions.create(
-    model="gpt-4o",
+# 发送消息
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
     messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
+        {"role": "user", "content": "请用 Python 写一个快速排序算法"}
+    ]
 )
 
-print(response.choices[0].message.content)</code></pre>
+print(message.content[0].text)</code></pre>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
+<h3>流式响应</h3>
+
+<p>对于长文本生成，流式响应可以提供更好的用户体验：</p>
+
+<pre><code>with client.messages.stream(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "写一篇关于人工智能的文章"}]
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="", flush=True)</code></pre>
+
+<h3>多轮对话</h3>
+
+<p>Claude API 通过消息数组实现多轮对话：</p>
+
+<pre><code>conversation = [
+    {"role": "user", "content": "我想学习机器学习"},
+    {"role": "assistant", "content": "很好！我建议从 Python 和基础数学开始..."},
+    {"role": "user", "content": "需要学哪些数学知识？"}
+]
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=conversation
 )
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+print(message.content[0].text)</code></pre>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<h2>Node.js 实现方案</h2>
+
+<p>对于 JavaScript 开发者，Anthropic 也提供了官方 Node.js SDK：</p>
+
+<pre><code>npm install @anthropic-ai/sdk</code></pre>
+
+<h3>基础调用示例</h3>
+
+<pre><code>import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+const message = await client.messages.create({
+  model: 'claude-3-5-sonnet-20241022',
+  max_tokens: 1024,
+  messages: [
+    { role: 'user', content: '解释什么是 RESTful API' }
+  ],
+});
+
+console.log(message.content[0].text);</code></pre>
+
+<h2>高级功能与最佳实践</h2>
+
+<h3>系统提示词（System Prompt）</h3>
+
+<p>通过系统提示词可以定制 Claude 的行为风格：</p>
+
+<pre><code>message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    system="你是一位资深的 Python 工程师，擅长用简洁的代码解决问题",
+    messages=[
+        {"role": "user", "content": "如何读取 CSV 文件？"}
+    ]
+)</code></pre>
+
+<h3>温度参数调节</h3>
+
+<p>temperature 参数控制输出的随机性（0-1 之间）：</p>
+
+<ul>
+<li><strong>0.0-0.3</strong>：适合代码生成、数据分析等需要精确性的任务</li>
+<li><strong>0.7-1.0</strong>：适合创意写作、头脑风暴等需要多样性的场景</li>
+</ul>
+
+<pre><code>message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    temperature=0.2,
+    messages=[{"role": "user", "content": "写一个数据验证函数"}]
+)</code></pre>
+
+<h3>Token 使用优化</h3>
+
+<p>Claude API 按 token 计费，优化建议：</p>
+
+<ul>
+<li>使用 <code>max_tokens</code> 限制输出长度</li>
+<li>精简提示词，避免冗余信息</li>
+<li>对于简单任务，选择 Claude 3 Haiku 等轻量模型</li>
+<li>利用缓存机制减少重复内容的 token 消耗</li>
+</ul>
+
+<h2>错误处理与调试</h2>
+
+<p>生产环境中必须妥善处理 API 错误：</p>
+
+<pre><code>from anthropic import APIError, RateLimitError
 
 try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+    message = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=1024,
+        messages=[{"role": "user", "content": "你好"}]
+    )
+except RateLimitError:
+    print("请求频率超限，请稍后重试")
+except APIError as e:
+    print(f"API 错误：{e.status_code} - {e.message}")</code></pre>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<h2>实际应用场景</h2>
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<h3>智能客服机器人</h3>
 
+<p>利用 Claude 的对话能力构建客服系统：</p>
+
+<pre><code>def customer_service_bot(user_message, history):
+    system_prompt = """你是一位专业的客服代表。
+    - 始终保持礼貌和耐心
+    - 如果不确定答案，诚实告知并提供联系方式
+    - 优先解决客户问题"""
+    
+    messages = history + [{"role": "user", "content": user_message}]
+    
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=512,
+        system=system_prompt,
+        messages=messages
+    )
+    
+    return response.content[0].text</code></pre>
+
+<h3>代码审查助手</h3>
+
+<p>自动化代码审查流程：</p>
+
+<pre><code>def review_code(code):
+    prompt = f"""请审查以下代码，关注：
+    1. 潜在的 bug
+    2. 性能问题
+    3. 安全隐患
+    4. 代码风格
+    
+    代码：
+    ```python
+    {code}
+    ```"""
+    
+    message = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=2048,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    
+    return message.content[0].text</code></pre>
+
+<h2>API 访问优化方案</h2>
+
+<p>对于国内开发者，直接访问 Claude API 可能遇到网络限制。此时可以考虑使用 API 中转服务，这类服务通常提供：</p>
+
+<ul>
+<li>国内优化的网络线路</li>
+<li>统一的接口格式（兼容 OpenAI SDK）</li>
+<li>更灵活的计费方式</li>
+<li>技术支持服务</li>
+</ul>
+
+<p>选择中转服务时，建议关注服务稳定性、数据安全保障和价格透明度。</p>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>Claude API 支持哪些模型？</summary>
+<p>目前主要包括 Claude 3.5 Sonnet（最新旗舰）、Claude 3 Opus（最强性能）、Claude 3 Sonnet（平衡版）和 Claude 3 Haiku（快速轻量）。不同模型在性能、速度和价格上有所差异，可根据具体需求选择。</p>
+</details>
+
+<details>
+<summary>如何计算 API 调用成本？</summary>
+<p>Claude API 按输入和输出 token 分别计费。以 Claude 3.5 Sonnet 为例，输入约 $3/百万 tokens，输出约 $15/百万 tokens。可以使用 <code>anthropic.count_tokens()</code> 方法预估 token 数量。</p>
+</details>
+
+<details>
+<summary>API 有速率限制吗？</summary>
+<p>是的，不同账户等级有不同的速率限制。免费试用账户通常限制为每分钟 5 次请求，付费账户可达到每分钟 50-100 次。超限时会返回 429 错误，建议实现指数退避重试机制。</p>
+</details>
+
+<details>
+<summary>Claude API 和 ChatGPT API 有什么区别？</summary>
+<p>主要区别在于：Claude 支持更长的上下文（200K vs 128K）、在代码和推理任务上表现更稳定、内置更强的安全机制。但 ChatGPT 生态更成熟，插件和工具更丰富。选择取决于具体应用场景。</p>
+</details>
+
+<details>
+<summary>如何保护 API 密钥安全？</summary>
+<p>最佳实践包括：1) 使用环境变量而非硬编码；2) 在 .gitignore 中排除配置文件；3) 为不同环境使用不同密钥；4) 定期轮换密钥；5) 在服务端调用 API，避免在前端暴露密钥。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>通过本 Claude API 使用教程，你已经掌握了从获取密钥、基础调用到高级功能的完整流程。无论是构建聊天机器人、代码助手还是内容生成工具，Claude API 都能提供强大的 AI 能力支持。</p>
+
+<p>建议从简单的对话示例开始实践，逐步探索流式响应、多轮对话等高级特性。在实际项目中，注意错误处理、token 优化和安全防护，确保应用的稳定性和可靠性。</p>
+
+<p>随着对 Claude API 的深入使用，你会发现更多创新应用场景。持续关注 Anthropic 官方文档，了解最新的模型更新和功能特性，让 AI 真正为你的产品赋能。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +729,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/openai-api-python-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>OpenAI API Python调用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/gpt-4-api-integration-guide.html">
-                        <span class="tag">使用教程</span>
-                        <h4>GPT-4 API 接入指南</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/openai-api-python-tutorial.html" class="related-card"><h3>OpenAI API Python调用教程</h3><p>用Python调用OpenAI API的完整指南</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+<a href="/tutorials/openai-function-calling-tutorial.html" class="related-card"><h3>OpenAI API Function Calling 教程</h3><p>学习OpenAI函数调用功能</p></a>
+
                 </div>
             </section>
         </article>

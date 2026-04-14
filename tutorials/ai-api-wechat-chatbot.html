@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用AI API开发微信聊天机器人 | 实战教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="用AI API开发微信聊天机器人实战教程。从入门到进阶，附完整代码示例。">
+    <title>用AI API开发微信聊天机器人 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="将AI API接入微信生态">
     <meta name="keywords" content="用AI API开发微信聊天机器人, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/ai-api-wechat-chatbot">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/ai-api-wechat-chatbot">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="用AI API开发微信聊天机器人 | 实战教程与代码示例">
-    <meta property="og:description" content="用AI API开发微信聊天机器人实战教程。从入门到进阶，附完整代码示例。">
+    <meta property="og:title" content="用AI API开发微信聊天机器人">
+    <meta property="og:description" content="将AI API接入微信生态">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/ai-api-wechat-chatbot">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/ai-api-wechat-chatbot">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="用AI API开发微信聊天机器人 | 实战教程与代码示例">
-    <meta name="twitter:description" content="用AI API开发微信聊天机器人实战教程。从入门到进阶，附完整代码示例。">
+    <meta name="twitter:title" content="用AI API开发微信聊天机器人">
+    <meta name="twitter:description" content="将AI API接入微信生态">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "用AI API开发微信聊天机器人 | 实战教程与代码示例",
-        "description": "用AI API开发微信聊天机器人实战教程。从入门到进阶，附完整代码示例。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "用AI API开发微信聊天机器人",
+        "description": "将AI API接入微信生态",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/ai-api-wechat-chatbot"
+            "@id": "https://guide.xiaomuai.cn/tutorials/ai-api-wechat-chatbot"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "Q: 个人微信机器人会被封号吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "使用协议或Hook方案存在一定风险，建议使用小号测试，控制消息频率，避免敏感操作。如果是商业用途，建议使用微信公众号或企业微信的官方接口。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: 如何选择合适的AI模型？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GPT-3.5-turbo性价比高，适合日常对话；GPT-4理解能力更强但成本较高；Claude 3在中文和长文本处理上表现优秀。可以根据场景混合使用，简单问题用3.5，复杂问题用4。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: 如何实现多轮对话记忆？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "维护一个Map存储每个用户的对话历史，每次调用API时传入完整历史。注意控制历史长度（如保留最近10轮），避免超过模型的token限制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: API调用失败怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "实现重试机制（如3次重试），设置超时时间，捕获异常后返回友好提示。可以准备备用API或降级方案（如返回预设回复）。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q: 如何降低API调用成本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1) 使用更便宜的模型；2) 设置用户请求频率限制；3) 对简单问题使用关键词匹配；4) 优化prompt减少token消耗；5) 使用流式响应提前返回部分内容。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,309 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">应用场景</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            用AI API开发微信聊天机器人
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>用AI API开发微信聊天机器人 | 实战教程与代码示例</h1>
+            <h1>用AI API开发微信聊天机器人</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：应用场景</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你用AI API开发微信聊天机器人。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>用AI API开发微信聊天机器人：完整实战指南</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>随着ChatGPT、Claude等大语言模型的普及，越来越多的开发者希望将AI能力接入微信生态，打造智能客服、私域助手或个人AI伴侣。本文将详细介绍如何<strong>用AI API开发微信聊天机器人</strong>，涵盖技术选型、接入方案、代码实现和实战经验。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>为什么选择微信作为AI机器人载体</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>微信拥有超过13亿月活用户，是国内最大的社交平台。将AI API接入微信有以下优势：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li><strong>用户触达率高</strong>：无需下载新应用，直接在微信中使用</li>
+<li><strong>场景丰富</strong>：支持个人号、公众号、企业微信多种形态</li>
+<li><strong>交互自然</strong>：文字、语音、图片多模态输入</li>
+<li><strong>私域运营</strong>：适合客户服务、社群管理等场景</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>技术方案选型：三种主流接入方式</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<p>根据不同需求和技术能力，<strong>用AI API开发微信聊天机器人</strong>有三种主流方案：</p>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+<h3>1. 微信公众号 + 服务器接口</h3>
 
-print(response.choices[0].message.content)</code></pre>
+<p>适合企业官方账号、客服场景。需要认证的服务号，通过微信公众平台配置服务器URL，接收用户消息并调用AI API返回回复。</p>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<p><strong>优点</strong>：官方支持、稳定可靠、功能完整<br>
+<strong>缺点</strong>：需要企业认证、开发门槛较高</p>
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+<h3>2. 个人微信 + 协议/Hook方案</h3>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<p>通过逆向微信协议或注入Hook，实现个人号自动回复。常见工具包括Wechaty、ComWeChatRobot等。</p>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<p><strong>优点</strong>：灵活度高、可用于私域运营<br>
+<strong>缺点</strong>：存在封号风险、协议可能失效</p>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<h3>3. 企业微信 + 应用接口</h3>
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<p>使用企业微信的自建应用或第三方应用，通过官方API接收消息。</p>
 
+<p><strong>优点</strong>：官方支持、相对稳定<br>
+<strong>缺点</strong>：仅限企业内部或已添加的外部联系人</p>
+
+<h2>实战：基于Wechaty和OpenAI API的微信机器人</h2>
+
+<p>下面演示如何使用Node.js + Wechaty + OpenAI API快速搭建一个<strong>微信聊天机器人</strong>。</p>
+
+<h3>环境准备</h3>
+
+<pre><code>npm init -y
+npm install wechaty wechaty-puppet-wechat4u openai
+</code></pre>
+
+<h3>核心代码实现</h3>
+
+<pre><code>const { WechatyBuilder } = require('wechaty');
+const OpenAI = require('openai');
+
+// 初始化OpenAI客户端
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  baseURL: 'https://api.openai.com/v1' // 可替换为中转服务地址
+});
+
+// 创建Wechaty实例
+const bot = WechatyBuilder.build({
+  puppet: 'wechaty-puppet-wechat4u',
+});
+
+// 消息处理函数
+async function handleMessage(message) {
+  // 忽略群消息和自己发的消息
+  if (message.room() || message.self()) return;
+  
+  const text = message.text();
+  console.log(`收到消息: ${text}`);
+  
+  try {
+    // 调用AI API
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: '你是一个友好的AI助手' },
+        { role: 'user', content: text }
+      ],
+      temperature: 0.7,
+      max_tokens: 500
+    });
+    
+    const reply = completion.choices[0].message.content;
+    await message.say(reply);
+    
+  } catch (error) {
+    console.error('AI API调用失败:', error);
+    await message.say('抱歉，我现在有点累，请稍后再试');
+  }
+}
+
+// 启动机器人
+bot.on('message', handleMessage);
+bot.on('login', user => console.log(`机器人登录成功: ${user}`));
+bot.start();
+</code></pre>
+
+<h3>运行与登录</h3>
+
+<pre><code>node bot.js
+</code></pre>
+
+<p>首次运行会生成二维码，使用微信扫码登录即可。登录成功后，向该微信号发送消息，机器人会自动调用AI API并回复。</p>
+
+<h2>进阶功能实现</h2>
+
+<h3>1. 上下文记忆</h3>
+
+<p>为了让对话更连贯，需要维护每个用户的聊天历史：</p>
+
+<pre><code>const conversationHistory = new Map();
+
+async function handleMessage(message) {
+  const userId = message.from().id;
+  const text = message.text();
+  
+  // 获取或初始化对话历史
+  if (!conversationHistory.has(userId)) {
+    conversationHistory.set(userId, [
+      { role: 'system', content: '你是一个友好的AI助手' }
+    ]);
+  }
+  
+  const history = conversationHistory.get(userId);
+  history.push({ role: 'user', content: text });
+  
+  // 限制历史长度（避免token超限）
+  if (history.length > 10) {
+    history.splice(1, 2); // 保留system消息，删除最早的对话
+  }
+  
+  const completion = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: history
+  });
+  
+  const reply = completion.choices[0].message.content;
+  history.push({ role: 'assistant', content: reply });
+  
+  await message.say(reply);
+}
+</code></pre>
+
+<h3>2. 多模态支持（图片识别）</h3>
+
+<p>如果使用GPT-4 Vision或Claude 3等多模态模型，可以实现图片理解：</p>
+
+<pre><code>async function handleMessage(message) {
+  if (message.type() === bot.Message.Type.Image) {
+    const image = await message.toFileBox();
+    const buffer = await image.toBuffer();
+    const base64 = buffer.toString('base64');
+    
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4-vision-preview',
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'text', text: '这张图片里有什么？' },
+          { type: 'image_url', image_url: { url: `data:image/jpeg;base64,${base64}` }}
+        ]
+      }]
+    });
+    
+    await message.say(completion.choices[0].message.content);
+  }
+}
+</code></pre>
+
+<h3>3. 群聊@回复</h3>
+
+<pre><code>async function handleMessage(message) {
+  const room = message.room();
+  if (!room) return; // 非群消息
+  
+  const mentionSelf = await message.mentionSelf();
+  if (!mentionSelf) return; // 未@机器人
+  
+  const text = await message.mentionText();
+  // 调用AI API处理...
+}
+</code></pre>
+
+<h2>Python实现方案</h2>
+
+<p>如果更熟悉Python，可以使用itchat或wxpy库：</p>
+
+<pre><code>import itchat
+from openai import OpenAI
+
+client = OpenAI(api_key="your-api-key")
+
+@itchat.msg_register(itchat.content.TEXT)
+def text_reply(msg):
+    user_text = msg['Text']
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "你是一个友好的AI助手"},
+            {"role": "user", "content": user_text}
+        ]
+    )
+    
+    reply = response.choices[0].message.content
+    return reply
+
+itchat.auto_login(hotReload=True)
+itchat.run()
+</code></pre>
+
+<h2>关键问题与解决方案</h2>
+
+<h3>1. API调用延迟</h3>
+
+<p>AI API响应通常需要2-5秒，用户可能以为机器人没反应。建议先发送"正在思考中..."的提示消息。</p>
+
+<h3>2. 成本控制</h3>
+
+<p>频繁调用AI API会产生费用。可以设置：</p>
+<ul>
+<li>单用户请求频率限制（如每分钟3次）</li>
+<li>使用更便宜的模型（如gpt-3.5-turbo而非gpt-4）</li>
+<li>对简单问题使用规则匹配，复杂问题才调用AI</li>
+</ul>
+
+<h3>3. 封号风险</h3>
+
+<p>使用协议方案存在封号风险。建议：</p>
+<ul>
+<li>使用小号测试，不要用主号</li>
+<li>控制消息频率，模拟真人行为</li>
+<li>避免群发、频繁加好友等敏感操作</li>
+<li>考虑使用企业微信或公众号等官方方案</li>
+</ul>
+
+<h3>4. API访问问题</h3>
+
+<p>国内直接访问OpenAI API可能不稳定。许多开发者选择使用API中转服务，这些服务通常提供国内优化的接入点、更稳定的连接和统一的计费管理，同时支持多家AI模型的统一调用，简化了<strong>用AI API开发微信聊天机器人</strong>的技术门槛。</p>
+
+<h2>生产环境部署建议</h2>
+
+<ul>
+<li><strong>使用PM2或Docker保持进程运行</strong>：<code>pm2 start bot.js</code></li>
+<li><strong>配置日志系统</strong>：记录所有对话和错误，便于调试</li>
+<li><strong>实现优雅重启</strong>：更新代码时保持登录状态</li>
+<li><strong>监控告警</strong>：API调用失败、登录掉线时及时通知</li>
+<li><strong>数据备份</strong>：定期备份对话历史和用户数据</li>
+</ul>
+
+<h2>常见问题FAQ</h2>
+
+<details>
+<summary>Q: 个人微信机器人会被封号吗？</summary>
+<p>使用协议或Hook方案存在一定风险，建议使用小号测试，控制消息频率，避免敏感操作。如果是商业用途，建议使用微信公众号或企业微信的官方接口。</p>
+</details>
+
+<details>
+<summary>Q: 如何选择合适的AI模型？</summary>
+<p>GPT-3.5-turbo性价比高，适合日常对话；GPT-4理解能力更强但成本较高；Claude 3在中文和长文本处理上表现优秀。可以根据场景混合使用，简单问题用3.5，复杂问题用4。</p>
+</details>
+
+<details>
+<summary>Q: 如何实现多轮对话记忆？</summary>
+<p>维护一个Map存储每个用户的对话历史，每次调用API时传入完整历史。注意控制历史长度（如保留最近10轮），避免超过模型的token限制。</p>
+</details>
+
+<details>
+<summary>Q: API调用失败怎么办？</summary>
+<p>实现重试机制（如3次重试），设置超时时间，捕获异常后返回友好提示。可以准备备用API或降级方案（如返回预设回复）。</p>
+</details>
+
+<details>
+<summary>Q: 如何降低API调用成本？</summary>
+<p>1) 使用更便宜的模型；2) 设置用户请求频率限制；3) 对简单问题使用关键词匹配；4) 优化prompt减少token消耗；5) 使用流式响应提前返回部分内容。</p>
+</details>
+
+<h2>总结</h2>
+
+<p><strong>用AI API开发微信聊天机器人</strong>已经成为AI应用落地的重要方向。通过本文介绍的技术方案，开发者可以快速搭建一个功能完整的智能助手。无论是选择官方的公众号接口，还是灵活的协议方案，关键在于理解业务需求、控制成本风险、优化用户体验。</p>
+
+<p>随着AI技术的快速发展，未来微信机器人将具备更强的多模态理解、情感识别和个性化能力。建议开发者持续关注新模型发布，不断优化产品体验，在合规前提下探索更多创新应用场景。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +751,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/ai-api-ecommerce-product-description.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 用于电商产品描述生成</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/ai-api-seo-content-generation.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 自动生成SEO文章</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/ai-api-ecommerce-product-description.html" class="related-card"><h3>AI API 用于电商产品描述生成</h3><p>用AI API自动生成电商产品文案</p></a>
+<a href="/tutorials/ai-api-seo-content-generation.html" class="related-card"><h3>AI API 自动生成SEO文章</h3><p>用AI API批量生成SEO优化内容</p></a>
+<a href="/tutorials/ai-api-code-review-tool.html" class="related-card"><h3>AI API 做代码审查工具</h3><p>构建基于AI API的代码审查系统</p></a>
+<a href="/tutorials/ai-api-rag-knowledge-base.html" class="related-card"><h3>AI API 构建RAG知识库</h3><p>使用AI API搭建检索增强生成系统</p></a>
+
                 </div>
             </section>
         </article>

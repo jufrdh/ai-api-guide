@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude API 批量请求教程 | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="Claude API 批量请求教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>Claude API 批量请求教程 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="高效进行Claude API批量调用">
     <meta name="keywords" content="Claude API 批量请求教程, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/claude-api-batch-requests">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/claude-api-batch-requests">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Claude API 批量请求教程 | 完整教程与代码示例">
-    <meta property="og:description" content="Claude API 批量请求教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="Claude API 批量请求教程">
+    <meta property="og:description" content="高效进行Claude API批量调用">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/claude-api-batch-requests">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/claude-api-batch-requests">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claude API 批量请求教程 | 完整教程与代码示例">
-    <meta name="twitter:description" content="Claude API 批量请求教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="Claude API 批量请求教程">
+    <meta name="twitter:description" content="高效进行Claude API批量调用">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Claude API 批量请求教程 | 完整教程与代码示例",
-        "description": "Claude API 批量请求教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "Claude API 批量请求教程",
+        "description": "高效进行Claude API批量调用",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/claude-api-batch-requests"
+            "@id": "https://guide.xiaomuai.cn/tutorials/claude-api-batch-requests"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "批量请求的处理时间一般需要多久？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude API 批量请求的处理时间取决于任务数量和复杂度，通常在提交后的 24 小时内完成。小批量任务（几百个请求）可能在几分钟到几小时内完成，大批量任务可能需要更长时间。系统会自动优化处理顺序，无需人工干预。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "批量请求失败后可以重试吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。当批量任务中的某些请求失败时，你可以提取失败的请求重新组织成新的批量任务进行重试。建议在重试前检查失败原因（如参数错误、token 超限等），修正问题后再提交。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "批量请求和普通 API 调用有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要区别在于：1) 批量请求是异步处理，普通调用是同步的；2) 批量请求价格更优惠（约50%折扣）；3) 批量请求适合非实时场景，普通调用适合需要即时响应的场景；4) 批量请求无需管理并发限制，系统自动处理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何处理批量请求中的敏感数据？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议在提交批量请求前对敏感数据进行脱敏处理，或使用加密传输。同时确保 API Key 的安全存储，不要硬编码在代码中。对于高度敏感的数据，可以考虑使用私有部署方案或在本地进行预处理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "批量请求的结果可以保存多久？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "批量任务完成后，结果文件通常会在 Anthropic 服务器上保留一段时间（具体时长请参考官方文档）。建议在任务完成后及时下载并保存结果到本地或云存储，避免数据丢失。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,339 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            Claude API 批量请求教程
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>Claude API 批量请求教程 | 完整教程与代码示例</h1>
+            <h1>Claude API 批量请求教程</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你Claude API 批量请求教程。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>Claude API 批量请求完整教程：高效处理大规模AI调用</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>在实际的AI应用开发中，我们经常需要对大量数据进行处理，这时候单个请求的方式就显得效率低下。Claude API 提供了批量请求功能，让开发者能够高效地进行大规模调用。本文将详细介绍如何使用 Claude API 批量请求，帮助你优化API调用效率，降低成本。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>什么是 Claude API 批量请求</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>Claude API 批量请求（Batch API）是 Anthropic 提供的一种异步处理方式，允许开发者一次性提交多个请求任务，系统会在后台批量处理这些请求，并在完成后返回结果。相比传统的同步请求方式，批量请求具有以下优势：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li><strong>成本更低</strong>：批量请求的价格通常是标准API价格的50%</li>
+<li><strong>处理能力更强</strong>：可以一次性提交数千个请求</li>
+<li><strong>无需管理并发</strong>：系统自动处理并发控制和速率限制</li>
+<li><strong>24小时处理窗口</strong>：适合非实时场景的大规模数据处理</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>Claude API 批量请求的工作流程</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
+<p>使用 Claude API 批量请求的基本流程包括四个步骤：</p>
+
+<ol>
+<li><strong>创建批量任务</strong>：将多个请求打包成 JSONL 格式文件并提交</li>
+<li><strong>任务处理</strong>：系统在后台异步处理所有请求</li>
+<li><strong>查询状态</strong>：通过 API 查询批量任务的处理进度</li>
+<li><strong>获取结果</strong>：下载处理完成的结果文件</li>
+</ol>
+
+<h2>准备工作：环境配置</h2>
+
+<p>在开始使用 Claude API 批量请求之前，需要完成以下准备工作：</p>
+
+<h3>1. 获取 API Key</h3>
+
+<p>首先需要在 Anthropic 官网注册账号并获取 API Key。登录后在控制台的 API Keys 页面创建新的密钥。</p>
+
+<h3>2. 安装必要的库</h3>
+
+<p>对于 Python 开发者：</p>
+
+<pre><code>pip install anthropic requests</code></pre>
+
+<p>对于 Node.js 开发者：</p>
+
+<pre><code>npm install @anthropic-ai/sdk</code></pre>
+
+<h2>Python 实现 Claude API 批量请求</h2>
+
+<h3>步骤1：准备批量请求数据</h3>
+
+<p>首先需要将所有请求组织成 JSONL 格式（每行一个 JSON 对象）：</p>
+
+<pre><code>import json
+
+# 准备批量请求数据
+requests_data = []
+
+# 示例：批量翻译任务
+texts_to_translate = [
+    "Hello, how are you?",
+    "What is artificial intelligence?",
+    "I love programming with Python."
+]
+
+for i, text in enumerate(texts_to_translate):
+    request = {
+        "custom_id": f"request-{i}",
+        "params": {
+            "model": "claude-3-5-sonnet-20241022",
+            "max_tokens": 1024,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": f"请将以下英文翻译成中文：{text}"
+                }
+            ]
+        }
+    }
+    requests_data.append(request)
+
+# 保存为 JSONL 文件
+with open("batch_requests.jsonl", "w", encoding="utf-8") as f:
+    for req in requests_data:
+        f.write(json.dumps(req, ensure_ascii=False) + "\n")</code></pre>
+
+<h3>步骤2：创建批量任务</h3>
+
+<pre><code>from anthropic import Anthropic
+
+client = Anthropic(api_key="your-api-key")
+
+# 读取 JSONL 文件内容
+with open("batch_requests.jsonl", "r", encoding="utf-8") as f:
+    requests_content = f.read()
+
+# 创建批量任务
+batch = client.messages.batches.create(
+    requests=requests_content
 )
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+print(f"批量任务已创建，ID: {batch.id}")
+print(f"状态: {batch.processing_status}")</code></pre>
 
-print(response.choices[0].message.content)</code></pre>
+<h3>步骤3：查询任务状态</h3>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<pre><code>import time
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+def check_batch_status(batch_id):
+    while True:
+        batch = client.messages.batches.retrieve(batch_id)
+        
+        print(f"当前状态: {batch.processing_status}")
+        print(f"已处理: {batch.request_counts.processed}/{batch.request_counts.total}")
+        
+        if batch.processing_status == "ended":
+            print("批量任务处理完成！")
+            return batch
+        
+        time.sleep(10)  # 每10秒查询一次
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+# 使用示例
+completed_batch = check_batch_status(batch.id)</code></pre>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<h3>步骤4：获取处理结果</h3>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<pre><code># 获取结果
+results = client.messages.batches.results(batch.id)
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+# 解析结果
+for line in results.text.strip().split("\n"):
+    result = json.loads(line)
+    
+    if result["result"]["type"] == "succeeded":
+        custom_id = result["custom_id"]
+        content = result["result"]["message"]["content"][0]["text"]
+        print(f"{custom_id}: {content}")
+    else:
+        print(f"请求失败: {result['custom_id']}")</code></pre>
 
+<h2>Node.js 实现 Claude API 批量请求</h2>
+
+<p>对于 Node.js 开发者，实现方式类似：</p>
+
+<pre><code>const Anthropic = require('@anthropic-ai/sdk');
+const fs = require('fs').promises;
+
+const client = new Anthropic({
+  apiKey: 'your-api-key'
+});
+
+async function createBatchRequest() {
+  // 准备批量请求数据
+  const requests = [
+    {
+      custom_id: "request-1",
+      params: {
+        model: "claude-3-5-sonnet-20241022",
+        max_tokens: 1024,
+        messages: [{
+          role: "user",
+          content: "解释什么是机器学习"
+        }]
+      }
+    },
+    // 更多请求...
+  ];
+
+  // 转换为 JSONL 格式
+  const jsonl = requests.map(r => JSON.stringify(r)).join('\n');
+  
+  // 创建批量任务
+  const batch = await client.messages.batches.create({
+    requests: jsonl
+  });
+
+  console.log(`批量任务ID: ${batch.id}`);
+  return batch.id;
+}
+
+async function pollBatchStatus(batchId) {
+  while (true) {
+    const batch = await client.messages.batches.retrieve(batchId);
+    
+    console.log(`状态: ${batch.processing_status}`);
+    
+    if (batch.processing_status === 'ended') {
+      return batch;
+    }
+    
+    await new Promise(resolve => setTimeout(resolve, 10000));
+  }
+}
+
+async function getResults(batchId) {
+  const results = await client.messages.batches.results(batchId);
+  
+  const lines = results.split('\n').filter(line => line.trim());
+  
+  for (const line of lines) {
+    const result = JSON.parse(line);
+    console.log(result);
+  }
+}
+
+// 执行流程
+(async () => {
+  const batchId = await createBatchRequest();
+  await pollBatchStatus(batchId);
+  await getResults(batchId);
+})();</code></pre>
+
+<h2>批量请求的最佳实践</h2>
+
+<h3>1. 合理控制批量大小</h3>
+
+<p>虽然 Claude API 批量请求支持大量任务，但建议单次批量任务控制在 10,000 个请求以内，这样可以更好地管理和追踪任务状态。</p>
+
+<h3>2. 使用有意义的 custom_id</h3>
+
+<p>为每个请求设置清晰的 custom_id，方便后续结果匹配和问题排查。建议使用业务相关的标识符，如 "user-123-task-456"。</p>
+
+<h3>3. 实现错误处理机制</h3>
+
+<pre><code>def process_batch_results(batch_id):
+    results = client.messages.batches.results(batch_id)
+    
+    succeeded = []
+    failed = []
+    
+    for line in results.text.strip().split("\n"):
+        result = json.loads(line)
+        
+        if result["result"]["type"] == "succeeded":
+            succeeded.append(result)
+        else:
+            failed.append(result)
+            # 记录失败原因
+            error_type = result["result"]["error"]["type"]
+            print(f"请求 {result['custom_id']} 失败: {error_type}")
+    
+    print(f"成功: {len(succeeded)}, 失败: {len(failed)}")
+    
+    # 对失败的请求进行重试
+    if failed:
+        retry_failed_requests(failed)</code></pre>
+
+<h3>4. 监控成本和配额</h3>
+
+<p>批量请求虽然价格优惠，但大规模使用仍需注意成本控制。建议在代码中添加成本估算逻辑：</p>
+
+<pre><code>def estimate_cost(num_requests, avg_tokens):
+    # Claude 3.5 Sonnet 批量价格（示例）
+    input_price_per_mtok = 1.5  # 每百万 token
+    output_price_per_mtok = 7.5
+    
+    estimated_cost = (num_requests * avg_tokens * 
+                     (input_price_per_mtok + output_price_per_mtok) / 1_000_000)
+    
+    print(f"预估成本: ${estimated_cost:.2f}")
+    return estimated_cost</code></pre>
+
+<h2>常见应用场景</h2>
+
+<p>Claude API 批量请求特别适合以下场景：</p>
+
+<ul>
+<li><strong>内容批量生成</strong>：为大量产品生成描述、标题或营销文案</li>
+<li><strong>数据标注</strong>：对数据集进行批量分类、情感分析或实体识别</li>
+<li><strong>文档处理</strong>：批量翻译、摘要或格式转换</li>
+<li><strong>代码审查</strong>：对多个代码文件进行批量分析和建议</li>
+<li><strong>客户反馈分析</strong>：批量处理用户评论和反馈</li>
+</ul>
+
+<h2>使用 API 中转服务优化体验</h2>
+
+<p>对于国内开发者，直接访问 Anthropic 官方 API 可能会遇到网络延迟或访问限制的问题。这时可以考虑使用专业的 API 中转服务，这些服务通常提供：</p>
+
+<ul>
+<li>国内优化的网络线路，降低延迟</li>
+<li>统一的接口管理多个 AI 模型</li>
+<li>更灵活的计费方式</li>
+<li>技术支持和文档</li>
+</ul>
+
+<p>选择中转服务时，建议关注服务的稳定性、价格透明度和数据安全保障。</p>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>批量请求的处理时间一般需要多久？</summary>
+<p>Claude API 批量请求的处理时间取决于任务数量和复杂度，通常在提交后的 24 小时内完成。小批量任务（几百个请求）可能在几分钟到几小时内完成，大批量任务可能需要更长时间。系统会自动优化处理顺序，无需人工干预。</p>
+</details>
+
+<details>
+<summary>批量请求失败后可以重试吗？</summary>
+<p>可以。当批量任务中的某些请求失败时，你可以提取失败的请求重新组织成新的批量任务进行重试。建议在重试前检查失败原因（如参数错误、token 超限等），修正问题后再提交。</p>
+</details>
+
+<details>
+<summary>批量请求和普通 API 调用有什么区别？</summary>
+<p>主要区别在于：1) 批量请求是异步处理，普通调用是同步的；2) 批量请求价格更优惠（约50%折扣）；3) 批量请求适合非实时场景，普通调用适合需要即时响应的场景；4) 批量请求无需管理并发限制，系统自动处理。</p>
+</details>
+
+<details>
+<summary>如何处理批量请求中的敏感数据？</summary>
+<p>建议在提交批量请求前对敏感数据进行脱敏处理，或使用加密传输。同时确保 API Key 的安全存储，不要硬编码在代码中。对于高度敏感的数据，可以考虑使用私有部署方案或在本地进行预处理。</p>
+</details>
+
+<details>
+<summary>批量请求的结果可以保存多久？</summary>
+<p>批量任务完成后，结果文件通常会在 Anthropic 服务器上保留一段时间（具体时长请参考官方文档）。建议在任务完成后及时下载并保存结果到本地或云存储，避免数据丢失。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>Claude API 批量请求是处理大规模 AI 任务的高效解决方案。通过本教程，你已经学会了如何使用 Python 和 Node.js 实现完整的批量请求流程，包括任务创建、状态监控和结果获取。合理使用批量请求功能，不仅能显著降低 API 调用成本，还能简化并发管理，提升开发效率。</p>
+
+<p>在实际应用中，记得根据业务场景选择合适的批量大小，实现完善的错误处理机制，并持续监控任务执行情况。随着对 Claude API 批量请求的深入使用，你将能够构建更加强大和高效的 AI 应用。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +781,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/claude-api-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>Claude API 使用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/openai-api-python-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>OpenAI API Python调用教程</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/claude-api-tutorial.html" class="related-card"><h3>Claude API 使用教程</h3><p>从零开始学习使用Claude API</p></a>
+<a href="/tutorials/openai-api-python-tutorial.html" class="related-card"><h3>OpenAI API Python调用教程</h3><p>用Python调用OpenAI API的完整指南</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+
                 </div>
             </section>
         </article>

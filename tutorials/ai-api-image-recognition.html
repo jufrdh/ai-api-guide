@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API 图片识别和描述生成 | 实战教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="AI API 图片识别和描述生成实战教程。从入门到进阶，附完整代码示例。">
+    <title>AI API 图片识别和描述生成 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="用多模态API处理图片内容">
     <meta name="keywords" content="AI API 图片识别和描述生成, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/ai-api-image-recognition">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/ai-api-image-recognition">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AI API 图片识别和描述生成 | 实战教程与代码示例">
-    <meta property="og:description" content="AI API 图片识别和描述生成实战教程。从入门到进阶，附完整代码示例。">
+    <meta property="og:title" content="AI API 图片识别和描述生成">
+    <meta property="og:description" content="用多模态API处理图片内容">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/ai-api-image-recognition">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/ai-api-image-recognition">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API 图片识别和描述生成 | 实战教程与代码示例">
-    <meta name="twitter:description" content="AI API 图片识别和描述生成实战教程。从入门到进阶，附完整代码示例。">
+    <meta name="twitter:title" content="AI API 图片识别和描述生成">
+    <meta name="twitter:description" content="用多模态API处理图片内容">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "AI API 图片识别和描述生成 | 实战教程与代码示例",
-        "description": "AI API 图片识别和描述生成实战教程。从入门到进阶，附完整代码示例。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "AI API 图片识别和描述生成",
+        "description": "用多模态API处理图片内容",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/ai-api-image-recognition"
+            "@id": "https://guide.xiaomuai.cn/tutorials/ai-api-image-recognition"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "Q1: 使用 AI API 进行图片识别需要多少成本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "成本因服务提供商和使用量而异。OpenAI GPT-4 Vision 按图片数量计费，约 $0.01-0.03/张；Google Gemini Pro Vision 提供免费额度，超出后按请求计费。建议根据实际业务量选择合适的套餐，并通过缓存、批量处理等方式优化成本。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q2: 哪个多模态 API 的中文识别效果最好？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "对于中文场景，阿里通义千问 VL 和百度文心一言的视觉模型针对中文内容进行了专门优化，在识别中文文字、理解中国文化元素方面表现更好。但 GPT-4 Vision 和 Claude 3 在复杂场景理解和描述生成质量上仍有优势。建议根据具体需求进行测试对比。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q3: 如何处理敏感图片内容的隐私问题？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议采取以下措施：1) 在本地进行图片预处理，去除敏感信息；2) 使用支持私有部署的开源模型；3) 选择提供数据隐私保护承诺的服务商；4) 对传输数据进行加密；5) 定期审计 API 调用日志，确保合规性。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q4: API 调用失败时如何处理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "实施完善的错误处理机制：1) 使用指数退避算法进行重试；2) 设置合理的超时时间；3) 准备降级方案（如切换到备用 API）；4) 记录详细的错误日志便于排查；5) 对用户提供友好的错误提示。建议使用 API 中转服务来自动处理故障切换。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Q5: 如何评估图片描述的质量？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以从以下维度评估：1) 准确性：描述是否与图片内容一致；2) 完整性：是否涵盖了主要元素；3) 可读性：语言是否流畅自然；4) 实用性：是否满足业务需求。建议建立人工评测标准，定期抽样检查 API 输出质量，并根据反馈优化 Prompt 设计。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,328 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">应用场景</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            AI API 图片识别和描述生成
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>AI API 图片识别和描述生成 | 实战教程与代码示例</h1>
+            <h1>AI API 图片识别和描述生成</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：应用场景</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你AI API 图片识别和描述生成。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>AI API 图片识别和描述生成：多模态技术的实战应用指南</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>随着人工智能技术的快速发展，<strong>AI API 图片识别和描述生成</strong>已经成为现代应用开发中不可或缺的能力。无论是电商平台的商品自动标注、社交媒体的内容审核，还是无障碍应用的图像描述生成，多模态 API 都在发挥着关键作用。本文将深入探讨如何使用主流的 AI API 实现图片识别和描述生成功能。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>什么是多模态 AI API</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>多模态 AI API 是指能够同时处理多种数据类型（如文本、图像、音频）的人工智能接口。在图片识别场景中，这类 API 可以接收图像输入，并返回结构化的识别结果或自然语言描述。目前市场上主流的多模态 API 包括：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<ul>
+<li><strong>OpenAI GPT-4 Vision</strong>：支持图像理解和详细描述生成</li>
+<li><strong>Google Gemini Pro Vision</strong>：提供高精度的视觉识别能力</li>
+<li><strong>Anthropic Claude 3</strong>：擅长复杂场景的图像分析</li>
+<li><strong>阿里通义千问 VL</strong>：针对中文场景优化的视觉模型</li>
+</ul>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h2>核心应用场景</h2>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<h3>1. 电商商品自动标注</h3>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+<p>电商平台每天需要处理海量商品图片，人工标注成本高昂且效率低下。通过<strong>AI API 图片识别和描述生成</strong>技术，可以自动提取商品的类别、颜色、材质、风格等属性，生成吸引人的商品描述文案。</p>
 
-print(response.choices[0].message.content)</code></pre>
+<h3>2. 内容审核与安全</h3>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<p>社交平台和 UGC 社区需要实时审核用户上传的图片内容，识别违规、暴力、色情等不当内容。多模态 API 可以快速分析图片内容，结合文本描述进行智能过滤。</p>
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+<h3>3. 无障碍辅助功能</h3>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<p>为视障用户提供图像描述服务，让他们通过语音播报了解图片内容。这是 AI 技术在社会公益领域的重要应用。</p>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<h3>4. 智能相册管理</h3>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<p>自动为照片生成标签和描述，支持语义搜索功能，用户可以通过"海边的日落"、"穿红色衣服的人"等自然语言查找照片。</p>
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<h2>技术实现：Python 代码示例</h2>
 
+<h3>使用 OpenAI GPT-4 Vision API</h3>
+
+<pre><code>import base64
+import requests
+from pathlib import Path
+
+def encode_image(image_path):
+    """将图片编码为 base64 格式"""
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+def analyze_image(image_path, api_key):
+    """使用 GPT-4 Vision 分析图片并生成描述"""
+    base64_image = encode_image(image_path)
+    
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+    
+    payload = {
+        "model": "gpt-4-vision-preview",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": "请详细描述这张图片的内容，包括主要物体、场景、颜色、氛围等信息。"
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}"
+                        }
+                    }
+                ]
+            }
+        ],
+        "max_tokens": 500
+    }
+    
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers=headers,
+        json=payload
+    )
+    
+    return response.json()['choices'][0]['message']['content']
+
+# 使用示例
+api_key = "your-api-key-here"
+image_path = "product.jpg"
+description = analyze_image(image_path, api_key)
+print(f"图片描述：{description}")
+</code></pre>
+
+<h3>使用 Google Gemini Pro Vision API</h3>
+
+<pre><code>import google.generativeai as genai
+from PIL import Image
+
+def analyze_with_gemini(image_path, api_key):
+    """使用 Gemini Pro Vision 进行图片分析"""
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel('gemini-pro-vision')
+    
+    # 加载图片
+    img = Image.open(image_path)
+    
+    # 生成描述
+    response = model.generate_content([
+        "请分析这张图片，提供详细的内容描述，包括：\n"
+        "1. 主要物体和场景\n"
+        "2. 颜色和光线特征\n"
+        "3. 可能的用途或场景\n"
+        "4. 任何值得注意的细节",
+        img
+    ])
+    
+    return response.text
+
+# 使用示例
+api_key = "your-gemini-api-key"
+result = analyze_with_gemini("scene.jpg", api_key)
+print(result)
+</code></pre>
+
+<h2>Node.js 实现方案</h2>
+
+<pre><code>const OpenAI = require('openai');
+const fs = require('fs');
+
+async function analyzeImage(imagePath, apiKey) {
+    const openai = new OpenAI({ apiKey });
+    
+    // 读取图片并转换为 base64
+    const imageBuffer = fs.readFileSync(imagePath);
+    const base64Image = imageBuffer.toString('base64');
+    
+    const response = await openai.chat.completions.create({
+        model: "gpt-4-vision-preview",
+        messages: [
+            {
+                role: "user",
+                content: [
+                    { 
+                        type: "text", 
+                        text: "请详细描述这张图片，包括主要元素、场景、颜色和氛围。" 
+                    },
+                    {
+                        type: "image_url",
+                        image_url: {
+                            url: `data:image/jpeg;base64,${base64Image}`
+                        }
+                    }
+                ]
+            }
+        ],
+        max_tokens: 500
+    });
+    
+    return response.choices[0].message.content;
+}
+
+// 使用示例
+analyzeImage('product.jpg', 'your-api-key')
+    .then(description => console.log('图片描述：', description))
+    .catch(error => console.error('错误：', error));
+</code></pre>
+
+<h2>最佳实践与优化建议</h2>
+
+<h3>1. 图片预处理</h3>
+
+<p>在调用<strong>AI API 图片识别和描述生成</strong>服务前，建议对图片进行适当的预处理：</p>
+
+<ul>
+<li><strong>压缩图片</strong>：将图片压缩到合理尺寸（如 1024x1024），减少传输时间和 API 成本</li>
+<li><strong>格式转换</strong>：统一使用 JPEG 或 PNG 格式，确保兼容性</li>
+<li><strong>质量优化</strong>：保持足够的清晰度，避免过度压缩导致识别准确率下降</li>
+</ul>
+
+<h3>2. Prompt 工程优化</h3>
+
+<p>精心设计的提示词可以显著提升描述质量：</p>
+
+<pre><code># 通用描述
+"请详细描述这张图片的内容。"
+
+# 结构化描述（推荐）
+"请按以下结构分析图片：
+1. 主要物体：列出图片中的主要元素
+2. 场景环境：描述背景和整体氛围
+3. 颜色特征：主要色调和配色方案
+4. 特殊细节：任何值得注意的细节
+5. 应用建议：这张图片适合用于什么场景"
+
+# 针对特定领域
+"作为电商专家，请为这个商品图片生成吸引人的描述，
+包括产品特点、材质、适用场景和卖点。"
+</code></pre>
+
+<h3>3. 批量处理策略</h3>
+
+<p>处理大量图片时，建议采用异步并发策略：</p>
+
+<pre><code>import asyncio
+import aiohttp
+
+async def batch_analyze(image_paths, api_key, max_concurrent=5):
+    """批量异步处理图片"""
+    semaphore = asyncio.Semaphore(max_concurrent)
+    
+    async def process_one(path):
+        async with semaphore:
+            return await analyze_image_async(path, api_key)
+    
+    tasks = [process_one(path) for path in image_paths]
+    results = await asyncio.gather(*tasks)
+    return results
+
+# 使用示例
+image_list = ['img1.jpg', 'img2.jpg', 'img3.jpg']
+results = asyncio.run(batch_analyze(image_list, api_key))
+</code></pre>
+
+<h3>4. 成本控制</h3>
+
+<ul>
+<li><strong>缓存机制</strong>：对相同图片的分析结果进行缓存，避免重复调用</li>
+<li><strong>分级处理</strong>：根据业务需求选择不同精度的模型，平衡成本和效果</li>
+<li><strong>错误重试</strong>：实现指数退避重试机制，避免因临时故障导致的额外成本</li>
+</ul>
+
+<h2>常见挑战与解决方案</h2>
+
+<h3>挑战 1：API 响应速度慢</h3>
+
+<p><strong>解决方案：</strong></p>
+<ul>
+<li>使用 CDN 加速图片传输</li>
+<li>采用异步处理架构，避免阻塞主线程</li>
+<li>考虑使用 API 中转服务优化网络路由</li>
+</ul>
+
+<h3>挑战 2：识别准确率不足</h3>
+
+<p><strong>解决方案：</strong></p>
+<ul>
+<li>提供更清晰的图片输入</li>
+<li>优化 Prompt 提示词，提供更多上下文信息</li>
+<li>尝试不同的模型，选择最适合业务场景的方案</li>
+</ul>
+
+<h3>挑战 3：成本控制困难</h3>
+
+<p><strong>解决方案：</strong></p>
+<ul>
+<li>实施智能缓存策略</li>
+<li>使用更经济的模型处理简单场景</li>
+<li>通过 API 中转服务获取更优惠的价格</li>
+</ul>
+
+<h2>API 中转服务的价值</h2>
+
+<p>在实际应用<strong>AI API 图片识别和描述生成</strong>技术时，许多开发者会遇到网络访问限制、成本过高、多模型切换复杂等问题。专业的 API 中转服务可以提供统一的接口格式、更稳定的网络连接、更灵活的计费方案，以及多模型负载均衡能力，帮助开发者更高效地集成多模态 AI 能力。</p>
+
+<h2>未来发展趋势</h2>
+
+<p>多模态 AI 技术正在快速演进，未来的<strong>AI API 图片识别和描述生成</strong>服务将呈现以下趋势：</p>
+
+<ul>
+<li><strong>更高的准确率</strong>：模型持续优化，识别精度不断提升</li>
+<li><strong>更快的响应速度</strong>：边缘计算和模型压缩技术的应用</li>
+<li><strong>更丰富的功能</strong>：支持视频分析、3D 物体识别等高级能力</li>
+<li><strong>更低的成本</strong>：开源模型和竞争加剧带来的价格下降</li>
+<li><strong>更好的隐私保护</strong>：本地化部署和联邦学习技术的普及</li>
+</ul>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>Q1: 使用 AI API 进行图片识别需要多少成本？</summary>
+<p>成本因服务提供商和使用量而异。OpenAI GPT-4 Vision 按图片数量计费，约 $0.01-0.03/张；Google Gemini Pro Vision 提供免费额度，超出后按请求计费。建议根据实际业务量选择合适的套餐，并通过缓存、批量处理等方式优化成本。</p>
+</details>
+
+<details>
+<summary>Q2: 哪个多模态 API 的中文识别效果最好？</summary>
+<p>对于中文场景，阿里通义千问 VL 和百度文心一言的视觉模型针对中文内容进行了专门优化，在识别中文文字、理解中国文化元素方面表现更好。但 GPT-4 Vision 和 Claude 3 在复杂场景理解和描述生成质量上仍有优势。建议根据具体需求进行测试对比。</p>
+</details>
+
+<details>
+<summary>Q3: 如何处理敏感图片内容的隐私问题？</summary>
+<p>建议采取以下措施：1) 在本地进行图片预处理，去除敏感信息；2) 使用支持私有部署的开源模型；3) 选择提供数据隐私保护承诺的服务商；4) 对传输数据进行加密；5) 定期审计 API 调用日志，确保合规性。</p>
+</details>
+
+<details>
+<summary>Q4: API 调用失败时如何处理？</summary>
+<p>实施完善的错误处理机制：1) 使用指数退避算法进行重试；2) 设置合理的超时时间；3) 准备降级方案（如切换到备用 API）；4) 记录详细的错误日志便于排查；5) 对用户提供友好的错误提示。建议使用 API 中转服务来自动处理故障切换。</p>
+</details>
+
+<details>
+<summary>Q5: 如何评估图片描述的质量？</summary>
+<p>可以从以下维度评估：1) 准确性：描述是否与图片内容一致；2) 完整性：是否涵盖了主要元素；3) 可读性：语言是否流畅自然；4) 实用性：是否满足业务需求。建议建立人工评测标准，定期抽样检查 API 输出质量，并根据反馈优化 Prompt 设计。</p>
+</details>
+
+<h2>总结</h2>
+
+<p><strong>AI API 图片识别和描述生成</strong>技术为开发者提供了强大的多模态处理能力，无需深厚的机器学习背景即可快速构建智能应用。通过合理选择 API 服务、优化调用策略、实施成本控制措施，可以在保证效果的同时实现高效的图片内容理解和描述生成。随着技术的不断进步，这一领域将为更多创新应用场景提供支持。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +770,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/ai-api-ecommerce-product-description.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 用于电商产品描述生成</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/ai-api-seo-content-generation.html">
-                        <span class="tag">应用场景</span>
-                        <h4>AI API 自动生成SEO文章</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/ai-api-ecommerce-product-description.html" class="related-card"><h3>AI API 用于电商产品描述生成</h3><p>用AI API自动生成电商产品文案</p></a>
+<a href="/tutorials/ai-api-seo-content-generation.html" class="related-card"><h3>AI API 自动生成SEO文章</h3><p>用AI API批量生成SEO优化内容</p></a>
+<a href="/tutorials/ai-api-code-review-tool.html" class="related-card"><h3>AI API 做代码审查工具</h3><p>构建基于AI API的代码审查系统</p></a>
+<a href="/tutorials/ai-api-rag-knowledge-base.html" class="related-card"><h3>AI API 构建RAG知识库</h3><p>使用AI API搭建检索增强生成系统</p></a>
+
                 </div>
             </section>
         </article>

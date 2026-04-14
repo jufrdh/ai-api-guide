@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI API 错误处理最佳实践 | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="OpenAI API 错误处理最佳实践完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>OpenAI API 错误处理最佳实践 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="正确处理OpenAI API返回的各种错误">
     <meta name="keywords" content="OpenAI API 错误处理最佳实践, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/openai-api-error-handling">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/openai-api-error-handling">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="OpenAI API 错误处理最佳实践 | 完整教程与代码示例">
-    <meta property="og:description" content="OpenAI API 错误处理最佳实践完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="OpenAI API 错误处理最佳实践">
+    <meta property="og:description" content="正确处理OpenAI API返回的各种错误">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/openai-api-error-handling">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/openai-api-error-handling">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenAI API 错误处理最佳实践 | 完整教程与代码示例">
-    <meta name="twitter:description" content="OpenAI API 错误处理最佳实践完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="OpenAI API 错误处理最佳实践">
+    <meta name="twitter:description" content="正确处理OpenAI API返回的各种错误">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "OpenAI API 错误处理最佳实践 | 完整教程与代码示例",
-        "description": "OpenAI API 错误处理最佳实践完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "OpenAI API 错误处理最佳实践",
+        "description": "正确处理OpenAI API返回的各种错误",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/openai-api-error-handling"
+            "@id": "https://guide.xiaomuai.cn/tutorials/openai-api-error-handling"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "如何判断是否应该重试 OpenAI API 请求？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般来说，速率限制错误（429）、服务器错误（5xx）和超时错误应该重试。而认证错误（401）、请求参数错误（400）和权限错误（403）不应该重试，因为重试不会改变结果。建议使用指数退避策略，最多重试 3-5 次。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OpenAI API 的速率限制是如何计算的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI 的速率限制基于每分钟请求数（RPM）和每分钟令牌数（TPM）两个维度。不同的订阅级别有不同的限制。当触发速率限制时，响应头会包含 Retry-After 字段，指示应该等待的秒数。建议在代码中解析这个字段来动态调整重试时间。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何处理 OpenAI API 的超时问题？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "超时通常由网络延迟或请求处理时间过长引起。建议设置合理的超时阈值（如 30-60 秒），并实施重试机制。对于长文本处理，可以考虑分段处理或使用流式响应。同时，检查网络连接质量和 DNS 解析速度也很重要。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "生产环境中应该如何监控 OpenAI API 的错误？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议建立完整的监控体系，包括：错误率追踪、响应时间监控、API 配额使用情况、不同错误类型的分布统计。使用日志聚合工具（如 ELK、Datadog）集中管理日志，设置告警规则在错误率异常时及时通知。同时，定期分析错误模式，优化错误处理策略。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何在多个 API 密钥之间实现负载均衡？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以维护一个 API 密钥池，使用轮询或随机选择策略分配请求。当某个密钥触发速率限制时，自动切换到其他可用密钥。同时追踪每个密钥的使用情况和配额，实现智能调度。这种方式能够有效提升系统的吞吐量和可用性。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,309 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            OpenAI API 错误处理最佳实践
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>OpenAI API 错误处理最佳实践 | 完整教程与代码示例</h1>
+            <h1>OpenAI API 错误处理最佳实践</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你OpenAI API 错误处理最佳实践。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>OpenAI API 错误处理最佳实践</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>在使用 OpenAI API 开发应用时，正确处理各种错误情况是确保系统稳定性和用户体验的关键。本文将深入探讨 OpenAI API 错误处理最佳实践，帮助开发者构建更加健壮的 AI 应用。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>常见的 OpenAI API 错误类型</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>OpenAI API 可能返回多种错误类型，了解这些错误的含义是实施正确错误处理策略的第一步：</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<h3>1. 认证错误（401 Unauthorized）</h3>
+<p>当 API 密钥无效、过期或格式错误时会触发此错误。这是最常见的配置问题之一。</p>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<h3>2. 速率限制错误（429 Too Many Requests）</h3>
+<p>超过 API 调用频率限制时返回。OpenAI 对不同订阅级别设置了不同的速率限制。</p>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
-client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+<h3>3. 服务器错误（500/502/503）</h3>
+<p>OpenAI 服务端出现临时性问题时会返回这些错误码，通常需要重试机制来处理。</p>
 
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
-    ],
-    temperature=0.7,
-    max_tokens=1000
-)
+<h3>4. 请求错误（400 Bad Request）</h3>
+<p>请求参数格式错误、模型名称错误或请求体不符合规范时触发。</p>
 
-print(response.choices[0].message.content)</code></pre>
+<h3>5. 超时错误（Timeout）</h3>
+<p>请求处理时间超过设定的超时阈值，在处理长文本或复杂任务时较为常见。</p>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
-    stream=True
-)
+<h2>Python 中的错误处理实现</h2>
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")</code></pre>
+<p>以下是一个完整的 Python 错误处理示例，展示了如何优雅地处理 OpenAI API 的各种错误情况：</p>
 
-            <h3>错误处理</h3>
 <pre><code>import openai
+import time
+from openai import OpenAI
 
+client = OpenAI(api_key="your-api-key")
+
+def call_openai_with_retry(prompt, max_retries=3, initial_delay=1):
+    """
+    带重试机制的 OpenAI API 调用函数
+    """
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4",
+                messages=[{"role": "user", "content": prompt}],
+                timeout=30
+            )
+            return response.choices[0].message.content
+            
+        except openai.AuthenticationError as e:
+            # 认证错误 - 不应重试
+            print(f"认证失败: {e}")
+            raise
+            
+        except openai.RateLimitError as e:
+            # 速率限制 - 使用指数退避重试
+            if attempt < max_retries - 1:
+                delay = initial_delay * (2 ** attempt)
+                print(f"触发速率限制，{delay}秒后重试...")
+                time.sleep(delay)
+            else:
+                print("达到最大重试次数")
+                raise
+                
+        except openai.APIError as e:
+            # 服务器错误 - 可以重试
+            if attempt < max_retries - 1:
+                delay = initial_delay * (2 ** attempt)
+                print(f"API 错误: {e}，{delay}秒后重试...")
+                time.sleep(delay)
+            else:
+                raise
+                
+        except openai.BadRequestError as e:
+            # 请求错误 - 不应重试
+            print(f"请求参数错误: {e}")
+            raise
+            
+        except openai.Timeout as e:
+            # 超时错误 - 可以重试
+            if attempt < max_retries - 1:
+                print(f"请求超时，重试中...")
+                time.sleep(initial_delay)
+            else:
+                raise
+                
+        except Exception as e:
+            # 其他未预期的错误
+            print(f"未知错误: {e}")
+            raise
+
+# 使用示例
 try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+    result = call_openai_with_retry("解释量子计算的基本原理")
+    print(result)
+except Exception as e:
+    print(f"最终失败: {e}")
+</code></pre>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<h2>Node.js 中的错误处理实现</h2>
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<p>对于使用 Node.js 的开发者，以下是相应的错误处理实现：</p>
 
+<pre><code>const OpenAI = require('openai');
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+
+async function callOpenAIWithRetry(prompt, maxRetries = 3, initialDelay = 1000) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4',
+        messages: [{ role: 'user', content: prompt }],
+        timeout: 30000
+      });
+      
+      return response.choices[0].message.content;
+      
+    } catch (error) {
+      // 认证错误
+      if (error.status === 401) {
+        console.error('认证失败:', error.message);
+        throw error;
+      }
+      
+      // 速率限制
+      if (error.status === 429) {
+        if (attempt < maxRetries - 1) {
+          const delay = initialDelay * Math.pow(2, attempt);
+          console.log(`触发速率限制，${delay}ms后重试...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          continue;
+        }
+      }
+      
+      // 服务器错误
+      if (error.status >= 500) {
+        if (attempt < maxRetries - 1) {
+          const delay = initialDelay * Math.pow(2, attempt);
+          console.log(`服务器错误，${delay}ms后重试...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          continue;
+        }
+      }
+      
+      // 请求错误
+      if (error.status === 400) {
+        console.error('请求参数错误:', error.message);
+        throw error;
+      }
+      
+      // 超时错误
+      if (error.code === 'ETIMEDOUT') {
+        if (attempt < maxRetries - 1) {
+          console.log('请求超时，重试中...');
+          await new Promise(resolve => setTimeout(resolve, initialDelay));
+          continue;
+        }
+      }
+      
+      throw error;
+    }
+  }
+}
+
+// 使用示例
+callOpenAIWithRetry('解释量子计算的基本原理')
+  .then(result => console.log(result))
+  .catch(error => console.error('最终失败:', error));
+</code></pre>
+
+<h2>OpenAI API 错误处理最佳实践核心原则</h2>
+
+<h3>1. 实施指数退避策略</h3>
+<p>对于可重试的错误（如速率限制、服务器错误），使用指数退避算法逐步增加重试间隔。这避免了在服务恢复期间过度请求，同时提高了最终成功的概率。</p>
+
+<h3>2. 区分可重试和不可重试错误</h3>
+<p>认证错误和请求参数错误属于不可重试错误，应立即返回给调用方。而速率限制、服务器错误和超时则应该实施重试机制。</p>
+
+<h3>3. 设置合理的超时时间</h3>
+<p>根据应用场景设置适当的超时阈值。对于实时交互场景，建议设置 30-60 秒；对于批处理任务，可以适当延长。</p>
+
+<h3>4. 记录详细的错误日志</h3>
+<p>完整记录错误类型、错误消息、请求参数和时间戳，便于后续问题排查和性能优化。</p>
+
+<h3>5. 实现降级策略</h3>
+<p>当 OpenAI API 持续不可用时，考虑使用缓存响应、备用模型或提示用户稍后重试等降级方案。</p>
+
+<h2>高级错误处理技巧</h2>
+
+<h3>使用断路器模式</h3>
+<p>当检测到 API 持续失败时，暂时停止请求一段时间，避免无效的重试消耗资源：</p>
+
+<pre><code>class CircuitBreaker:
+    def __init__(self, failure_threshold=5, timeout=60):
+        self.failure_count = 0
+        self.failure_threshold = failure_threshold
+        self.timeout = timeout
+        self.last_failure_time = None
+        self.state = 'CLOSED'  # CLOSED, OPEN, HALF_OPEN
+    
+    def call(self, func, *args, **kwargs):
+        if self.state == 'OPEN':
+            if time.time() - self.last_failure_time > self.timeout:
+                self.state = 'HALF_OPEN'
+            else:
+                raise Exception("断路器开启，暂时不可用")
+        
+        try:
+            result = func(*args, **kwargs)
+            self.on_success()
+            return result
+        except Exception as e:
+            self.on_failure()
+            raise
+    
+    def on_success(self):
+        self.failure_count = 0
+        self.state = 'CLOSED'
+    
+    def on_failure(self):
+        self.failure_count += 1
+        self.last_failure_time = time.time()
+        if self.failure_count >= self.failure_threshold:
+            self.state = 'OPEN'
+</code></pre>
+
+<h3>监控和告警</h3>
+<p>建立完善的监控体系，追踪错误率、响应时间和 API 配额使用情况。当错误率超过阈值时及时告警。</p>
+
+<h3>使用 API 中转服务</h3>
+<p>对于需要高可用性的生产环境，可以考虑使用专业的 API 中转服务。这些服务通常提供自动重试、负载均衡、多区域部署等企业级特性，能够显著提升系统稳定性。同时，中转服务还能帮助优化成本和提供更灵活的配额管理。</p>
+
+<h2>错误处理的性能优化</h2>
+
+<h3>批量请求处理</h3>
+<p>当需要处理大量请求时，实施批量处理和并发控制，避免触发速率限制：</p>
+
+<pre><code>import asyncio
+from asyncio import Semaphore
+
+async def process_batch(prompts, concurrency=5):
+    semaphore = Semaphore(concurrency)
+    
+    async def process_single(prompt):
+        async with semaphore:
+            return await call_openai_async(prompt)
+    
+    tasks = [process_single(p) for p in prompts]
+    return await asyncio.gather(*tasks, return_exceptions=True)
+</code></pre>
+
+<h3>缓存策略</h3>
+<p>对于相同或相似的请求，实施缓存机制减少 API 调用次数，既能提升响应速度又能降低成本。</p>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>如何判断是否应该重试 OpenAI API 请求？</summary>
+<p>一般来说，速率限制错误（429）、服务器错误（5xx）和超时错误应该重试。而认证错误（401）、请求参数错误（400）和权限错误（403）不应该重试，因为重试不会改变结果。建议使用指数退避策略，最多重试 3-5 次。</p>
+</details>
+
+<details>
+<summary>OpenAI API 的速率限制是如何计算的？</summary>
+<p>OpenAI 的速率限制基于每分钟请求数（RPM）和每分钟令牌数（TPM）两个维度。不同的订阅级别有不同的限制。当触发速率限制时，响应头会包含 Retry-After 字段，指示应该等待的秒数。建议在代码中解析这个字段来动态调整重试时间。</p>
+</details>
+
+<details>
+<summary>如何处理 OpenAI API 的超时问题？</summary>
+<p>超时通常由网络延迟或请求处理时间过长引起。建议设置合理的超时阈值（如 30-60 秒），并实施重试机制。对于长文本处理，可以考虑分段处理或使用流式响应。同时，检查网络连接质量和 DNS 解析速度也很重要。</p>
+</details>
+
+<details>
+<summary>生产环境中应该如何监控 OpenAI API 的错误？</summary>
+<p>建议建立完整的监控体系，包括：错误率追踪、响应时间监控、API 配额使用情况、不同错误类型的分布统计。使用日志聚合工具（如 ELK、Datadog）集中管理日志，设置告警规则在错误率异常时及时通知。同时，定期分析错误模式，优化错误处理策略。</p>
+</details>
+
+<details>
+<summary>如何在多个 API 密钥之间实现负载均衡？</summary>
+<p>可以维护一个 API 密钥池，使用轮询或随机选择策略分配请求。当某个密钥触发速率限制时，自动切换到其他可用密钥。同时追踪每个密钥的使用情况和配额，实现智能调度。这种方式能够有效提升系统的吞吐量和可用性。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>掌握 OpenAI API 错误处理最佳实践对于构建稳定可靠的 AI 应用至关重要。通过实施合理的重试策略、区分错误类型、设置适当的超时、记录详细日志以及使用断路器等高级模式，可以显著提升系统的健壮性和用户体验。</p>
+
+<p>在实际开发中，建议根据具体业务场景调整错误处理策略，持续监控和优化系统性能。对于企业级应用，考虑使用专业的 API 管理和中转服务能够进一步提升系统的稳定性和可维护性。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +751,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/claude-api-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>Claude API 使用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/openai-api-python-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>OpenAI API Python调用教程</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/claude-api-tutorial.html" class="related-card"><h3>Claude API 使用教程</h3><p>从零开始学习使用Claude API</p></a>
+<a href="/tutorials/openai-api-python-tutorial.html" class="related-card"><h3>OpenAI API Python调用教程</h3><p>用Python调用OpenAI API的完整指南</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+
                 </div>
             </section>
         </article>

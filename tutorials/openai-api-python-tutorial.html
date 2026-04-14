@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI API Python调用教程 | 完整教程与代码示例 | OpenClaw - AI API 中转服务</title>
-    <meta name="description" content="OpenAI API Python调用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <title>OpenAI API Python调用教程 | OpenClaw - AI API 中转服务</title>
+    <meta name="description" content="用Python调用OpenAI API的完整指南">
     <meta name="keywords" content="OpenAI API Python调用教程, AI API, API中转, OpenClaw">
-    <link rel="canonical" href="https://openclaw.com/tutorials/openai-api-python-tutorial">
+    <link rel="canonical" href="https://guide.xiaomuai.cn/tutorials/openai-api-python-tutorial">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="OpenAI API Python调用教程 | 完整教程与代码示例">
-    <meta property="og:description" content="OpenAI API Python调用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta property="og:title" content="OpenAI API Python调用教程">
+    <meta property="og:description" content="用Python调用OpenAI API的完整指南">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://openclaw.com/tutorials/openai-api-python-tutorial">
+    <meta property="og:url" content="https://guide.xiaomuai.cn/tutorials/openai-api-python-tutorial">
     <meta property="og:site_name" content="OpenClaw">
     <meta property="og:locale" content="zh_CN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenAI API Python调用教程 | 完整教程与代码示例">
-    <meta name="twitter:description" content="OpenAI API Python调用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。">
+    <meta name="twitter:title" content="OpenAI API Python调用教程">
+    <meta name="twitter:description" content="用Python调用OpenAI API的完整指南">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "OpenAI API Python调用教程 | 完整教程与代码示例",
-        "description": "OpenAI API Python调用教程完整指南。包含代码示例、最佳实践和常见问题排查，新手友好。",
-        "datePublished": "2026-04-13",
-        "dateModified": "2026-04-13",
+        "headline": "OpenAI API Python调用教程",
+        "description": "用Python调用OpenAI API的完整指南",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
         "author": {
             "@type": "Organization",
             "name": "OpenClaw",
@@ -41,7 +41,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://openclaw.com/tutorials/openai-api-python-tutorial"
+            "@id": "https://guide.xiaomuai.cn/tutorials/openai-api-python-tutorial"
         }
     }
     </script>
@@ -52,46 +52,55 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-                        {
-                "@type": "Question",
-                "name": "新手需要什么基础？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "API Key 在哪里获取？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "国内可以直接调用吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "调用失败怎么排查？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "有完整的代码示例吗？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "本教程提供了完整的可运行代码示例，你可以直接复制使用。"
-                }
-            }
+            
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+      "@type": "Question",
+      "name": "如何处理 API 速率限制错误？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI API 有速率限制，当遇到 RateLimitError 时，应该实现指数退避重试策略。可以使用 tenacity 库简化重试逻辑，或者手动实现 try-except 捕获错误并等待一段时间后重试。对于高频应用，建议升级到更高的使用层级或考虑使用 API 中转服务来分散请求。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OpenAI API Python调用时如何控制输出格式？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以通过在 system 消息中明确指定输出格式要求，例如"请以 JSON 格式返回"或"请用列表形式回答"。对于结构化输出，可以使用 response_format 参数指定 json_object 类型。此外，通过调整 temperature 参数可以控制输出的确定性，较低的值会产生更一致的格式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何在 Python 中实现 OpenAI API 的异步调用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI Python 库支持异步操作，使用 AsyncOpenAI 客户端即可。导入 asyncio 和 AsyncOpenAI，然后使用 await 关键字调用 API。异步调用特别适合需要同时处理多个请求的场景，可以显著提高应用性能。示例：client = AsyncOpenAI() 然后 await client.chat.completions.create(...)。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "调用 OpenAI API 时如何保证数据安全？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首先，永远不要在代码中硬编码 API 密钥，应使用环境变量或密钥管理服务。其次，不要将包含敏感信息的请求发送到 API。OpenAI 声明不会使用 API 调用的数据来训练模型，但仍需谨慎处理用户隐私数据。对于企业应用，可以考虑使用 Azure OpenAI 服务获得更强的合规保障。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何优化 OpenAI API Python调用的响应速度？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以从几个方面优化：1) 使用流式输出让用户更快看到结果；2) 减少 messages 数组长度，只保留必要的上下文；3) 选择响应更快的模型如 gpt-3.5-turbo；4) 使用地理位置更近的 API 端点或中转服务；5) 实现本地缓存机制，避免重复请求相同内容。对于批量处理任务，可以使用异步并发调用。"
+      }
+    }
+        ]
+    }
+    </script>
         ]
     }
     </script>
@@ -427,111 +436,238 @@
         <nav class="breadcrumb">
             <a href="/">首页</a>
             <span>/</span>
-            <a href="/tutorials/">使用教程</a>
+            <a href="/{{category}}/">{{category_name}}</a>
             <span>/</span>
-            OpenAI API Python调用教程
+            {{breadcrumb_current}}
         </nav>
     </div>
 
     <!-- Article -->
     <main class="container">
         <article class="article">
-            <h1>OpenAI API Python调用教程 | 完整教程与代码示例</h1>
+            <h1>OpenAI API Python调用教程</h1>
             <div class="article-meta">
-                <span>更新于 2026-04-13</span>
-                <span>阅读时间：5 分钟</span>
-                <span>分类：使用教程</span>
+                <span>更新于 2026-04-14</span>
+                <span>阅读时间：{{read_time}} 分钟</span>
+                <span>分类：{{category_name}}</span>
             </div>
 
             <!-- Main Content -->
-            
-            <p>本教程将手把手教你OpenAI API Python调用教程。无论你是刚接触 AI API 的新手，还是有经验的开发者，都能从中获得实用的指导。</p>
+            <h2>OpenAI API Python调用完整指南</h2>
 
-            <h2>前置要求</h2>
-            <ul>
-                <li>Python 3.8+ 或 Node.js 18+</li>
-                <li>API Key（可通过 OpenClaw 获取统一的 API Key）</li>
-                <li>基础的编程知识</li>
-            </ul>
+<p>OpenAI API 为开发者提供了强大的人工智能能力，通过 Python 调用 OpenAI API 可以轻松实现文本生成、对话系统、代码补全等功能。本教程将详细介绍如何使用 Python 调用 OpenAI API，从环境配置到实际应用，帮助你快速上手。</p>
 
-            <h2>第一步：获取 API Key</h2>
-            <p>你可以直接从官方渠道获取 API Key，也可以通过 OpenClaw 统一管理。使用 OpenClaw 的好处是一个 Key 即可访问所有模型。</p>
+<h2>准备工作：获取 API 密钥</h2>
 
-            <h2>第二步：安装依赖</h2>
-<pre><code># Python
-pip install openai anthropic
+<p>在开始使用 OpenAI API Python调用之前，你需要先获取 API 密钥。访问 OpenAI 官网注册账号，在账户设置中创建新的 API Key。请妥善保管你的密钥，不要将其提交到公开的代码仓库中。</p>
 
-# Node.js
-npm install openai @anthropic-ai/sdk</code></pre>
+<h3>安装必要的 Python 库</h3>
 
-            <h2>第三步：基础调用</h2>
-<pre><code>from openai import OpenAI
+<p>首先需要安装 OpenAI 官方提供的 Python 客户端库。打开终端或命令提示符，执行以下命令：</p>
 
-# 使用 OpenClaw 中转（可选，国内推荐）
+<pre><code>pip install openai</code></pre>
+
+<p>如果你使用的是较新版本的 Python（3.7+），建议同时安装 python-dotenv 来管理环境变量：</p>
+
+<pre><code>pip install python-dotenv</code></pre>
+
+<h2>基础配置：设置 API 密钥</h2>
+
+<p>为了安全起见，建议将 API 密钥存储在环境变量中。创建一个 .env 文件：</p>
+
+<pre><code>OPENAI_API_KEY=your_api_key_here</code></pre>
+
+<p>然后在 Python 代码中加载：</p>
+
+<pre><code>import os
+from dotenv import load_dotenv
+from openai import OpenAI
+
+# 加载环境变量
+load_dotenv()
+
+# 初始化客户端
 client = OpenAI(
-    api_key="your-openclaw-key",
-    base_url="https://api.openclaw.com/v1"
-)
+    api_key=os.getenv("OPENAI_API_KEY")
+)</code></pre>
 
+<h2>第一个 OpenAI API Python调用示例</h2>
+
+<p>让我们从最简单的文本生成开始。以下是一个完整的示例代码：</p>
+
+<pre><code>from openai import OpenAI
+import os
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# 调用 Chat Completions API
 response = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-3.5-turbo",
     messages=[
         {"role": "system", "content": "你是一个有帮助的助手。"},
-        {"role": "user", "content": "请解释什么是 API"}
+        {"role": "user", "content": "请用一句话介绍 Python 编程语言。"}
     ],
     temperature=0.7,
-    max_tokens=1000
+    max_tokens=150
 )
 
+# 输出结果
 print(response.choices[0].message.content)</code></pre>
 
-            <h2>第四步：进阶用法</h2>
-            <h3>流式输出</h3>
-<pre><code>stream = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "写一首诗"}],
+<h3>参数详解</h3>
+
+<ul>
+<li><strong>model</strong>: 指定使用的模型，如 gpt-3.5-turbo、gpt-4 等</li>
+<li><strong>messages</strong>: 对话历史数组，包含 system、user、assistant 三种角色</li>
+<li><strong>temperature</strong>: 控制输出的随机性，范围 0-2，值越高越随机</li>
+<li><strong>max_tokens</strong>: 限制生成的最大 token 数量</li>
+</ul>
+
+<h2>进阶应用：流式输出</h2>
+
+<p>对于长文本生成，流式输出可以提供更好的用户体验。通过设置 stream=True 参数实现：</p>
+
+<pre><code>response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": "写一篇关于人工智能的短文"}
+    ],
     stream=True
 )
 
-for chunk in stream:
-    if chunk.choices[0].delta.content:
+for chunk in response:
+    if chunk.choices[0].delta.content is not None:
         print(chunk.choices[0].delta.content, end="")</code></pre>
 
-            <h3>错误处理</h3>
-<pre><code>import openai
+<h2>实用技巧：错误处理与重试机制</h2>
 
-try:
-    response = client.chat.completions.create(...)
-except openai.RateLimitError:
-    print("触发速率限制，请稍后重试")
-except openai.APIConnectionError:
-    print("网络连接失败，请检查网络")
-except openai.APIError as e:
-    print(f"API 错误: {e}")</code></pre>
+<p>在实际应用中，网络问题或 API 限流可能导致请求失败。建议添加错误处理和重试逻辑：</p>
 
-            <h2>最佳实践</h2>
-            <ol>
-                <li><strong>设置合理的 timeout：</strong>避免请求长时间挂起</li>
-                <li><strong>实现重试机制：</strong>使用指数退避策略处理临时错误</li>
-                <li><strong>监控使用量：</strong>定期检查 token 消耗，避免超出预算</li>
-                <li><strong>使用环境变量：</strong>不要在代码中硬编码 API Key</li>
-            </ol>
+<pre><code>import time
+from openai import OpenAI, OpenAIError
 
-            <h2>常见问题排查</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>错误</th><th>原因</th><th>解决方案</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>401 Unauthorized</td><td>API Key 无效或过期</td><td>检查 Key 是否正确</td></tr>
-                        <tr><td>429 Rate Limit</td><td>请求频率过高</td><td>实现退避重试或升级套餐</td></tr>
-                        <tr><td>500 Server Error</td><td>服务端临时故障</td><td>等待后重试</td></tr>
-                        <tr><td>网络超时</td><td>网络不通或延迟高</td><td>使用 OpenClaw 中转加速</td></tr>
-                    </tbody>
-                </table>
-            </div>
+def call_openai_with_retry(client, messages, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=messages
+            )
+            return response.choices[0].message.content
+        except OpenAIError as e:
+            if attempt < max_retries - 1:
+                wait_time = 2 ** attempt  # 指数退避
+                print(f"请求失败，{wait_time}秒后重试...")
+                time.sleep(wait_time)
+            else:
+                raise e</code></pre>
 
+<h2>多轮对话实现</h2>
+
+<p>构建对话系统时，需要维护对话历史。以下是一个简单的对话循环示例：</p>
+
+<pre><code>messages = [
+    {"role": "system", "content": "你是一个友好的助手。"}
+]
+
+while True:
+    user_input = input("你: ")
+    if user_input.lower() in ['退出', 'quit', 'exit']:
+        break
+    
+    messages.append({"role": "user", "content": user_input})
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages
+    )
+    
+    assistant_message = response.choices[0].message.content
+    messages.append({"role": "assistant", "content": assistant_message})
+    
+    print(f"助手: {assistant_message}")</code></pre>
+
+<h2>成本优化建议</h2>
+
+<p>使用 OpenAI API Python调用时，合理控制成本很重要：</p>
+
+<ul>
+<li>根据需求选择合适的模型，gpt-3.5-turbo 比 gpt-4 便宜很多</li>
+<li>设置合理的 max_tokens 限制，避免不必要的长输出</li>
+<li>对于简单任务，可以使用更低的 temperature 值减少重试次数</li>
+<li>实现缓存机制，避免重复请求相同内容</li>
+<li>考虑使用 API 中转服务来降低调用成本，特别是对于高频应用场景</li>
+</ul>
+
+<h2>Function Calling 功能</h2>
+
+<p>OpenAI API 支持函数调用功能，让模型能够调用外部工具。这是构建智能助手的关键能力：</p>
+
+<pre><code>tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "获取指定城市的天气信息",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "type": "string",
+                        "description": "城市名称"
+                    }
+                },
+                "required": ["city"]
+            }
+        }
+    }
+]
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "北京今天天气怎么样？"}],
+    tools=tools,
+    tool_choice="auto"
+)
+
+# 检查是否需要调用函数
+if response.choices[0].message.tool_calls:
+    tool_call = response.choices[0].message.tool_calls[0]
+    function_name = tool_call.function.name
+    arguments = tool_call.function.arguments
+    print(f"模型想调用函数: {function_name}")
+    print(f"参数: {arguments}")</code></pre>
+
+<h2>常见问题解答</h2>
+
+<details>
+<summary>如何处理 API 速率限制错误？</summary>
+<p>OpenAI API 有速率限制，当遇到 RateLimitError 时，应该实现指数退避重试策略。可以使用 tenacity 库简化重试逻辑，或者手动实现 try-except 捕获错误并等待一段时间后重试。对于高频应用，建议升级到更高的使用层级或考虑使用 API 中转服务来分散请求。</p>
+</details>
+
+<details>
+<summary>OpenAI API Python调用时如何控制输出格式？</summary>
+<p>可以通过在 system 消息中明确指定输出格式要求，例如"请以 JSON 格式返回"或"请用列表形式回答"。对于结构化输出，可以使用 response_format 参数指定 json_object 类型。此外，通过调整 temperature 参数可以控制输出的确定性，较低的值会产生更一致的格式。</p>
+</details>
+
+<details>
+<summary>如何在 Python 中实现 OpenAI API 的异步调用？</summary>
+<p>OpenAI Python 库支持异步操作，使用 AsyncOpenAI 客户端即可。导入 asyncio 和 AsyncOpenAI，然后使用 await 关键字调用 API。异步调用特别适合需要同时处理多个请求的场景，可以显著提高应用性能。示例：client = AsyncOpenAI() 然后 await client.chat.completions.create(...)。</p>
+</details>
+
+<details>
+<summary>调用 OpenAI API 时如何保证数据安全？</summary>
+<p>首先，永远不要在代码中硬编码 API 密钥，应使用环境变量或密钥管理服务。其次，不要将包含敏感信息的请求发送到 API。OpenAI 声明不会使用 API 调用的数据来训练模型，但仍需谨慎处理用户隐私数据。对于企业应用，可以考虑使用 Azure OpenAI 服务获得更强的合规保障。</p>
+</details>
+
+<details>
+<summary>如何优化 OpenAI API Python调用的响应速度？</summary>
+<p>可以从几个方面优化：1) 使用流式输出让用户更快看到结果；2) 减少 messages 数组长度，只保留必要的上下文；3) 选择响应更快的模型如 gpt-3.5-turbo；4) 使用地理位置更近的 API 端点或中转服务；5) 实现本地缓存机制，避免重复请求相同内容。对于批量处理任务，可以使用异步并发调用。</p>
+</details>
+
+<h2>总结</h2>
+
+<p>通过本教程，你已经掌握了 OpenAI API Python调用的核心技能，从基础配置到进阶应用都有涉及。无论是构建聊天机器人、内容生成工具还是智能助手，这些知识都能帮助你快速实现想法。记住要合理控制成本、处理好错误情况，并始终关注数据安全。随着实践经验的积累，你会发现更多创新的应用场景。</p>
 
             <!-- CTA -->
             <div class="cta-box">
@@ -544,48 +680,18 @@ except openai.APIError as e:
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2>常见问题</h2>
-                                <div class="faq-item">
-                    <div class="faq-question">新手需要什么基础？</div>
-                    <div class="faq-answer">基本的 Python 或 JavaScript 编程能力即可。本教程会从安装环境开始手把手教你。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">API Key 在哪里获取？</div>
-                    <div class="faq-answer">可以从各 API 提供商官网注册获取，也可以通过 OpenClaw 获取统一的 API Key，一个 Key 访问所有模型。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">国内可以直接调用吗？</div>
-                    <div class="faq-answer">部分海外 API 在国内可能存在网络问题。推荐使用 OpenClaw 中转服务，国内直连、低延迟。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">调用失败怎么排查？</div>
-                    <div class="faq-answer">常见原因包括：API Key 无效、网络不通、请求格式错误、触发速率限制等。请参考文中的常见问题排查表格。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有完整的代码示例吗？</div>
-                    <div class="faq-answer">本教程提供了完整的可运行代码示例，你可以直接复制使用。</div>
-                </div>
+                {{faqs}}
             </section>
 
             <!-- Related Pages -->
             <section class="related-pages">
                 <h2>相关阅读</h2>
                 <div class="related-grid">
-                                        <a class="related-card" href="/tutorials/claude-api-tutorial.html">
-                        <span class="tag">使用教程</span>
-                        <h4>Claude API 使用教程</h4>
-                    </a>
-                    <a class="related-card" href="/tutorials/gpt-4-api-integration-guide.html">
-                        <span class="tag">使用教程</span>
-                        <h4>GPT-4 API 接入指南</h4>
-                    </a>
-                    <a class="related-card" href="/compare/openai-api-vs-claude-api-pricing.html">
-                        <span class="tag">对比评测</span>
-                        <h4>OpenAI API vs Claude API 价格对比</h4>
-                    </a>
-                    <a class="related-card" href="/compare/gpt-4o-vs-claude-3-5-sonnet.html">
-                        <span class="tag">对比评测</span>
-                        <h4>GPT-4o API vs Claude 3.5 Sonnet API 对比</h4>
-                    </a>
+                    <a href="/tutorials/claude-api-tutorial.html" class="related-card"><h3>Claude API 使用教程</h3><p>从零开始学习使用Claude API</p></a>
+<a href="/tutorials/gpt-4-api-integration-guide.html" class="related-card"><h3>GPT-4 API 接入指南</h3><p>将GPT-4 API集成到项目中</p></a>
+<a href="/tutorials/claude-api-streaming-tutorial.html" class="related-card"><h3>Claude API 流式输出教程</h3><p>实现Claude API的流式响应</p></a>
+<a href="/tutorials/openai-function-calling-tutorial.html" class="related-card"><h3>OpenAI API Function Calling 教程</h3><p>学习OpenAI函数调用功能</p></a>
+
                 </div>
             </section>
         </article>
